@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: Jason的coding之路
 subtitle: ''
-description: ''
+description: '不要等待運氣來臨，應該主動去努力掌握知識。'
 keywords:
-author: John Doe
-language: en
+author: Jason06286
+language: zh-tw
 timezone: ''
 
 # URL
@@ -32,7 +32,7 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
-new_post_name: :title.md # File name of new posts
+new_post_name: :year/:month/:day/:title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link:
