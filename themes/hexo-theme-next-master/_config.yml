@@ -64,7 +64,7 @@ footer:
     color: "#ff0000"
 
   # If not defined, `author` from Hexo `_config.yml` will be used.
-  copyright: © 2020  jason06286 - 轉載文章請附上原文連結，謝謝！
+  copyright:  jason06286 - 轉載文章請附上原文連結，謝謝！
 
   # Powered by Hexo & NexT
   powered: false
