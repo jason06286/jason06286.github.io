@@ -78,8 +78,8 @@ category_map:
   Nodejs: node
   SCS5: scss
   Vue: vue
-  - 克服JS奇怪的部分系列: jsweirdworld
-  - 學習經驗: learnexp
+  克服JS奇怪的部分系列: jsweirdworld
+  學習經驗: learnexp
 tag_map:
 
 # Metadata elements
