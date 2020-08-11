@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jason06286.github.io/20200811/33161/</loc>
+    
+    <lastmod>2020-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jason06286.github.io/20200811/38287/</loc>
+    
+    <lastmod>2020-08-11</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jason06286.github.io/20200811/17504/</loc>
+    
+    <lastmod>2020-08-11</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jason06286.github.io/20200810/53228/</loc>
     
     <lastmod>2020-08-11</lastmod>
@@ -80,10 +101,24 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://jason06286.github.io/tags/git/</loc>
+    <lastmod>2020-08-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
     <loc>https://jason06286.github.io/categories/hexo/</loc>
+    <lastmod>2020-08-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jason06286.github.io/categories/git/</loc>
     <lastmod>2020-08-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
