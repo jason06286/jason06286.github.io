@@ -33,10 +33,6 @@ IDE：VS Code
 hexo: 5.0.0
 
 hexo-cli: 4.1.0
-
-#### NexT 版本
-Next: 7.8.0
-
 ---
 ## 從 GitHub 建立新的數據庫 (Creat a new Repository)
 ![](/images/hexoblog1.png)
@@ -141,6 +137,7 @@ hexo g d
 ```
 ---
 > 參考文章：https://hsiangfeng.github.io/hexo/20190411/932826160/
+> 參考文章：https://www.youtube.com/watch?v=jOJI9ekTzK8&t=3809s
 
 
 
