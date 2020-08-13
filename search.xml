@@ -213,7 +213,7 @@
       </tags>
   </entry>
   <entry>
-    <title>Js筆記 var let const 差異</title>
+    <title>JS 筆記 var let const 差異</title>
     <url>/20200813/54502/</url>
     <content><![CDATA[<p><img src="/images/js01/js1.jpg"><br>在 ES6 之前 JavaScript 沒有區塊域的概念，因此經常使用 <code>var</code> 來宣告變數，<br>而造成區域變數覆蓋到全域變數，因此才有 <code>let</code>、<code>const</code> 來避免此狀況產生。</p>
 <h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><p>用法就跟 <code>var</code> 沒有差別，但作用域只在括號內，讓我們看個經典例子來瞭解</p>
@@ -229,6 +229,26 @@
 <blockquote>
 <p>盡量少用 <code>var</code> 用 <code>let</code>、<code>const</code> 做取代<br><code>const</code> 可以宣告不太會更動的內容。ex: DOM 、物件、api<br><code>const</code> 常數可以用大寫，以利區分</p>
 </blockquote>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS 筆記 Arrow Function 箭頭函式</title>
+    <url>/20200813/34258/</url>
+    <content><![CDATA[<p><img src="/images/js01/js5.png"></p>
+<h2 id="箭頭函式（Arrow-Function）"><a href="#箭頭函式（Arrow-Function）" class="headerlink" title="箭頭函式（Arrow Function）"></a>箭頭函式（Arrow Function）</h2><p>ES6 增加了箭頭函式使我們的程式碼更簡潔</p>
+<blockquote>
+<p>去掉 <code>function</code> 加入 <code>=&gt;</code><br>只有一個參數 <code>（）</code>可加可不加，兩個以上一定要加 <code>（params,params2）</code><br>箭頭函式 <code>this</code> 指向外層</p>
+</blockquote>
+<h3 id="函式比較"><a href="#函式比較" class="headerlink" title="函式比較"></a>函式比較</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; ES5</span><br><span class="line">const numbers &#x3D;[2,3,4];</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map(function(number)&#123;</span><br><span class="line">    return number * number;</span><br><span class="line">&#125;);</span><br><span class="line">console.log(double)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; ES6</span><br><span class="line">const numbers &#x3D;[2,3,4];</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map((number)&#x3D;&gt;&#123;</span><br><span class="line">    return number * number;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map(number&#x3D;&gt;&#123;</span><br><span class="line">    return number * number;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map(number&#x3D;&gt;number * number);</span><br><span class="line"></span><br><span class="line">console.log(double)</span><br></pre></td></tr></table></figure>
+<h3 id="this比較"><a href="#this比較" class="headerlink" title="this比較"></a>this比較</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; ES5</span><br><span class="line">const Jason&#x3D;&#123;</span><br><span class="line">    name:&#39;Jason&#39;,</span><br><span class="line">    hobbies:[&#39;Coding&#39;, &#39;Running&#39;, &#39;Sleeping&#39;],</span><br><span class="line">    printHobbies: function()&#123;</span><br><span class="line">        let self&#x3D;this &#x2F;&#x2F;透過宣告變數來取得外層this</span><br><span class="line">        this.hobbies.map(function (hobby) &#123;</span><br><span class="line">            console.log(this) &#x2F;&#x2F;指向window</span><br><span class="line">            console.log(&#96;$&#123;self.name&#125; loves $&#123;hobby&#125;&#96;); </span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Jason.printHobbies();</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; ES6</span><br><span class="line">const Jason&#x3D;&#123;</span><br><span class="line">    name:&#39;Jason&#39;,</span><br><span class="line">    hobbies:[&#39;Coding&#39;, &#39;Running&#39;, &#39;Sleeping&#39;],</span><br><span class="line">    printHobbies: function()&#123;</span><br><span class="line">        this.hobbies.map(hobby&#x3D;&gt; &#123;</span><br><span class="line">            console.log(&#96;$&#123;this.name&#125; loves $&#123;hobby&#125;&#96;); </span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Jason.printHobbies();</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>JavaScript</category>
