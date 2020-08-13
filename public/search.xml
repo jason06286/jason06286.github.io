@@ -83,10 +83,57 @@
 </blockquote>
 ]]></content>
       <categories>
-        <category>hexo</category>
+        <category>Hexo</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git branch 合併 Merge Rebase</title>
+    <url>/20200811/33161/</url>
+    <content><![CDATA[<p>s</p>
+<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><p>在開發中我們會有許多版本，像是開發版、測試版，測試功能都正常，才會合併到上線版。</p>
+<blockquote>
+<p>分支就像是影分身術的概念，而我們會透過 <code>git </code>的指令，來取需要分身的部分。 </p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">新增分支：git branch 分支名稱</span><br><span class="line">查看分支：git branch </span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>HEAD</code> 表示目前在哪裡，預設是指向 <code>master</code></p>
+</blockquote>
+<p><img src="/images/git02/git1.png"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">切換分支：git checkout 分支名稱</span><br><span class="line">刪除分支：git branch -d 分支名稱 、-D 是強制刪除</span><br><span class="line">還原上個版本：git reset HEAD^</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>HEAD</code> 代表目前位置<br><code>HEAD^</code> 代表 HEAD 往前一個版本，<code>HEAD^^</code> 代表 HEAD 往前二個版本<br><code>HEAD~1 </code>代表 HEAD 往前一個版本，<code>HEAD~4 </code>代表 HEAD 往前四個版本 </p>
+</blockquote>
+<p><img src="/images/git02/git2.png"><br><img src="/images/git02/git3.png"><br><img src="/images/git02/git4.png"></p>
+<h1 id="分支合併"><a href="#分支合併" class="headerlink" title="分支合併"></a>分支合併</h1><h2 id="Merge"><a href="#Merge" class="headerlink" title="Merge"></a>Merge</h2><p>在使用 <code>merge</code> 合併分支的時候，<code>git</code> 預設會以 <code>fast-forward</code> 的模式進行，那什麼是 <code>fast-forward</code> 和 <code>no-fast-forward</code> 呢？</p>
+<h4 id="fast-forward"><a href="#fast-forward" class="headerlink" title="fast-forward"></a>fast-forward</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git merge 分支名稱</span><br></pre></td></tr></table></figure>
+<p><img src="https://www.maxlist.xyz/wp-content/uploads/2020/05/merge_fast_foard.gif"><br><a href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1#merge">Gif 來源：CS Visualized</a></p>
+<h4 id="no-fast-forward"><a href="#no-fast-forward" class="headerlink" title="no-fast-forward"></a>no-fast-forward</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git merge 分支名稱 --no-ff</span><br></pre></td></tr></table></figure>
+<p><img src="https://www.maxlist.xyz/wp-content/uploads/2020/05/merge_no_fast_forward.gif"><br><a href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1#merge">Gif 來源：CS Visualized</a></p>
+<p>可以很清楚的看到同樣都是 <code>merge</code>，使用<code> no-fast-forward</code> 的模式，會長出小耳朵，可以讓成員在日後很清楚辨識不同的 <code>Commit</code> 歷程，但小耳朵過多會造成混亂，所以會需要 fast-forward 用來 <code>merge</code> 些較不重要的 <code>Commit</code>，像是零碎的 <code>bug fix</code>，保持 <code>Commit</code> 的乾淨。</p>
+<blockquote>
+<p>重要的合併用 <code>git merge 分支名稱 --no-ff</code><br>不重要的合併用 <code>git merge 分支名稱</code></p>
+</blockquote>
+<h3 id="衝突"><a href="#衝突" class="headerlink" title="衝突"></a>衝突</h3><p>當同時修改同一個檔案的同一行code，就會發生衝突，<br>因為<code> git</code> 無法知道哪個才是正確的內容，<br>這時就需要雙方溝通，看要用誰的code。</p>
+<p>假設我們在 <code>cat </code>分支修改了 <code>index.html</code> 的內容如下：<br><img src="/images/git02/git5.png"><br>然後在 <code>dog</code> 分支剛好也修改了 <code>index.html</code>，內容如下：<br><img src="/images/git02/git6.png"><br>這時候進行合併，發現因為第 9 行重複，所以產生了衝突，<br>此時狀態，已被放置至暫存區。<br>選要用哪個內容，在跑過一次 <code>Commit</code> 流程，就解決衝突了。<br><img src="/images/git02/git7.png"><br><img src="/images/git02/git8.png"></p>
+<h2 id="Rebase"><a href="#Rebase" class="headerlink" title="Rebase"></a>Rebase</h2><p>從字面上來看，「rebase」是「re」加上「base」，翻成中文大概是「重新定義分支的參考基準」的意思。</p>
+<h4 id="合併版本"><a href="#合併版本" class="headerlink" title="合併版本"></a>合併版本</h4><p><img src="https://www.maxlist.xyz/wp-content/uploads/2020/05/git_rebase.gif"><br><a href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1#merge">Gif 來源：CS Visualized</a></p>
+<h4 id="修改歷史-commit-紀錄"><a href="#修改歷史-commit-紀錄" class="headerlink" title="修改歷史 commit 紀錄"></a>修改歷史 commit 紀錄</h4><p><img src="https://www.maxlist.xyz/wp-content/uploads/2020/05/git_rebase_i.gif"><br><a href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1#merge">Gif 來源：CS Visualized</a></p>
+<h4 id="使用-Rebase-來合併分支"><a href="#使用-Rebase-來合併分支" class="headerlink" title="使用 Rebase 來合併分支"></a>使用 Rebase 來合併分支</h4><p>優點:很自由可以自己決定歷史順序<br>缺點:有時候恍神失智，忘了自己 <code>Rebase</code> 到哪，<br>不小心弄壞了還不知道怎麼 <code>reset</code> 回來 (¬_¬)，<br>發生衝突時會停在一半，對不熟悉 <code>Rebase</code> 的人來說是個困擾</p>
+<h4 id="使用時機"><a href="#使用時機" class="headerlink" title="使用時機"></a>使用時機</h4><p>通常在還沒有推（<code>Push</code>）出去但感覺得有點亂（或太瑣碎）的 <code>Commit</code>，可以先使用 <code>Rebase</code> 分支來整理完再推出去。但如同前面提到的，<code>Rebase</code> 等於是修改歷史，修改已經推出去的歷史可能會對其它人帶來困擾，所以對於已經推出去的內容，非必要的話請盡量不要使用 <code>Rebase</code>。</p>
+<h4 id="技術總結"><a href="#技術總結" class="headerlink" title="技術總結:"></a>技術總結:</h4><blockquote>
+<p>創立 <code>branch</code> 用 <code>git branch 分支名稱</code><br>切換 <code>HEAD</code> 位置 <code>git ckeckout 位置</code><br>合併到主要版本用 <code>git merge 分支名稱 --no-ff</code><br>整理 <code>commit</code> 點 可以用 <code>git rebase</code> 和 <code>git merge</code></p>
+</blockquote>
+<h3 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h3><p><a href="https://gitbook.tw/">為你自己學 Git</a></p>
+<h3 id="練習-Git-小遊戲"><a href="#練習-Git-小遊戲" class="headerlink" title="練習 Git 小遊戲"></a>練習 Git 小遊戲</h3><p><a href="https://learngitbranching.js.org/?locale=zh_TW">Learn Git Branching</a></p>
+]]></content>
+      <categories>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
@@ -125,10 +172,10 @@
 
 ]]></content>
       <categories>
-        <category>hexo</category>
+        <category>Hexo</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -159,56 +206,55 @@
 <p><img src="/images/git01/git13.png"></p>
 ]]></content>
       <categories>
-        <category>git</category>
+        <category>Git</category>
       </categories>
       <tags>
-        <tag>git</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
-    <title>Git branch 合併 Merge Rebase</title>
-    <url>/20200811/33161/</url>
-    <content><![CDATA[<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><p>在開發中我們會有許多版本，像是開發版、測試版，測試功能都正常，才會合併到上線版。</p>
+    <title>JS 筆記 var let const 差異</title>
+    <url>/20200813/54502/</url>
+    <content><![CDATA[<p><img src="/images/js01/js1.jpg"><br>在 ES6 之前 JavaScript 沒有區塊域的概念，因此經常使用 <code>var</code> 來宣告變數，<br>而造成區域變數覆蓋到全域變數，因此才有 <code>let</code>、<code>const</code> 來避免此狀況產生。</p>
+<h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><p>用法就跟 <code>var</code> 沒有差別，但作用域只在括號內，讓我們看個經典例子來瞭解</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for (var i &#x3D; 0; i &lt; 3; i++) &#123;</span><br><span class="line">  console.log(i);</span><br><span class="line">  setTimeout(function () &#123;</span><br><span class="line">    console.log(&#39;這執行第&#39; + i + &#39;次&#39;);</span><br><span class="line">  &#125;, 10);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/js01/js2.png"><br>我們會發現出來的結果是 <code>這執行第3次</code>，而不是我們要的結果，<br>因為 <code>var</code> 宣告 <code>i</code> 會變成全域變數，造成 <code>for</code> 迴圈累加，<br>在 <code>setTimeout</code> 實際執行時只會拿到 3 這個數字。<br>此時在查找 <code>i</code>，發現 <code>i＝3</code>，疑～🧐 不是只會作用在函式裡嗎？<br>怎麼 window 也讀得到？</p>
+<h3 id="用-let-改寫"><a href="#用-let-改寫" class="headerlink" title="用 let 改寫"></a>用 <code>let</code> 改寫</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for (let i &#x3D; 0; i &lt; 10; i++) &#123;</span><br><span class="line">  console.log(i);</span><br><span class="line">  setTimeout(function () &#123;</span><br><span class="line">    console.log(&#39;這執行第&#39; + i + &#39;次&#39;);</span><br><span class="line">  &#125;, 10);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/js01/js3.png"><br>我們會發現結果會依序跑出，且查找<code>i</code>，<br>顯示 <code>Uncaught ReferenceError: i is not defined</code>，<br><code>i</code> 變數未被宣告，因為 <code>let</code> 作用域只在括號內。</p>
+<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>是宣吿一個常數，且必須一定要有值，不可被更改。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const a&#x3D;1;</span><br><span class="line">let  a&#x3D;2;</span><br><span class="line">a&#x3D;2</span><br></pre></td></tr></table></figure>
+<p><img src="/images/js01/js4.png"></p>
+<h3 id="物件是例外"><a href="#物件是例外" class="headerlink" title="物件是例外"></a>物件是例外</h3><p>因為物件是傳址而不是傳值</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const CLOTHES &#x3D;&#123;</span><br><span class="line">    color:&#39;red&#39;,</span><br><span class="line">    size:&#39;L&#39;,</span><br><span class="line">&#125;</span><br><span class="line">CLOTHES .material&#x3D;&quot;棉&quot;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>分支就像是影分身術的概念，而我們會透過 <code>git </code>的指令，來取需要分身的部分。 </p>
+<p>盡量少用 <code>var</code> 用 <code>let</code>、<code>const</code> 做取代<br><code>const</code> 可以宣告不太會更動的內容。ex: DOM 、物件、api<br><code>const</code> 常數可以用大寫，以利區分</p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">新增分支：git branch 分支名稱</span><br><span class="line">查看分支：git branch </span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><code>HEAD</code> 表示目前在哪裡，預設是指向 <code>master</code></p>
-</blockquote>
-<p><img src="/images/git02/git1.png"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">切換分支：git checkout 分支名稱</span><br><span class="line">刪除分支：git branch -d 分支名稱 、-D 是強制刪除</span><br><span class="line">還原上個版本：git reset HEAD^</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><code>HEAD</code> 代表目前位置<br><code>HEAD^</code> 代表 HEAD 往前一個版本，<code>HEAD^^</code> 代表 HEAD 往前二個版本<br><code>HEAD~1 </code>代表 HEAD 往前一個版本，<code>HEAD~4 </code>代表 HEAD 往前四個版本 </p>
-</blockquote>
-<p><img src="/images/git02/git2.png"><br><img src="/images/git02/git3.png"><br><img src="/images/git02/git4.png"></p>
-<h1 id="分支合併"><a href="#分支合併" class="headerlink" title="分支合併"></a>分支合併</h1><h2 id="Merge"><a href="#Merge" class="headerlink" title="Merge"></a>Merge</h2><p>在使用 <code>merge</code> 合併分支的時候，<code>git</code> 預設會以 <code>fast-forward</code> 的模式進行，那什麼是 <code>fast-forward</code> 和 <code>no-fast-forward</code> 呢？</p>
-<h4 id="fast-forward"><a href="#fast-forward" class="headerlink" title="fast-forward"></a>fast-forward</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git merge 分支名稱</span><br></pre></td></tr></table></figure>
-<p><img src="https://www.maxlist.xyz/wp-content/uploads/2020/05/merge_fast_foard.gif"><br><a href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1#merge">Gif 來源：CS Visualized</a></p>
-<h4 id="no-fast-forward"><a href="#no-fast-forward" class="headerlink" title="no-fast-forward"></a>no-fast-forward</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git merge 分支名稱 --no-ff</span><br></pre></td></tr></table></figure>
-<p><img src="https://www.maxlist.xyz/wp-content/uploads/2020/05/merge_no_fast_forward.gif"><br><a href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1#merge">Gif 來源：CS Visualized</a></p>
-<p>可以很清楚的看到同樣都是 <code>merge</code>，使用<code> no-fast-forward</code> 的模式，會長出小耳朵，可以讓成員在日後很清楚辨識不同的 <code>Commit</code> 歷程，但小耳朵過多會造成混亂，所以會需要 fast-forward 用來 <code>merge</code> 些較不重要的 <code>Commit</code>，像是零碎的 <code>bug fix</code>，保持 <code>Commit</code> 的乾淨。</p>
-<blockquote>
-<p>重要的合併用 <code>git merge 分支名稱 --no-ff</code><br>不重要的合併用 <code>git merge 分支名稱</code></p>
-</blockquote>
-<h3 id="衝突"><a href="#衝突" class="headerlink" title="衝突"></a>衝突</h3><p>當同時修改同一個檔案的同一行code，就會發生衝突，<br>因為<code> git</code> 無法知道哪個才是正確的內容，<br>這時就需要雙方溝通，看要用誰的code。</p>
-<p>假設我們在 <code>cat </code>分支修改了 <code>index.html</code> 的內容如下：<br><img src="/images/git02/git5.png"><br>然後在 <code>dog</code> 分支剛好也修改了 <code>index.html</code>，內容如下：<br><img src="/images/git02/git6.png"><br>這時候進行合併，發現因為第 9 行重複，所以產生了衝突，<br>此時狀態，已被放置至暫存區。<br>選要用哪個內容，在跑過一次 <code>Commit</code> 流程，就解決衝突了。<br><img src="/images/git02/git7.png"><br><img src="/images/git02/git8.png"></p>
-<h2 id="Rebase"><a href="#Rebase" class="headerlink" title="Rebase"></a>Rebase</h2><p>從字面上來看，「rebase」是「re」加上「base」，翻成中文大概是「重新定義分支的參考基準」的意思。</p>
-<h4 id="合併版本"><a href="#合併版本" class="headerlink" title="合併版本"></a>合併版本</h4><p><img src="https://www.maxlist.xyz/wp-content/uploads/2020/05/git_rebase.gif"><br><a href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1#merge">Gif 來源：CS Visualized</a></p>
-<h4 id="修改歷史-commit-紀錄"><a href="#修改歷史-commit-紀錄" class="headerlink" title="修改歷史 commit 紀錄"></a>修改歷史 commit 紀錄</h4><p><img src="https://www.maxlist.xyz/wp-content/uploads/2020/05/git_rebase_i.gif"><br><a href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1#merge">Gif 來源：CS Visualized</a></p>
-<h4 id="使用-Rebase-來合併分支"><a href="#使用-Rebase-來合併分支" class="headerlink" title="使用 Rebase 來合併分支"></a>使用 Rebase 來合併分支</h4><p>優點:很自由可以自己決定歷史順序<br>缺點:有時候恍神失智，忘了自己 <code>Rebase</code> 到哪，<br>不小心弄壞了還不知道怎麼 <code>reset</code> 回來 (¬_¬)，<br>發生衝突時會停在一半，對不熟悉 <code>Rebase</code> 的人來說是個困擾</p>
-<h4 id="使用時機"><a href="#使用時機" class="headerlink" title="使用時機"></a>使用時機</h4><p>通常在還沒有推（<code>Push</code>）出去但感覺得有點亂（或太瑣碎）的 <code>Commit</code>，可以先使用 <code>Rebase</code> 分支來整理完再推出去。但如同前面提到的，<code>Rebase</code> 等於是修改歷史，修改已經推出去的歷史可能會對其它人帶來困擾，所以對於已經推出去的內容，非必要的話請盡量不要使用 <code>Rebase</code>。</p>
-<h4 id="技術總結"><a href="#技術總結" class="headerlink" title="技術總結:"></a>技術總結:</h4><blockquote>
-<p>創立 <code>branch</code> 用 <code>git branch 分支名稱</code><br>切換 <code>HEAD</code> 位置 <code>git ckeckout 位置</code><br>合併到主要版本用 <code>git merge 分支名稱 --no-ff</code><br>整理 <code>commit</code> 點 可以用 <code>git rebase</code> 和 <code>git merge</code></p>
-</blockquote>
-<h3 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h3><p><a href="https://gitbook.tw/">為你自己學 Git</a></p>
-<h3 id="練習-Git-小遊戲"><a href="#練習-Git-小遊戲" class="headerlink" title="練習 Git 小遊戲"></a>練習 Git 小遊戲</h3><p><a href="https://learngitbranching.js.org/?locale=zh_TW">Learn Git Branching</a></p>
 ]]></content>
       <categories>
-        <category>git</category>
+        <category>JavaScript</category>
       </categories>
       <tags>
-        <tag>git</tag>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS 筆記 Arrow Function 箭頭函式</title>
+    <url>/20200813/34258/</url>
+    <content><![CDATA[<p><img src="/images/js01/js5.png"></p>
+<h2 id="箭頭函式（Arrow-Function）"><a href="#箭頭函式（Arrow-Function）" class="headerlink" title="箭頭函式（Arrow Function）"></a>箭頭函式（Arrow Function）</h2><p>ES6 增加了箭頭函式使我們的程式碼更簡潔</p>
+<blockquote>
+<p>去掉 <code>function</code> 加入 <code>=&gt;</code><br>只有一個參數 <code>（）</code>可加可不加，兩個以上一定要加 <code>（params,params2）</code><br>箭頭函式 <code>this</code> 指向外層</p>
+</blockquote>
+<h3 id="函式比較"><a href="#函式比較" class="headerlink" title="函式比較"></a>函式比較</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; ES5</span><br><span class="line">const numbers &#x3D;[2,3,4];</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map(function(number)&#123;</span><br><span class="line">    return number * number;</span><br><span class="line">&#125;);</span><br><span class="line">console.log(double)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; ES6</span><br><span class="line">const numbers &#x3D;[2,3,4];</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map((number)&#x3D;&gt;&#123;</span><br><span class="line">    return number * number;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map(number&#x3D;&gt;&#123;</span><br><span class="line">    return number * number;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map(number&#x3D;&gt;number * number);</span><br><span class="line"></span><br><span class="line">console.log(double)</span><br></pre></td></tr></table></figure>
+<h3 id="this比較"><a href="#this比較" class="headerlink" title="this比較"></a>this比較</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; ES5</span><br><span class="line">const Jason&#x3D;&#123;</span><br><span class="line">    name:&#39;Jason&#39;,</span><br><span class="line">    hobbies:[&#39;Coding&#39;, &#39;Running&#39;, &#39;Sleeping&#39;],</span><br><span class="line">    printHobbies: function()&#123;</span><br><span class="line">        let self&#x3D;this &#x2F;&#x2F;透過宣告變數來取得外層this</span><br><span class="line">        this.hobbies.map(function (hobby) &#123;</span><br><span class="line">            console.log(this) &#x2F;&#x2F;指向window</span><br><span class="line">            console.log(&#96;$&#123;self.name&#125; loves $&#123;hobby&#125;&#96;); </span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Jason.printHobbies();</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; ES6</span><br><span class="line">const Jason&#x3D;&#123;</span><br><span class="line">    name:&#39;Jason&#39;,</span><br><span class="line">    hobbies:[&#39;Coding&#39;, &#39;Running&#39;, &#39;Sleeping&#39;],</span><br><span class="line">    printHobbies: function()&#123;</span><br><span class="line">        this.hobbies.map(hobby&#x3D;&gt; &#123;</span><br><span class="line">            console.log(&#96;$&#123;this.name&#125; loves $&#123;hobby&#125;&#96;); </span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Jason.printHobbies();</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
 </search>

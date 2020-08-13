@@ -1,10 +1,10 @@
 ---
 title: Git branch 合併 Merge Rebase
-tags: git
-category: git
+tags: Git
+category: Git
 abbrlink: 33161
 date: 2020-08-11 14:49:28
----
+---s
 # 分支
 在開發中我們會有許多版本，像是開發版、測試版，測試功能都正常，才會合併到上線版。
 > 分支就像是影分身術的概念，而我們會透過 `git `的指令，來取需要分身的部分。 

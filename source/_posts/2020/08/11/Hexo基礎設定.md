@@ -1,7 +1,7 @@
 ---
 title: Hexo 基礎設定
-tags: hexo
-category: hexo
+tags: Hexo
+category: Hexo
 abbrlink: 17504
 date: 2020-08-11 12:33:55
 ---

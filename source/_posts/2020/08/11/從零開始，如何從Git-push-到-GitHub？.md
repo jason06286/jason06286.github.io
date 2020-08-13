@@ -1,7 +1,7 @@
 ---
 title: 從零開始，如何從 Git push 到 GitHub？
-tags: git
-category: git
+tags: Git
+category: Git
 abbrlink: 38287
 date: 2020-08-11 14:32:06
 ---

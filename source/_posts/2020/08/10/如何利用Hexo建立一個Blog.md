@@ -1,7 +1,7 @@
 ---
 title: 如何利用Hexo建立一個Blog
-tags: hexo
-category: hexo
+tags: Hexo
+category: Hexo
 abbrlink: 53228
 date: 2020-08-10 15:59:11
 ---
