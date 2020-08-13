@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jason06286.github.io/20200813/54502/</loc>
+    
+    <lastmod>2020-08-13</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jason06286.github.io/20200810/53228/</loc>
     
     <lastmod>2020-08-13</lastmod>
@@ -24,13 +31,6 @@
   
   <url>
     <loc>https://jason06286.github.io/20200811/38287/</loc>
-    
-    <lastmod>2020-08-13</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jason06286.github.io/20200813/54502/</loc>
     
     <lastmod>2020-08-13</lastmod>
     
@@ -102,7 +102,7 @@
 
   
   <url>
-    <loc>https://jason06286.github.io/tags/JavaScript/</loc>
+    <loc>https://jason06286.github.io/tags/Hexo/</loc>
     <lastmod>2020-08-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -116,7 +116,7 @@
   </url>
   
   <url>
-    <loc>https://jason06286.github.io/tags/Hexo/</loc>
+    <loc>https://jason06286.github.io/tags/JavaScript/</loc>
     <lastmod>2020-08-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -125,7 +125,7 @@
 
   
   <url>
-    <loc>https://jason06286.github.io/categories/javascript/</loc>
+    <loc>https://jason06286.github.io/categories/hexo/</loc>
     <lastmod>2020-08-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -139,7 +139,7 @@
   </url>
   
   <url>
-    <loc>https://jason06286.github.io/categories/hexo/</loc>
+    <loc>https://jason06286.github.io/categories/javascript/</loc>
     <lastmod>2020-08-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
