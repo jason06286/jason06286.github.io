@@ -83,10 +83,10 @@
 </blockquote>
 ]]></content>
       <categories>
-        <category>hexo</category>
+        <category>Hexo</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -125,10 +125,10 @@
 
 ]]></content>
       <categories>
-        <category>hexo</category>
+        <category>Hexo</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -159,16 +159,17 @@
 <p><img src="/images/git01/git13.png"></p>
 ]]></content>
       <categories>
-        <category>git</category>
+        <category>Git</category>
       </categories>
       <tags>
-        <tag>git</tag>
+        <tag>Git</tag>
       </tags>
   </entry>
   <entry>
     <title>Git branch 合併 Merge Rebase</title>
     <url>/20200811/33161/</url>
-    <content><![CDATA[<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><p>在開發中我們會有許多版本，像是開發版、測試版，測試功能都正常，才會合併到上線版。</p>
+    <content><![CDATA[<p>s</p>
+<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><p>在開發中我們會有許多版本，像是開發版、測試版，測試功能都正常，才會合併到上線版。</p>
 <blockquote>
 <p>分支就像是影分身術的概念，而我們會透過 <code>git </code>的指令，來取需要分身的部分。 </p>
 </blockquote>
@@ -205,10 +206,35 @@
 <h3 id="練習-Git-小遊戲"><a href="#練習-Git-小遊戲" class="headerlink" title="練習 Git 小遊戲"></a>練習 Git 小遊戲</h3><p><a href="https://learngitbranching.js.org/?locale=zh_TW">Learn Git Branching</a></p>
 ]]></content>
       <categories>
-        <category>git</category>
+        <category>Git</category>
       </categories>
       <tags>
-        <tag>git</tag>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Js筆記 var let const 差異</title>
+    <url>/20200813/54502/</url>
+    <content><![CDATA[<p><img src="/images/js01/js1.jpg"><br>在 ES6 之前 JavaScript 沒有區塊域的概念，因此經常使用 <code>var</code> 來宣告變數，<br>而造成區域變數覆蓋到全域變數，因此才有 <code>let</code>、<code>const</code> 來避免此狀況產生。</p>
+<h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><p>用法就跟 <code>var</code> 沒有差別，但作用域只在括號內，讓我們看個經典例子來瞭解</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for (var i &#x3D; 0; i &lt; 3; i++) &#123;</span><br><span class="line">  console.log(i);</span><br><span class="line">  setTimeout(function () &#123;</span><br><span class="line">    console.log(&#39;這執行第&#39; + i + &#39;次&#39;);</span><br><span class="line">  &#125;, 10);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/js01/js2.png"><br>我們會發現出來的結果是 <code>這執行第3次</code>，而不是我們要的結果，<br>因為 <code>var</code> 宣告 <code>i</code> 會變成全域變數，造成 <code>for</code> 迴圈累加，<br>在 <code>setTimeout</code> 實際執行時只會拿到 3 這個數字。<br>此時在查找 <code>i</code>，發現 <code>i＝3</code>，疑～🧐 不是只會作用在函式裡嗎？<br>怎麼 window 也讀得到？</p>
+<h3 id="用-let-改寫"><a href="#用-let-改寫" class="headerlink" title="用 let 改寫"></a>用 <code>let</code> 改寫</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">for (let i &#x3D; 0; i &lt; 10; i++) &#123;</span><br><span class="line">  console.log(i);</span><br><span class="line">  setTimeout(function () &#123;</span><br><span class="line">    console.log(&#39;這執行第&#39; + i + &#39;次&#39;);</span><br><span class="line">  &#125;, 10);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/js01/js3.png"><br>我們會發現結果會依序跑出，且查找<code>i</code>，<br>顯示 <code>Uncaught ReferenceError: i is not defined</code>，<br><code>i</code> 變數未被宣告，因為 <code>let</code> 作用域只在括號內。</p>
+<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>是宣吿一個常數，且必須一定要有值，不可被更改。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const a&#x3D;1;</span><br><span class="line">let  a&#x3D;2;</span><br><span class="line">a&#x3D;2</span><br></pre></td></tr></table></figure>
+<p><img src="/images/js01/js4.png"></p>
+<h3 id="物件是例外"><a href="#物件是例外" class="headerlink" title="物件是例外"></a>物件是例外</h3><p>因為物件是傳址而不是傳值</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const clothes &#x3D;&#123;</span><br><span class="line">    color:&#39;red&#39;,</span><br><span class="line">    size:&#39;L&#39;,</span><br><span class="line">&#125;</span><br><span class="line">clothes.material&#x3D;&quot;棉&quot;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>盡量少用 <code>var</code> 用 <code>let</code>、<code>const</code> 做取代<br><code>const</code> 可以宣告不太會更動的內容。ex: DOM 、物件、api</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
 </search>
