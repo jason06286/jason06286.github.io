@@ -90,6 +90,48 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo 基礎設定</title>
+    <url>/20200811/17504/</url>
+    <content><![CDATA[<h1 id="Hexo-基礎設定"><a href="#Hexo-基礎設定" class="headerlink" title="Hexo 基礎設定"></a>Hexo 基礎設定</h1><h2 id="設定網站名稱、及作者名稱"><a href="#設定網站名稱、及作者名稱" class="headerlink" title="設定網站名稱、及作者名稱"></a>設定網站名稱、及作者名稱</h2><p>開啟目錄資料夾中的 <code>_config.yml</code>搜尋<code>site</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: JasonCodingBlog &#x2F;&#x2F;網站名稱</span><br><span class="line">subtitle: &#39;Coding Road&#39; &#x2F;&#x2F;副標題</span><br><span class="line">description: &#39;不要等待運氣來臨，應該主動去努力掌握知識。&#39; &#x2F;&#x2F;網站敘述</span><br><span class="line">keywords: &#x2F;&#x2F;關鍵字</span><br><span class="line">author: Jason06286 &#x2F;&#x2F;作者名稱</span><br><span class="line">language: zh-tw &#x2F;&#x2F;語系</span><br><span class="line">timezone: &#39;&#39;</span><br><span class="line"></span><br><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &#39;http:&#x2F;&#x2F;yoursite.com&#x2F;child&#39; and root as &#39;&#x2F;child&#x2F;&#39;</span><br><span class="line">url: https:&#x2F;&#x2F;jason06286.github.io&#x2F; &#x2F;&#x2F;輸入您的網站URL</span><br><span class="line">root: &#x2F;</span><br><span class="line">permalink: :year:month:day&#x2F;:abbrlink&#x2F;</span><br><span class="line">permalink_defaults:</span><br><span class="line">pretty_urls:</span><br><span class="line">  trailing_index: true # Set to false to remove trailing &#39;index.html&#39; from permalinks</span><br><span class="line">  trailing_html: true # Set to false to remove trailing &#39;.html&#39; from permalinks</span><br></pre></td></tr></table></figure>
+<h2 id="設定主題"><a href="#設定主題" class="headerlink" title="設定主題"></a>設定主題</h2><p>下載 themes 並解壓縮到資料夾內的 themes 資料夾內，<br>開啟目錄資料夾中的 <code>_config.yml</code>搜尋<code>theme</code><br><img src="/images/hexoset/hexoset1.png"></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https:&#x2F;&#x2F;hexo.io&#x2F;plugins&#x2F;</span><br><span class="line">## Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F;</span><br><span class="line">theme: hexo-theme-next-master &#x2F;&#x2F;更改成你所下載的主題名稱</span><br></pre></td></tr></table></figure>
+<h2 id="Next"><a href="#Next" class="headerlink" title="Next"></a>Next</h2><h3 id="加入-Google-Analytics"><a href="#加入-Google-Analytics" class="headerlink" title="加入 Google Analytics"></a>加入 Google Analytics</h3><p>這邊使用 NexT 7.8.0 模板作舉例。<br>進入主題 (Next) 中尋找 <code>_config.yml</code> 檔案，搜尋<code>Google Analytics</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">google_analytics:</span><br><span class="line">  tracking_id: </span><br><span class="line">  only_pageview: false</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">google_analytics:</span><br><span class="line">  tracking_id: UA-XXXXXX-1 &#x2F;&#x2F;UAID追蹤碼</span><br><span class="line">  only_pageview: false</span><br></pre></td></tr></table></figure>
+<h3 id="更改-Next-主題樣式"><a href="#更改-Next-主題樣式" class="headerlink" title="更改 Next 主題樣式"></a>更改 Next 主題樣式</h3><p>進入主題 (Next) 中尋找 <code>_config.yml</code> 檔案，搜尋<code>scheme</code><br>想要使用哪一個，打開註解即可。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Schemes</span><br><span class="line"># scheme: Muse</span><br><span class="line"># scheme: Mist</span><br><span class="line"># scheme: Pisces</span><br><span class="line">scheme: Gemini </span><br></pre></td></tr></table></figure>
+<h3 id="設置側邊欄"><a href="#設置側邊欄" class="headerlink" title="設置側邊欄"></a>設置側邊欄</h3><p>進入主題 (Next) 中尋找 <code>_config.yml</code> 檔案，搜尋<code>menu</code>，<br>想要使用哪一個，打開註解即可，若<code>tags</code>、<code>categories</code>跳出 404，<br>請參照此<a href="https://www.zhihu.com/question/29017171">解決辦法</a>。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: &#x2F; || fa fa-home</span><br><span class="line">  # about: &#x2F;about&#x2F; || fa fa-user</span><br><span class="line">  tags: &#x2F;tags&#x2F; || fa fa-tags</span><br><span class="line">  categories: &#x2F;categories&#x2F; || fa fa-th</span><br><span class="line">  archives: &#x2F;archives&#x2F; || fa fa-archive</span><br><span class="line">  # schedule: &#x2F;schedule&#x2F; || fa fa-calendar</span><br><span class="line">  # sitemap: &#x2F;sitemap.xml || fa fa-sitemap</span><br><span class="line">  #commonweal: &#x2F;404&#x2F; || fa fa-heartbeat</span><br></pre></td></tr></table></figure>
+<h3 id="開啟-Social-Media"><a href="#開啟-Social-Media" class="headerlink" title="開啟 Social Media"></a>開啟 Social Media</h3><p>進入主題 (Next) 中尋找 <code>_config.yml</code> 檔案，搜尋<code>menu</code>，<br>想要使用哪一個，打開註解即可。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">social:</span><br><span class="line">  GitHub: https:&#x2F;&#x2F;github.com&#x2F;jason06286 || fab fa-github</span><br><span class="line">  E-Mail: mailto:dj4871114@gmail.com || fa fa-envelope</span><br><span class="line">  #Weibo: https:&#x2F;&#x2F;weibo.com&#x2F;yourname || fab fa-weibo</span><br><span class="line">  #Google: https:&#x2F;&#x2F;plus.google.com&#x2F;yourname || fab fa-google</span><br><span class="line">  #Twitter: https:&#x2F;&#x2F;twitter.com&#x2F;yourname || fab fa-twitter</span><br><span class="line">  FB Page: https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100000248997692 || fab fa-facebook</span><br><span class="line">  #StackOverflow: https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname || fab fa-stack-overflow</span><br><span class="line">  #YouTube: https:&#x2F;&#x2F;youtube.com&#x2F;yourname || fab fa-youtube</span><br><span class="line">  #Instagram: https:&#x2F;&#x2F;instagram.com&#x2F;yourname || fab fa-instagram</span><br><span class="line">  #Skype: skype:yourname?call|chat || fab fa-skype</span><br></pre></td></tr></table></figure>
+<h3 id="開啟-Gitalk-留言版"><a href="#開啟-Gitalk-留言版" class="headerlink" title="開啟 Gitalk 留言版"></a>開啟 Gitalk 留言版</h3><h4 id="建立-GitHub-OAuth-APP"><a href="#建立-GitHub-OAuth-APP" class="headerlink" title="建立 GitHub OAuth APP"></a>建立 GitHub OAuth APP</h4><p>由於要使用 Gitalk 必須先有 GitHub OAuth，首先開啟 GitHub → Setting<br><img src="/images/hexoset/hexoset2.png"><br>接下來選擇 Developer settings<br><img src="/images/hexoset/hexoset3.png"><br>然後點 OAuth Apps ，新增 New OAuth Apps<br><img src="/images/hexoset/hexoset4.png"><br>接下來依照欄位填寫即可</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Application name - 應用程式名稱</span><br><span class="line">Homepage URL - 應用程式網域 → 部落格網址</span><br><span class="line">Application description - 應用程式描述</span><br><span class="line">Authorization callback URL - 授權回應網址 → 部落格網址</span><br></pre></td></tr></table></figure>
+<p><img src="/images/hexoset/hexoset5.png"><br>申請完之後，你會獲得兩組 ID (Client ID、Client Secret)<br><img src="/images/hexoset/hexoset6.png"></p>
+<h4 id="Gitalk"><a href="#Gitalk" class="headerlink" title="Gitalk"></a>Gitalk</h4><p>進入主題 (Next) 中尋找 <code>_config.yml</code> 檔案，搜尋<code>Gitalk</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">gitalk:</span><br><span class="line">  enable: true</span><br><span class="line">  github_id:  &#x2F;&#x2F;GitHub 作者帳號</span><br><span class="line">  repo: jason06286.github.io &#x2F;&#x2F;你的 Repo 名稱，通常就是網域</span><br><span class="line">  client_id: xxxxxxxx &#x2F;&#x2F;剛剛申請的 Client ID</span><br><span class="line">  client_secret: xxxxxxxx &#x2F;&#x2F;剛剛申請的 Client Secret</span><br><span class="line">  admin_user: jason06286 &#x2F;&#x2F;管理者的帳號</span><br><span class="line">  distraction_free_mode: true &#x2F;&#x2F;無干擾模式</span><br><span class="line">  language: zh-TW &#x2F;&#x2F;語系</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Git branch 合併 Merge Rebase</title>
     <url>/20200811/33161/</url>
     <content><![CDATA[<p>s</p>
@@ -137,48 +179,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo 基礎設定</title>
-    <url>/20200811/17504/</url>
-    <content><![CDATA[<h1 id="Hexo-基礎設定"><a href="#Hexo-基礎設定" class="headerlink" title="Hexo 基礎設定"></a>Hexo 基礎設定</h1><h2 id="設定網站名稱、及作者名稱"><a href="#設定網站名稱、及作者名稱" class="headerlink" title="設定網站名稱、及作者名稱"></a>設定網站名稱、及作者名稱</h2><p>開啟目錄資料夾中的 <code>_config.yml</code>搜尋<code>site</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: JasonCodingBlog &#x2F;&#x2F;網站名稱</span><br><span class="line">subtitle: &#39;Coding Road&#39; &#x2F;&#x2F;副標題</span><br><span class="line">description: &#39;不要等待運氣來臨，應該主動去努力掌握知識。&#39; &#x2F;&#x2F;網站敘述</span><br><span class="line">keywords: &#x2F;&#x2F;關鍵字</span><br><span class="line">author: Jason06286 &#x2F;&#x2F;作者名稱</span><br><span class="line">language: zh-tw &#x2F;&#x2F;語系</span><br><span class="line">timezone: &#39;&#39;</span><br><span class="line"></span><br><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &#39;http:&#x2F;&#x2F;yoursite.com&#x2F;child&#39; and root as &#39;&#x2F;child&#x2F;&#39;</span><br><span class="line">url: https:&#x2F;&#x2F;jason06286.github.io&#x2F; &#x2F;&#x2F;輸入您的網站URL</span><br><span class="line">root: &#x2F;</span><br><span class="line">permalink: :year:month:day&#x2F;:abbrlink&#x2F;</span><br><span class="line">permalink_defaults:</span><br><span class="line">pretty_urls:</span><br><span class="line">  trailing_index: true # Set to false to remove trailing &#39;index.html&#39; from permalinks</span><br><span class="line">  trailing_html: true # Set to false to remove trailing &#39;.html&#39; from permalinks</span><br></pre></td></tr></table></figure>
-<h2 id="設定主題"><a href="#設定主題" class="headerlink" title="設定主題"></a>設定主題</h2><p>下載 themes 並解壓縮到資料夾內的 themes 資料夾內，<br>開啟目錄資料夾中的 <code>_config.yml</code>搜尋<code>theme</code><br><img src="/images/hexoset/hexoset1.png"></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https:&#x2F;&#x2F;hexo.io&#x2F;plugins&#x2F;</span><br><span class="line">## Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F;</span><br><span class="line">theme: hexo-theme-next-master &#x2F;&#x2F;更改成你所下載的主題名稱</span><br></pre></td></tr></table></figure>
-<h2 id="Next"><a href="#Next" class="headerlink" title="Next"></a>Next</h2><h3 id="加入-Google-Analytics"><a href="#加入-Google-Analytics" class="headerlink" title="加入 Google Analytics"></a>加入 Google Analytics</h3><p>這邊使用 NexT 7.8.0 模板作舉例。<br>進入主題 (Next) 中尋找 <code>_config.yml</code> 檔案，搜尋<code>Google Analytics</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">google_analytics:</span><br><span class="line">  tracking_id: </span><br><span class="line">  only_pageview: false</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">google_analytics:</span><br><span class="line">  tracking_id: UA-XXXXXX-1 &#x2F;&#x2F;UAID追蹤碼</span><br><span class="line">  only_pageview: false</span><br></pre></td></tr></table></figure>
-<h3 id="更改-Next-主題樣式"><a href="#更改-Next-主題樣式" class="headerlink" title="更改 Next 主題樣式"></a>更改 Next 主題樣式</h3><p>進入主題 (Next) 中尋找 <code>_config.yml</code> 檔案，搜尋<code>scheme</code><br>想要使用哪一個，打開註解即可。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Schemes</span><br><span class="line"># scheme: Muse</span><br><span class="line"># scheme: Mist</span><br><span class="line"># scheme: Pisces</span><br><span class="line">scheme: Gemini </span><br></pre></td></tr></table></figure>
-<h3 id="設置側邊欄"><a href="#設置側邊欄" class="headerlink" title="設置側邊欄"></a>設置側邊欄</h3><p>進入主題 (Next) 中尋找 <code>_config.yml</code> 檔案，搜尋<code>menu</code>，<br>想要使用哪一個，打開註解即可，若<code>tags</code>、<code>categories</code>跳出 404，<br>請參照此<a href="https://www.zhihu.com/question/29017171">解決辦法</a>。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: &#x2F; || fa fa-home</span><br><span class="line">  # about: &#x2F;about&#x2F; || fa fa-user</span><br><span class="line">  tags: &#x2F;tags&#x2F; || fa fa-tags</span><br><span class="line">  categories: &#x2F;categories&#x2F; || fa fa-th</span><br><span class="line">  archives: &#x2F;archives&#x2F; || fa fa-archive</span><br><span class="line">  # schedule: &#x2F;schedule&#x2F; || fa fa-calendar</span><br><span class="line">  # sitemap: &#x2F;sitemap.xml || fa fa-sitemap</span><br><span class="line">  #commonweal: &#x2F;404&#x2F; || fa fa-heartbeat</span><br></pre></td></tr></table></figure>
-<h3 id="開啟-Social-Media"><a href="#開啟-Social-Media" class="headerlink" title="開啟 Social Media"></a>開啟 Social Media</h3><p>進入主題 (Next) 中尋找 <code>_config.yml</code> 檔案，搜尋<code>menu</code>，<br>想要使用哪一個，打開註解即可。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">social:</span><br><span class="line">  GitHub: https:&#x2F;&#x2F;github.com&#x2F;jason06286 || fab fa-github</span><br><span class="line">  E-Mail: mailto:dj4871114@gmail.com || fa fa-envelope</span><br><span class="line">  #Weibo: https:&#x2F;&#x2F;weibo.com&#x2F;yourname || fab fa-weibo</span><br><span class="line">  #Google: https:&#x2F;&#x2F;plus.google.com&#x2F;yourname || fab fa-google</span><br><span class="line">  #Twitter: https:&#x2F;&#x2F;twitter.com&#x2F;yourname || fab fa-twitter</span><br><span class="line">  FB Page: https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100000248997692 || fab fa-facebook</span><br><span class="line">  #StackOverflow: https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname || fab fa-stack-overflow</span><br><span class="line">  #YouTube: https:&#x2F;&#x2F;youtube.com&#x2F;yourname || fab fa-youtube</span><br><span class="line">  #Instagram: https:&#x2F;&#x2F;instagram.com&#x2F;yourname || fab fa-instagram</span><br><span class="line">  #Skype: skype:yourname?call|chat || fab fa-skype</span><br></pre></td></tr></table></figure>
-<h3 id="開啟-Gitalk-留言版"><a href="#開啟-Gitalk-留言版" class="headerlink" title="開啟 Gitalk 留言版"></a>開啟 Gitalk 留言版</h3><h4 id="建立-GitHub-OAuth-APP"><a href="#建立-GitHub-OAuth-APP" class="headerlink" title="建立 GitHub OAuth APP"></a>建立 GitHub OAuth APP</h4><p>由於要使用 Gitalk 必須先有 GitHub OAuth，首先開啟 GitHub → Setting<br><img src="/images/hexoset/hexoset2.png"><br>接下來選擇 Developer settings<br><img src="/images/hexoset/hexoset3.png"><br>然後點 OAuth Apps ，新增 New OAuth Apps<br><img src="/images/hexoset/hexoset4.png"><br>接下來依照欄位填寫即可</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Application name - 應用程式名稱</span><br><span class="line">Homepage URL - 應用程式網域 → 部落格網址</span><br><span class="line">Application description - 應用程式描述</span><br><span class="line">Authorization callback URL - 授權回應網址 → 部落格網址</span><br></pre></td></tr></table></figure>
-<p><img src="/images/hexoset/hexoset5.png"><br>申請完之後，你會獲得兩組 ID (Client ID、Client Secret)<br><img src="/images/hexoset/hexoset6.png"></p>
-<h4 id="Gitalk"><a href="#Gitalk" class="headerlink" title="Gitalk"></a>Gitalk</h4><p>進入主題 (Next) 中尋找 <code>_config.yml</code> 檔案，搜尋<code>Gitalk</code></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">gitalk:</span><br><span class="line">  enable: true</span><br><span class="line">  github_id:  &#x2F;&#x2F;GitHub 作者帳號</span><br><span class="line">  repo: jason06286.github.io &#x2F;&#x2F;你的 Repo 名稱，通常就是網域</span><br><span class="line">  client_id: xxxxxxxx &#x2F;&#x2F;剛剛申請的 Client ID</span><br><span class="line">  client_secret: xxxxxxxx &#x2F;&#x2F;剛剛申請的 Client Secret</span><br><span class="line">  admin_user: jason06286 &#x2F;&#x2F;管理者的帳號</span><br><span class="line">  distraction_free_mode: true &#x2F;&#x2F;無干擾模式</span><br><span class="line">  language: zh-TW &#x2F;&#x2F;語系</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>從零開始，如何從 Git push 到 GitHub？</title>
     <url>/20200811/38287/</url>
     <content><![CDATA[<p>本篇適用於完全不會<code>Git</code>的人，將一步步帶你上傳檔案至<code>GitHub</code></p>
@@ -213,26 +213,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JS 筆記 Arrow Function 箭頭函式</title>
-    <url>/20200813/34258/</url>
-    <content><![CDATA[<p><img src="/images/js01/js5.png"></p>
-<h2 id="箭頭函式（Arrow-Function）"><a href="#箭頭函式（Arrow-Function）" class="headerlink" title="箭頭函式（Arrow Function）"></a>箭頭函式（Arrow Function）</h2><p>ES6 增加了箭頭函式使我們的程式碼更簡潔</p>
-<blockquote>
-<p>去掉 <code>function</code> 加入 <code>=&gt;</code><br>只有一個參數 <code>（）</code>可加可不加，兩個以上一定要加 <code>（params,params2）</code><br>箭頭函式 <code>this</code> 指向外層</p>
-</blockquote>
-<h3 id="函式比較"><a href="#函式比較" class="headerlink" title="函式比較"></a>函式比較</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; ES5</span><br><span class="line">const numbers &#x3D;[2,3,4];</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map(function(number)&#123;</span><br><span class="line">    return number * number;</span><br><span class="line">&#125;);</span><br><span class="line">console.log(double)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; ES6</span><br><span class="line">const numbers &#x3D;[2,3,4];</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map((number)&#x3D;&gt;&#123;</span><br><span class="line">    return number * number;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map(number&#x3D;&gt;&#123;</span><br><span class="line">    return number * number;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map(number&#x3D;&gt;number * number);</span><br><span class="line"></span><br><span class="line">console.log(double)</span><br></pre></td></tr></table></figure>
-<h3 id="this比較"><a href="#this比較" class="headerlink" title="this比較"></a>this比較</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; ES5</span><br><span class="line">const Jason&#x3D;&#123;</span><br><span class="line">    name:&#39;Jason&#39;,</span><br><span class="line">    hobbies:[&#39;Coding&#39;, &#39;Running&#39;, &#39;Sleeping&#39;],</span><br><span class="line">    printHobbies: function()&#123;</span><br><span class="line">        let self&#x3D;this &#x2F;&#x2F;透過宣告變數來取得外層this</span><br><span class="line">        this.hobbies.map(function (hobby) &#123;</span><br><span class="line">            console.log(this) &#x2F;&#x2F;指向window</span><br><span class="line">            console.log(&#96;$&#123;self.name&#125; loves $&#123;hobby&#125;&#96;); </span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Jason.printHobbies();</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; ES6</span><br><span class="line">const Jason&#x3D;&#123;</span><br><span class="line">    name:&#39;Jason&#39;,</span><br><span class="line">    hobbies:[&#39;Coding&#39;, &#39;Running&#39;, &#39;Sleeping&#39;],</span><br><span class="line">    printHobbies: function()&#123;</span><br><span class="line">        this.hobbies.map(hobby&#x3D;&gt; &#123;</span><br><span class="line">            console.log(&#96;$&#123;this.name&#125; loves $&#123;hobby&#125;&#96;); </span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Jason.printHobbies();</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>JavaScript</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JS 筆記 var let const 差異</title>
     <url>/20200813/54502/</url>
     <content><![CDATA[<p><img src="/images/js01/js1.jpg"><br>在 ES6 之前 JavaScript 沒有區塊域的概念，因此經常使用 <code>var</code> 來宣告變數，<br>而造成區域變數覆蓋到全域變數，因此才有 <code>let</code>、<code>const</code> 來避免此狀況產生。</p>
@@ -249,6 +229,26 @@
 <blockquote>
 <p>盡量少用 <code>var</code> 用 <code>let</code>、<code>const</code> 做取代<br><code>const</code> 可以宣告不太會更動的內容。ex: DOM 、物件、api<br><code>const</code> 常數可以用大寫，以利區分</p>
 </blockquote>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS 筆記 Arrow Function 箭頭函式</title>
+    <url>/20200813/34258/</url>
+    <content><![CDATA[<p><img src="/images/js01/js5.png"></p>
+<h2 id="箭頭函式（Arrow-Function）"><a href="#箭頭函式（Arrow-Function）" class="headerlink" title="箭頭函式（Arrow Function）"></a>箭頭函式（Arrow Function）</h2><p>ES6 增加了箭頭函式使我們的程式碼更簡潔</p>
+<blockquote>
+<p>去掉 <code>function</code> 加入 <code>=&gt;</code><br>只有一個參數 <code>（）</code>可加可不加，兩個以上一定要加 <code>（params,params2）</code><br>箭頭函式 <code>this</code> 指向外層</p>
+</blockquote>
+<h3 id="函式比較"><a href="#函式比較" class="headerlink" title="函式比較"></a>函式比較</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; ES5</span><br><span class="line">const numbers &#x3D;[2,3,4];</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map(function(number)&#123;</span><br><span class="line">    return number * number;</span><br><span class="line">&#125;);</span><br><span class="line">console.log(double)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; ES6</span><br><span class="line">const numbers &#x3D;[2,3,4];</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map((number)&#x3D;&gt;&#123;</span><br><span class="line">    return number * number;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map(number&#x3D;&gt;&#123;</span><br><span class="line">    return number * number;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map(number&#x3D;&gt;number * number);</span><br><span class="line"></span><br><span class="line">console.log(double)</span><br></pre></td></tr></table></figure>
+<h3 id="this比較"><a href="#this比較" class="headerlink" title="this比較"></a>this比較</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; ES5</span><br><span class="line">const Jason&#x3D;&#123;</span><br><span class="line">    name:&#39;Jason&#39;,</span><br><span class="line">    hobbies:[&#39;Coding&#39;, &#39;Running&#39;, &#39;Sleeping&#39;],</span><br><span class="line">    printHobbies: function()&#123;</span><br><span class="line">        let self&#x3D;this &#x2F;&#x2F;透過宣告變數來取得外層this</span><br><span class="line">        this.hobbies.map(function (hobby) &#123;</span><br><span class="line">            console.log(this) &#x2F;&#x2F;指向window</span><br><span class="line">            console.log(&#96;$&#123;self.name&#125; loves $&#123;hobby&#125;&#96;); </span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Jason.printHobbies();</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; ES6</span><br><span class="line">const Jason&#x3D;&#123;</span><br><span class="line">    name:&#39;Jason&#39;,</span><br><span class="line">    hobbies:[&#39;Coding&#39;, &#39;Running&#39;, &#39;Sleeping&#39;],</span><br><span class="line">    printHobbies: function()&#123;</span><br><span class="line">        this.hobbies.map(hobby&#x3D;&gt; &#123;</span><br><span class="line">            console.log(&#96;$&#123;this.name&#125; loves $&#123;hobby&#125;&#96;); </span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Jason.printHobbies();</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>JavaScript</category>
