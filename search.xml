@@ -353,4 +353,21 @@
         <tag>CSS</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Js筆記 表單驗證-正規表達式、JavaScript match() </title>
+    <url>/20200821/17906/</url>
+    <content><![CDATA[<h2 id="JavaScript-match"><a href="#JavaScript-match" class="headerlink" title="JavaScript  match()"></a>JavaScript  match()</h2><p>通常都會搭配正規表達式使用，若找到匹配的內容會回傳內容，<br>反之則傳回<code>null</code>.</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let str&#x3D;&#39;abc123&#39;</span><br><span class="line">&#x2F;&#x2F; 含數字或小寫字母之字串</span><br><span class="line">let re&#x3D;&#x2F;[a-z0-9]&#x2F;</span><br><span class="line">&#x2F;&#x2F; 篩選</span><br><span class="line">let found&#x3D;str.match(re)</span><br><span class="line">console.log(found)</span><br></pre></td></tr></table></figure>
+<p><img src="/images/match/match1.png"></p>
+<h2 id="正規表達式"><a href="#正規表達式" class="headerlink" title="正規表達式"></a>正規表達式</h2><p><img src="/images/match/regexp.gif"><br><code>/要驗證的內容/</code><br><img src="/images/match/match2.png"><br><img src="/images/match/match3.png"><br><img src="/images/match/match4.png"></p>
+<h3 id="帳號註冊範例"><a href="#帳號註冊範例" class="headerlink" title="帳號註冊範例"></a>帳號註冊範例</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 帳號驗證</span><br><span class="line">   if (emailStr &#x3D;&#x3D;&#x3D; &#39;&#39;) &#123;</span><br><span class="line">       reportOfEmail.innerHTML &#x3D; &#39;Email不能為空&#39;</span><br><span class="line">   &#125; else if (emailStr.match(&#x2F;[@]+&#x2F;) &#x3D;&#x3D;&#x3D; null ) &#123;</span><br><span class="line">   reportOfEmail.innerHTML &#x3D; &#39;Email必須包含 @符號&#39;</span><br><span class="line">   &#125; else if (emailStr.match(&#x2F;[.]+&#x2F;) &#x3D;&#x3D;&#x3D; null ) &#123;</span><br><span class="line">   reportOfEmail.innerHTML &#x3D; &#39;Email格式錯誤&#39;</span><br><span class="line">   &#125; else &#123;</span><br><span class="line">   reportOfEmail.innerHTML &#x3D; &#39;&#39;</span><br><span class="line">   account.email&#x3D;emailStr;</span><br><span class="line">   &#125;</span><br><span class="line">   &#x2F;&#x2F; 密碼驗證</span><br><span class="line">   if (passwordStr &#x3D;&#x3D;&#x3D; &#39;&#39;) &#123;</span><br><span class="line">       reportOfPassword.innerHTML &#x3D; &#39;密碼不能為空&#39;</span><br><span class="line">   &#125; else if (passwordStr.match(&#x2F;[a-zA-Z]+&#x2F;) &#x3D;&#x3D;&#x3D; null || passwordStr.match(&#x2F;[0-9]+&#x2F;) &#x3D;&#x3D;&#x3D; null) &#123;</span><br><span class="line">   reportOfPassword.innerHTML &#x3D; &#39;密碼需包含英數&#39;</span><br><span class="line">   &#125; else &#123;</span><br><span class="line">   reportOfPassword.innerHTML &#x3D; &#39;&#39;</span><br><span class="line">   account.password&#x3D;passwordStr;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h2><p><a href="https://jonas1011.pixnet.net/blog/post/26065399">https://jonas1011.pixnet.net/blog/post/26065399</a><br><a href="https://www.runoob.com/jsref/jsref-match.html">https://www.runoob.com/jsref/jsref-match.html</a><br><a href="https://5xruby.tw/posts/learn-regular-expression/">https://5xruby.tw/posts/learn-regular-expression/</a></p>
+]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
 </search>
