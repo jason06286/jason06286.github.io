@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://jason06286.github.io/20200903/36391/</loc>
+    
+    <lastmod>2020-09-03</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://jason06286.github.io/20200901/8450/</loc>
     
     <lastmod>2020-09-01</lastmod>
@@ -144,7 +151,7 @@
 
   <url>
     <loc>https://jason06286.github.io/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -152,42 +159,49 @@
   
   <url>
     <loc>https://jason06286.github.io/tags/Hexo/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jason06286.github.io/tags/Git/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jason06286.github.io/tags/JavaScript/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jason06286.github.io/tags/XMLHttpRequest/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jason06286.github.io/tags/CSS/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jason06286.github.io/tags/Datepicker/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jason06286.github.io/tags/Vue/</loc>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -196,21 +210,28 @@
   
   <url>
     <loc>https://jason06286.github.io/categories/hexo/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jason06286.github.io/categories/Git/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jason06286.github.io/categories/javascript/</loc>
-    <lastmod>2020-09-01</lastmod>
+    <lastmod>2020-09-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://jason06286.github.io/categories/vue/</loc>
+    <lastmod>2020-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
