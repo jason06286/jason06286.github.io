@@ -18,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"jason06286.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"jason06286.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
@@ -112,6 +112,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -121,31 +122,58 @@
 
 <nav class="site-nav">
   <ul id="menu" class="main-menu menu">
-        <li class="menu-item menu-item-home">
+        <li class="menu-item menu-item-首頁">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首頁</a>
 
   </li>
-        <li class="menu-item menu-item-categories">
+        <li class="menu-item menu-item-標籤">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>標籤</a>
 
   </li>
+        <li class="menu-item menu-item-分類">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分類</a>
+
+  </li>
+        <li class="menu-item menu-item-歸檔">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>歸檔</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -245,6 +273,698 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200908/23984/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Jason06286">
+      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JasonCodingBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/20200908/23984/" class="post-title-link" itemprop="url">Vue 筆記 進階指令 </a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-09-08 15:08:17" itemprop="dateCreated datePublished" datetime="2020-09-08T15:08:17+08:00">2020-09-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-24 18:42:57" itemprop="dateModified" datetime="2020-12-24T18:42:57+08:00">2020-12-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="進階指令"><a href="#進階指令" class="headerlink" title="進階指令"></a>進階指令</h2><h3 id="v-class"><a href="#v-class" class="headerlink" title="v-class"></a>v-class</h3><p>button v-on<br>input v-model</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">  &lt;h4&gt;物件寫法&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;box&quot; :class&#x3D;&quot;&#123;&#39;rotate&#39;:isTransform,&#39;bg-danger&#39;:boxColor&#125;&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;p&gt;請為此元素加上動態 className&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;button class&#x3D;&quot;btn btn-outline-primary&quot; @click&#x3D;&quot;isTransform &#x3D; !isTransform&quot;&gt;選轉物件&lt;&#x2F;button&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;form-check&quot;&gt;</span><br><span class="line">    &lt;input type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;form-check-input&quot; id&#x3D;&quot;classToggle1&quot; v-model&#x3D;&quot;boxColor&quot;&gt;</span><br><span class="line">    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;classToggle1&quot;&gt;切換色彩&lt;&#x2F;label&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;h5&gt;物件寫法 2&lt;&#x2F;h5&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;box&quot; :class&#x3D;&quot;objectClass&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;p&gt;請將此範例改為 &quot;物件&quot; 寫法&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;button class&#x3D;&quot;btn btn-outline-primary&quot; @click&#x3D;&quot;objectClass.rotate &#x3D;!objectClass.rotate&quot;&gt;選轉物件&lt;&#x2F;button&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;form-check&quot;&gt;</span><br><span class="line">    &lt;input type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;form-check-input&quot; id&#x3D;&quot;classToggle2&quot; v-model&#x3D;&quot;objectClass[&#39;bg-danger&#39;]&quot;&gt;</span><br><span class="line">    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;classToggle2&quot;&gt;切換色彩&lt;&#x2F;label&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;h4&gt;陣列寫法&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;button class&#x3D;&quot;btn&quot; :class&#x3D;&quot;arrayClass&quot;&gt;請操作本元件&lt;&#x2F;button&gt;</span><br><span class="line">  &lt;p&gt;請用陣列呈現此元件 className&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;form-check&quot;&gt;</span><br><span class="line">    &lt;input type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;form-check-input&quot; id&#x3D;&quot;classToggle3&quot; v-model&#x3D;&quot;arrayClass&quot; value&#x3D;&quot;btn-outline-primary&quot;&gt;  </span><br><span class="line">    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;classToggle3&quot;&gt;切換樣式&lt;&#x2F;label&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;form-check&quot;&gt;</span><br><span class="line">    &lt;input type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;form-check-input&quot; id&#x3D;&quot;classToggle4&quot; v-model&#x3D;&quot;arrayClass&quot; value&#x3D;&quot;active&quot;&gt;</span><br><span class="line">    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;classToggle4&quot;&gt;啟用元素狀態&lt;&#x2F;label&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;h4&gt;綁定行內樣式&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;p&gt;請用不同方式綁定以下行內樣式&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;box&quot; :style&#x3D;&quot;styleObject&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;box&quot; :style&#x3D;&quot;[styleObject,styleObject2,styleObject3]&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;box&quot; :style&#x3D;&quot;&#123;backgroundColor: styleObject2.boxShadow&#125;&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;h5&gt;自動加上 Prefix (每個版本結果不同)&lt;&#x2F;h5&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;box&quot; :class&#x3D;&quot;styleObject3&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var app &#x3D; new Vue(&#123;</span><br><span class="line">  el: &#39;#app&#39;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    isTransform: false,</span><br><span class="line">    boxColor: false,</span><br><span class="line">    objectClass: &#123;</span><br><span class="line">      &#39;rotate&#39;: false,</span><br><span class="line">      &#39;bg-danger&#39;: false,</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; Array 操作</span><br><span class="line">    arrayClass: [],</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 行內樣式</span><br><span class="line">    &#x2F;&#x2F; 使用駝峰式命名</span><br><span class="line">    styleObject: &#123;</span><br><span class="line">      backgroundColor: &#39;red&#39;,</span><br><span class="line">      borderWidth: &#39;5px&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">    styleObject2: &#123;</span><br><span class="line">      boxShadow: &#39;3px 3px 5px rgba(0, 0, 0, 0.16)&#39;</span><br><span class="line">    &#125;,</span><br><span class="line">    styleObject3: &#123;</span><br><span class="line">      userSelect: &#39;none&#39;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.box &#123;</span><br><span class="line">  transition: all .5s;</span><br><span class="line">&#125;</span><br><span class="line">.box.rotate &#123;</span><br><span class="line">  transform: rotate(45deg)</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h3><p>v-for 加上 key 綁id<br>修改陣列資料<code>Vue.set(array,index,value)</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">  &lt;h4&gt;陣列與物件的迴圈&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;p&gt;請使用 v-for 在陣列與物件上，並且加上索引&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;li v-for&#x3D;&quot;(item, key) in objectData&quot;&gt;</span><br><span class="line">      &#123;&#123; key &#125;&#125; - &#123;&#123; item.name &#125;&#125; &#123;&#123; item.age &#125;&#125; 歲</span><br><span class="line">    &lt;&#x2F;li&gt;</span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    </span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;h4&gt;Key&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;p&gt;請在範例上補上 key，並觀察其差異&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;li v-for&#x3D;&quot;(item, key) in arrayData&quot;:key&#x3D;&quot;item.age&quot;&gt;</span><br><span class="line">      &#123;&#123; key &#125;&#125; - &#123;&#123; item.name &#125;&#125; &#123;&#123; item.age &#125;&#125; 歲 &lt;input type&#x3D;&quot;text&quot;&gt;</span><br><span class="line">    &lt;&#x2F;li&gt;</span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br><span class="line">  &lt;button class&#x3D;&quot;btn btn-outline-primary&quot; @click&#x3D;&quot;reverseArray&quot;&gt;反轉陣列&lt;&#x2F;button&gt;</span><br><span class="line"></span><br><span class="line">  &lt;h4&gt;Filter&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;p&gt;請製作過濾資料&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; v-model&#x3D;&quot;filterText&quot; @keyup.enter&#x3D;&quot;filterData&quot;&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;li v-for&#x3D;&quot;(item, key) in arrayData&quot; :key&#x3D;&quot;item.age&quot;&gt;</span><br><span class="line">      &#123;&#123; key &#125;&#125; - &#123;&#123; item.name &#125;&#125; &#123;&#123; item.age &#125;&#125; 歲 &lt;input type&#x3D;&quot;text&quot;&gt;</span><br><span class="line">    &lt;&#x2F;li&gt;</span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br><span class="line"></span><br><span class="line">  &lt;h4&gt;不能運作的狀況&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;p&gt;講師說明&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;button class&#x3D;&quot;btn btn-outline-primary&quot; @click&#x3D;&quot;cantWork&quot;&gt;無法運行&lt;&#x2F;button&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;li v-for&#x3D;&quot;(item, key) in arrayData&quot; :key&#x3D;&quot;item.age&quot;&gt;</span><br><span class="line">      &#123;&#123; key &#125;&#125; - &#123;&#123; item.name &#125;&#125; &#123;&#123; item.age &#125;&#125; 歲 &lt;input type&#x3D;&quot;text&quot;&gt;</span><br><span class="line">    &lt;&#x2F;li&gt;</span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br><span class="line"></span><br><span class="line">  &lt;h4&gt;純數字的迴圈&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;li v-for&#x3D;&quot;item in 10&quot;&gt;</span><br><span class="line">      &#123;&#123; item &#125;&#125;</span><br><span class="line">    &lt;&#x2F;li&gt;</span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br><span class="line"></span><br><span class="line">  &lt;h4&gt;Template 的運用&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;p&gt;請將兩個 tr 一組使用 v-for&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;table class&#x3D;&quot;table&quot; v-for&#x3D;&quot;(item, index) in arrayData&quot; :key&#x3D;&quot;index&quot;&gt;</span><br><span class="line">    &lt;template&gt;</span><br><span class="line">      &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;&#123;&#123;item.age&#125;&#125;&lt;&#x2F;td&gt;</span><br><span class="line">      &lt;&#x2F;tr&gt;</span><br><span class="line">      &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;&#123;&#123;item.name&#125;&#125;&lt;&#x2F;td&gt;</span><br><span class="line">      &lt;&#x2F;tr&gt;</span><br><span class="line"></span><br><span class="line">    &lt;&#x2F;template&gt;</span><br><span class="line">  &lt;&#x2F;table&gt;</span><br><span class="line"></span><br><span class="line">  &lt;h4&gt;v-for 與 v-if&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;p&gt;請加上 v-if 判斷式&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;li v-for&#x3D;&quot;(item, key) in arrayData&quot; v-if&#x3D;&quot;item.age&gt;20&quot;&gt;</span><br><span class="line">      &#123;&#123; key &#125;&#125; - &#123;&#123; item.name &#125;&#125; &#123;&#123; item.age &#125;&#125; 歲</span><br><span class="line">    &lt;&#x2F;li&gt;</span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br><span class="line"></span><br><span class="line">  &lt;h4&gt;v-for 與 元件&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;p&gt;講師說明&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;list-item :item&#x3D;&quot;item&quot; v-for&#x3D;&quot;(item, key) in arrayData&quot; :key&#x3D;&quot;key&quot;&gt;&lt;&#x2F;list-item&gt;</span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br><span class="line">  &lt;p&gt;注意：現在建議元件使用 v-for 都加上 key。&lt;a href&#x3D;&quot;https:&#x2F;&#x2F;cn.vuejs.org&#x2F;v2&#x2F;guide&#x2F;list.html#%E4%B8%80%E4%B8%AA%E7%BB%84%E4%BB%B6%E7%9A%84-v-for&quot;&gt;參考&lt;&#x2F;a&gt;&lt;&#x2F;p&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">Vue.component(&#39;list-item&#39;, &#123;</span><br><span class="line">  template: &#96;</span><br><span class="line">    &lt;li&gt;</span><br><span class="line">      &#123;&#123; item.name &#125;&#125; &#123;&#123; item.age &#125;&#125; 歲</span><br><span class="line">    &lt;&#x2F;li&gt;</span><br><span class="line">  &#96;,</span><br><span class="line">  props: [&#39;item&#39;]</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">var app &#x3D; new Vue(&#123;</span><br><span class="line">  el: &#39;#app&#39;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    arrayData: [</span><br><span class="line">      &#123;</span><br><span class="line">        name: &#39;小明&#39;,</span><br><span class="line">        age: 16</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        name: &#39;漂亮阿姨&#39;,</span><br><span class="line">        age: 24</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        name: &#39;杰倫&#39;,</span><br><span class="line">        age: 20</span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    objectData: &#123;</span><br><span class="line">      ming: &#123;</span><br><span class="line">        name: &#39;小明&#39;,</span><br><span class="line">        age: 16</span><br><span class="line">      &#125;,</span><br><span class="line">      auntie: &#123;</span><br><span class="line">        name: &#39;漂亮阿姨&#39;,</span><br><span class="line">        age: 24</span><br><span class="line">      &#125;,</span><br><span class="line">      jay: &#123;</span><br><span class="line">        name: &#39;杰倫&#39;,</span><br><span class="line">        age: 20</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    filterArray: [],</span><br><span class="line">    filterText: &#39;&#39;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    &#x2F;&#x2F; 請在此練習 JavaScript</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 解答：</span><br><span class="line">    reverseArray: function () &#123;</span><br><span class="line">      this.arrayData.reverse()</span><br><span class="line">      console.log(this.arrayData)</span><br><span class="line">    &#125;,</span><br><span class="line">    filterData: function () &#123;</span><br><span class="line">      var vm &#x3D; this;</span><br><span class="line">      vm.filterArray &#x3D; vm.arrayData.filter(function (item) &#123;</span><br><span class="line">        console.log(vm.filterText, item.name, item.name.match(vm.filterText))</span><br><span class="line">        return item.name.match(vm.filterText);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    cantWork: function () &#123;</span><br><span class="line">      &#x2F;&#x2F; &#x2F;&#x2F; 情境一</span><br><span class="line">      &#x2F;&#x2F; this.arrayData.length &#x3D; 2;</span><br><span class="line"></span><br><span class="line">      &#x2F;&#x2F; 情境二</span><br><span class="line">      this.arrayData[0] &#x3D; &#123;</span><br><span class="line">        name: &#39;阿強&#39;,</span><br><span class="line">        age: 99</span><br><span class="line">      &#125;</span><br><span class="line">      &#x2F;&#x2F;解法</span><br><span class="line">      Vue.set(this.arrayData, 0, &#123;</span><br><span class="line">        name: &#39;阿強&#39;,</span><br><span class="line">        age: 99</span><br><span class="line">      &#125;)</span><br><span class="line">      console.log(this.arrayData)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="v-if-v-else-if-v-else"><a href="#v-if-v-else-if-v-else" class="headerlink" title="v-if v-else-if v-else"></a>v-if v-else-if v-else</h3><p>v-if 移除整個 <code>DOM</code><br>v-show <code>display:none</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">  &lt;h4&gt;v-if, v-else&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;p&gt;使用 v-if, v-else 切換物件呈現&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;alert alert-success&quot; v-if&#x3D;&quot;isSuccess&quot;&gt;成功!&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;alert alert-danger&quot; v-else&gt;失敗!&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;form-check&quot;&gt;</span><br><span class="line">    &lt;input type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;form-check-input&quot; id&#x3D;&quot;isSuccess&quot; v-model&#x3D;&quot;isSuccess&quot;&gt;</span><br><span class="line">    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;isSuccess&quot;&gt;啟用元素狀態&lt;&#x2F;label&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">  &lt;h4&gt;template 標籤&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;p&gt;使用 template 切換多數 DOM 呈現&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;table class&#x3D;&quot;table&quot;&gt;</span><br><span class="line">    &lt;thead&gt;</span><br><span class="line">      &lt;th&gt;編號&lt;&#x2F;th&gt;</span><br><span class="line">      &lt;th&gt;姓名&lt;&#x2F;th&gt;</span><br><span class="line">    &lt;&#x2F;thead&gt;</span><br><span class="line">  &lt;template v-if&#x3D;&quot;showTemplate&quot;&gt;</span><br><span class="line">      &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;1&lt;&#x2F;td&gt;</span><br><span class="line">        &lt;td&gt;安妮&lt;&#x2F;td&gt;</span><br><span class="line">      &lt;&#x2F;tr&gt;</span><br><span class="line">      &lt;tr&gt;</span><br><span class="line">        &lt;td&gt;2&lt;&#x2F;td&gt;</span><br><span class="line">        &lt;td&gt;小明&lt;&#x2F;td&gt;</span><br><span class="line">      &lt;&#x2F;tr&gt;</span><br><span class="line">  &lt;&#x2F;template&gt;</span><br><span class="line">&lt;&#x2F;table&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;form-check&quot;&gt;</span><br><span class="line">    &lt;input type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;form-check-input&quot; id&#x3D;&quot;showTemplate&quot; v-model&#x3D;&quot;showTemplate&quot;&gt;</span><br><span class="line">    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;showTemplate&quot;&gt;啟用元素狀態&lt;&#x2F;label&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;h4&gt;v-else-if&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;p&gt;使用 v-else-if 做出分頁頁籤&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;ul class&#x3D;&quot;nav nav-tabs&quot;&gt;</span><br><span class="line">    &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">      &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot; @click.prevent&#x3D;&quot;link&#x3D;&#39;a&#39;&quot; :class&#x3D;&quot;&#123;&#39;active&#39;: link &#x3D;&#x3D;&#x3D; &#39;a&#39;&#125;&quot;&gt;標題一&lt;&#x2F;a&gt;</span><br><span class="line">    &lt;&#x2F;li&gt;</span><br><span class="line">    &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">      &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot; @click.prevent&#x3D;&quot;link&#x3D;&#39;b&#39;&quot; :class&#x3D;&quot;&#123;&#39;active&#39;: link &#x3D;&#x3D;&#x3D; &#39;b&#39;&#125;&quot;&gt;標題二&lt;&#x2F;a&gt;</span><br><span class="line">    &lt;&#x2F;li&gt;</span><br><span class="line">    &lt;li class&#x3D;&quot;nav-item&quot;&gt;</span><br><span class="line">      &lt;a class&#x3D;&quot;nav-link&quot; href&#x3D;&quot;#&quot; @click.prevent&#x3D;&quot;link&#x3D;&#39;c&#39;&quot; :class&#x3D;&quot;&#123;&#39;active&#39;: link &#x3D;&#x3D;&#x3D; &#39;c&#39;&#125;&quot;&gt;標題三&lt;&#x2F;a&gt;</span><br><span class="line">    &lt;&#x2F;li&gt;</span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;content&quot;&gt;</span><br><span class="line">    &lt;div v-if&#x3D;&quot;link &#x3D;&#x3D;&#x3D; &#39;a&#39;&quot;&gt;Ａ&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div v-else-if&#x3D;&quot;link &#x3D;&#x3D;&#x3D; &#39;b&#39;&quot;&gt;Ｂ&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div v-else-if&#x3D;&quot;link &#x3D;&#x3D;&#x3D; &#39;c&#39;&quot;&gt;Ｃ&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;h4&gt;KEY&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;p&gt;講師說明 Vue 切換狀態可能遇到的問題&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;template v-if&#x3D;&quot;loginType &#x3D;&#x3D;&#x3D; &#39;username&#39;&quot;&gt;</span><br><span class="line">    &lt;label&gt;Username&lt;&#x2F;label&gt;</span><br><span class="line">    &lt;input class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Enter your username&quot; :key&#x3D;&quot;1&quot;&gt;</span><br><span class="line">  &lt;&#x2F;template&gt;</span><br><span class="line">  &lt;template v-else&gt;</span><br><span class="line">    &lt;label&gt;Email&lt;&#x2F;label&gt;</span><br><span class="line">    &lt;input class&#x3D;&quot;form-control&quot; placeholder&#x3D;&quot;Enter your email address&quot; :key&#x3D;&quot;2&quot;&gt;</span><br><span class="line">  &lt;&#x2F;template&gt;</span><br><span class="line">  &lt;button class&#x3D;&quot;btn btn-outline-primary mt-3&quot; @click&#x3D;&quot;toggleLoginType&quot; &gt;切換狀態&lt;&#x2F;button&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;h4&gt;v-if 與 v-show&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;p&gt;講師說明 v-if 與 v-show 的差異&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;alert alert-success&quot; v-show&#x3D;&quot;isSuccess&quot;&gt;成功!&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;alert alert-danger&quot; v-show&#x3D;&quot;!isSuccess&quot;&gt;失敗!&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;form-check&quot;&gt;</span><br><span class="line">    &lt;input type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;form-check-input&quot; id&#x3D;&quot;isSuccess2&quot; v-model&#x3D;&quot;isSuccess&quot;&gt;</span><br><span class="line">    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;isSuccess2&quot;&gt;啟用元素狀態&lt;&#x2F;label&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var app &#x3D; new Vue(&#123;</span><br><span class="line">  el: &#39;#app&#39;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    isSuccess: true,</span><br><span class="line">    showTemplate: true,</span><br><span class="line"></span><br><span class="line">    link: &#39;a&#39;,</span><br><span class="line"></span><br><span class="line">    loginType: &#39;username&#39;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    toggleLoginType: function () &#123;</span><br><span class="line">      return this.loginType &#x3D; this.loginType &#x3D;&#x3D;&#x3D; &#39;username&#39; ? &#39;email&#39; : &#39;username&#39;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Computed-Watch"><a href="#Computed-Watch" class="headerlink" title="Computed Watch"></a>Computed Watch</h3><p>Computed 是監聽整體資料變化<br>Watch 是監聽 <code>Vue</code> 變數變化</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">  &lt;h4&gt;Computed&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;p&gt;使用 Computed 來過濾資料。&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; v-model&#x3D;&quot;filterText&quot;&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;li v-for&#x3D;&quot;(item, key) in filterArray&quot; :key&#x3D;&quot;item.age&quot;&gt;</span><br><span class="line">      &#123;&#123; key &#125;&#125; - &#123;&#123; item.name &#125;&#125; &#123;&#123; item.age &#125;&#125; 歲 &lt;input type&#x3D;&quot;text&quot;&gt;</span><br><span class="line">    &lt;&#x2F;li&gt;</span><br><span class="line">  &lt;&#x2F;ul&gt; </span><br><span class="line">  &lt;p&gt;使用 Computed 來呈現時間格式。&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;p&gt;&#123;&#123;formatTime&#125;&#125;&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;h4&gt;Watch&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;p&gt;使用 trigger 來觸發旋轉 box、並在三秒後改變回來&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;box&quot; :class&#x3D;&quot;&#123;&#39;rotate&#39;: trigger &#125;&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;button class&#x3D;&quot;btn btn-outline-primary&quot; @click&#x3D;&quot;openTrigger&quot;&gt;Counter&lt;&#x2F;button&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var app &#x3D; new Vue(&#123;</span><br><span class="line">  el: &#39;#app&#39;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    arrayData: [</span><br><span class="line">      &#123;</span><br><span class="line">        name: &#39;小明&#39;,</span><br><span class="line">        age: 16</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        name: &#39;漂亮阿姨&#39;,</span><br><span class="line">        age: 24</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        name: &#39;杰倫&#39;,</span><br><span class="line">        age: 20</span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    filterText: &#39;&#39;,</span><br><span class="line">    trigger: false,</span><br><span class="line">    newDate: 0</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    openTrigger: function() &#123;</span><br><span class="line">      var vm &#x3D; this;</span><br><span class="line">      vm.trigger &#x3D; true</span><br><span class="line">    &#125;,</span><br><span class="line">    closeTrigger: function() &#123;</span><br><span class="line">      var vm &#x3D; this;</span><br><span class="line">      setTimeout(function() &#123; </span><br><span class="line">        vm.trigger &#x3D; false</span><br><span class="line">      &#125;, 3000);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    trigger: function() &#123;</span><br><span class="line">      this.closeTrigger();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    filterArray: function () &#123;</span><br><span class="line">      var vm &#x3D; this;</span><br><span class="line">      return vm.arrayData.filter(function(item) &#123;</span><br><span class="line">        return item.name.match(vm.filterText);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    formatTime: function () &#123;</span><br><span class="line">      console.log(this.newDate)</span><br><span class="line">      var dates &#x3D; new Date(this.newDate * 1000);</span><br><span class="line">      var year &#x3D; dates.getFullYear();</span><br><span class="line">      var month &#x3D; dates.getMonth() + 1;</span><br><span class="line">      var date &#x3D; dates.getDate() + 1;</span><br><span class="line">      var hours &#x3D; dates.getHours();</span><br><span class="line">      var minutes &#x3D; dates.getMinutes();</span><br><span class="line">      var seconds &#x3D; dates.getSeconds();</span><br><span class="line">      return &#96;$&#123;year&#125;&#x2F;$&#123;month&#125;&#x2F;$&#123;date&#125; $&#123;hours&#125;:$&#123;minutes&#125;:$&#123;seconds&#125;&#96;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  mounted: function () &#123;</span><br><span class="line">    this.newDate &#x3D; Math.floor(Date.now() &#x2F; 1000);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.box &#123;</span><br><span class="line">  transition: all .5s;</span><br><span class="line">&#125;</span><br><span class="line">.box.rotate &#123;</span><br><span class="line">  transform: rotate(45deg)</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="表單細節操作"><a href="#表單細節操作" class="headerlink" title="表單細節操作"></a>表單細節操作</h3><p><code>select</code>+<code>multiple</code> = 複選</p>
+<h5 id="修飾符"><a href="#修飾符" class="headerlink" title="修飾符"></a>修飾符</h5><p>v-model.lazy =離開元素才會顯現<br>v-model.number =value轉數字<br>v-model.trim =最後不留白</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">  &lt;h4&gt;Select&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;select name&#x3D;&quot;&quot; id&#x3D;&quot;&quot; class&#x3D;&quot;form-control&quot; v-model&#x3D;&quot;selected&quot;&gt;</span><br><span class="line">    &lt;option disabled value&#x3D;&quot;&quot;&gt;請選擇&lt;&#x2F;option&gt;</span><br><span class="line">    &lt;option value&#x3D;&quot;小美&quot;&gt;小美&lt;&#x2F;option&gt;</span><br><span class="line">    &lt;option value&#x3D;&quot;可愛小妞&quot;&gt;可愛小妞&lt;&#x2F;option&gt;</span><br><span class="line">    &lt;option value&#x3D;&quot;漂亮阿姨&quot;&gt;漂亮阿姨&lt;&#x2F;option&gt;</span><br><span class="line">  &lt;&#x2F;select&gt;</span><br><span class="line">  &lt;p&gt;小明喜歡的女生是 &#123;&#123; selected &#125;&#125;。&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;select name&#x3D;&quot;&quot; id&#x3D;&quot;&quot; class&#x3D;&quot;form-control&quot; v-model&#x3D;&quot;selected2&quot; &gt;</span><br><span class="line">    &lt;option disabled value&#x3D;&quot;&quot;&gt;請選擇&lt;&#x2F;option&gt;</span><br><span class="line">    &lt;option :value&#x3D;&quot;item&quot; v-for&#x3D;&quot;(item, index) in selectData&quot; :key&#x3D;&quot;index&quot;&gt;&#123;&#123;item&#125;&#125;&lt;&#x2F;option&gt;</span><br><span class="line">  &lt;&#x2F;select&gt;</span><br><span class="line">  &lt;p&gt;小明喜歡的女生是 &#123;&#123; selected2 &#125;&#125;。&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;h4 class&#x3D;&quot;mt-3&quot;&gt;多選&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;select name&#x3D;&quot;&quot; id&#x3D;&quot;&quot; class&#x3D;&quot;form-control&quot; multiple v-model&#x3D;&quot;multiSelected&quot; &gt;</span><br><span class="line">    &lt;option value&#x3D;&quot;小美&quot;&gt;小美&lt;&#x2F;option&gt;</span><br><span class="line">    &lt;option value&#x3D;&quot;可愛小妞&quot;&gt;可愛小妞&lt;&#x2F;option&gt;</span><br><span class="line">    &lt;option value&#x3D;&quot;漂亮阿姨&quot;&gt;漂亮阿姨&lt;&#x2F;option&gt;</span><br><span class="line">  &lt;&#x2F;select&gt;</span><br><span class="line">  &lt;p&gt;小明喜歡的女生是 &lt;span v-for&#x3D;&quot;item in multiSelected&quot;&gt;&#123;&#123; item &#125;&#125; &lt;&#x2F;span&gt;。&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;h4 class&#x3D;&quot;mt-3&quot;&gt;複選框&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;form-check&quot;&gt;</span><br><span class="line">    &lt;input type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;form-check-input&quot; id&#x3D;&quot;sex&quot; v-model&#x3D;&quot;sex&quot; true-value&#x3D;&quot;boy&quot; false-value&#x3D;&quot;girl&quot;&gt;</span><br><span class="line">    &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;sex&quot;&gt;&#123;&#123; sex &#125;&#125;&lt;&#x2F;label&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;h4 class&#x3D;&quot;mt-3&quot;&gt;修飾符&lt;&#x2F;h4&gt;</span><br><span class="line">  &#123;&#123; lazyMsg &#125;&#125;</span><br><span class="line">  &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; v-model.lazy&#x3D;&quot;lazyMsg&quot;&gt;</span><br><span class="line">  &lt;br&gt;</span><br><span class="line">  &lt;pre&gt;&#123;&#123; age &#125;&#125;&lt;&#x2F;pre&gt;</span><br><span class="line">  &lt;input type&#x3D;&quot;number&quot; class&#x3D;&quot;form-control&quot; v-model.number&#x3D;&quot;age&quot;&gt;</span><br><span class="line">  &lt;br&gt;</span><br><span class="line">  &#123;&#123; trimMsg &#125;&#125;緊黏的文字</span><br><span class="line">  &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; v-model.trim&#x3D;&quot;trimMsg&quot;&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var app &#x3D; new Vue(&#123;</span><br><span class="line">  el: &#39;#app&#39;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    singleRadio: &#39;&#39;,</span><br><span class="line">    selected: &#39;&#39;,</span><br><span class="line">    selectData: [&#39;小美&#39;, &#39;可愛小妞&#39;, &#39;漂亮阿姨&#39;],</span><br><span class="line">    selected2: &#39;&#39;,</span><br><span class="line">    multiSelected: [],</span><br><span class="line">    sex: &#39;男生&#39;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 修飾符</span><br><span class="line">    lazyMsg: &#39;&#39;,</span><br><span class="line">    age: &#39;&#39;,</span><br><span class="line">    trimMsg: &#39;&#39;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">  &lt;p&gt;請切換下方 box 的 className&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;box&quot; :class&#x3D;&quot;&#123;&#39;rotate&#39;: isRotate &#125;&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;button class&#x3D;&quot;btn btn-outline-primary&quot; @click&#x3D;&quot;changeRotate&quot;&gt;切換 box 樣式&lt;&#x2F;button&gt;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;h4&gt;帶入參數&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;li v-for&#x3D;&quot;item in arrayData&quot; class&#x3D;&quot;my-2&quot;&gt;</span><br><span class="line">      &#123;&#123; item.name &#125;&#125; 有 &#123;&#123; item.cash &#125;&#125; 元 </span><br><span class="line">      &lt;button class&#x3D;&quot;btn btn-sm btn-outline-primary&quot; @click&#x3D;&quot;storeMoney(item)&quot;&gt;儲值&lt;&#x2F;button&gt;</span><br><span class="line">    &lt;&#x2F;li&gt;</span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br><span class="line">  &lt;h4&gt;修飾符&lt;&#x2F;h4&gt;</span><br><span class="line">  &lt;h5&gt;事件修飾符&lt;&#x2F;h5&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;li&gt;.stop - 調用 event.stopPropagation()。&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;li&gt;.prevent - 調用 event.preventDefault()。&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;li&gt;.capture - 添加事件偵聽器時使用 capture 模式。&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;li&gt;.self - 只當事件是從偵聽器綁定的元素本身觸發時才觸發回調。&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;li&gt;.once - 只觸發一次回調。&lt;&#x2F;li&gt;</span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br><span class="line"></span><br><span class="line">  &lt;h5&gt;按鍵修飾符&lt;&#x2F;h5&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;li&gt;.&#123;keyCode | keyAlias&#125; - 只當事件是從特定鍵觸發時才觸發回調。&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;li&gt;別名修飾 - .enter, .tab, .delete, .esc, .space, .up, .down, .left, .right&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;li&gt;修飾符來實現僅在按下相應按鍵時才觸發鼠標或鍵盤事件的監聽器 - .ctrl, .alt, .shift, .meta&lt;&#x2F;li&gt;</span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br><span class="line">  &lt;h6 class&#x3D;&quot;mt-3&quot;&gt;keyCode&lt;&#x2F;h6&gt;</span><br><span class="line">  &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; v-model&#x3D;&quot;text&quot; @keyup.enter&#x3D;&quot;trigger(13)&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;h6 class&#x3D;&quot;mt-3&quot;&gt;別名修飾&lt;&#x2F;h6&gt;</span><br><span class="line">  &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; v-model&#x3D;&quot;text&quot; @keyup.space&#x3D;&quot;trigger(&#39;space&#39;)&quot;&gt;</span><br><span class="line"></span><br><span class="line">  &lt;h6 class&#x3D;&quot;mt-3&quot;&gt;相應按鍵時才觸發的監聽器&lt;&#x2F;h6&gt;</span><br><span class="line">  &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; v-model&#x3D;&quot;text&quot; @keyup.shift.enter&#x3D;&quot;trigger(&#39;shift + Enter&#39;)&quot;&gt;</span><br><span class="line">  </span><br><span class="line">  &lt;h5&gt;滑鼠修飾符&lt;&#x2F;h5&gt;</span><br><span class="line">  &lt;ul&gt;</span><br><span class="line">    &lt;li&gt;.left - (2.2.0) 只當點擊鼠標左鍵時觸發。&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;li&gt;.right - (2.2.0) 只當點擊鼠標右鍵時觸發。&lt;&#x2F;li&gt;</span><br><span class="line">    &lt;li&gt;.middle - (2.2.0) 只當點擊鼠標中鍵時觸發。&lt;&#x2F;li&gt;</span><br><span class="line">  &lt;&#x2F;ul&gt;</span><br><span class="line">  &lt;h6 class&#x3D;&quot;mt-3&quot;&gt;滑鼠修飾符&lt;&#x2F;h6&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;p-3 bg-primary&quot;&gt;</span><br><span class="line">    &lt;span class&#x3D;&quot;box&quot; @click.left&#x3D;&quot;trigger(&#39;Right button&#39;)&quot;&gt;</span><br><span class="line">    &lt;&#x2F;span&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var app &#x3D; new Vue(&#123;</span><br><span class="line">  el: &#39;#app&#39;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    arrayData: [</span><br><span class="line">      &#123;</span><br><span class="line">        name: &#39;小明&#39;,</span><br><span class="line">        age: 16,</span><br><span class="line">        cash: 500</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        name: &#39;漂亮阿姨&#39;,</span><br><span class="line">        age: 24,</span><br><span class="line">        cash: 1000</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        name: &#39;杰倫&#39;,</span><br><span class="line">        age: 20,</span><br><span class="line">        cash: 5000</span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    isRotate: false,</span><br><span class="line">    text: &#39;&#39;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    changeRotate: function() &#123;</span><br><span class="line">      this.isRotate &#x3D; !this.isRotate;</span><br><span class="line">    &#125;,</span><br><span class="line">    storeMoney: function(item) &#123;</span><br><span class="line">      item.cash &#x3D; item.cash + 500;</span><br><span class="line">    &#125;,</span><br><span class="line">    trigger: function(name) &#123;</span><br><span class="line">      console.log(name, &#39;此事件被觸發了&#39;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  &#x2F;&#x2F; 解答</span><br><span class="line">&#125;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style&gt;</span><br><span class="line">.box &#123;</span><br><span class="line">  display: block;</span><br><span class="line">  transition: all .5s;</span><br><span class="line">&#125;</span><br><span class="line">.box.rotate &#123;</span><br><span class="line">  transform: rotate(45deg)</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200903/36391/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Jason06286">
+      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JasonCodingBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/20200903/36391/" class="post-title-link" itemprop="url">Vue 筆記 基礎指令 </a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-09-03 14:40:04" itemprop="dateCreated datePublished" datetime="2020-09-03T14:40:04+08:00">2020-09-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-24 18:42:57" itemprop="dateModified" datetime="2020-12-24T18:42:57+08:00">2020-12-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="基礎指令"><a href="#基礎指令" class="headerlink" title="基礎指令"></a>基礎指令</h2><h3 id="v-text-v-html-v-modal"><a href="#v-text-v-html-v-modal" class="headerlink" title="v-text v-html v-modal"></a>v-text v-html v-modal</h3><blockquote>
+<p>v-text == textContent<br>v-html == innerHtml<br>v-modal == 宣告變數 雙向</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;app&quot;&gt;</span><br><span class="line">  &#123;&#123;text&#125;&#125; &#x2F;&#x2F;textContent</span><br><span class="line">  &lt;div v-text&#x3D;&quot;text&quot;&gt;&lt;&#x2F;div&gt; &#x2F;&#x2F;textContent</span><br><span class="line">  &lt;div v-html&#x3D;&quot;text&quot;&gt;&lt;&#x2F;div&gt; &#x2F;&#x2F;innerHtml</span><br><span class="line">  &lt;input type&#x3D;&quot;text&quot; v-model&#x3D;&quot;text&quot;&gt; &#x2F;&#x2F;雙向綁定 input.value&#x3D;Vue data.text</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">  let app &#x3D;new Vue(&#123;</span><br><span class="line">    el:&#39;.app&#39;, &#x2F;&#x2F;綁定DOM</span><br><span class="line">    data:&#123;</span><br><span class="line">      text:&#39;&lt;span&gt;hello&lt;&#x2F;span&gt;&#39;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h3><p>可縮寫成 <code>:</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img :src&#x3D;&quot;imgSrc&quot;  :class&#x3D;&quot;className&quot; alt&#x3D;&quot;&quot;&gt; &#x2F;&#x2F;setAttribute</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>v-bind == setAttribute</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">  &lt;img v-bind:src&#x3D;&quot;imgSrc&quot;  v-bind:class&#x3D;&quot;className&quot; alt&#x3D;&quot;&quot;&gt; &#x2F;&#x2F;setAttribute</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var app &#x3D; new Vue(&#123;</span><br><span class="line">  el: &#39;#app&#39;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    imgSrc: &#39;https:&#x2F;&#x2F;images.unsplash.com&#x2F;photo-1479568933336-ea01829af8de?ixlib&#x3D;rb-0.3.5&amp;ixid&#x3D;eyJhcHBfaWQiOjEyMDd9&amp;s&#x3D;d9926ef56492b20aea8508ed32ec6030&amp;auto&#x3D;format&amp;fit&#x3D;crop&amp;w&#x3D;2250&amp;q&#x3D;80&#39;,</span><br><span class="line">    className: &#39;img-fluid&#39;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="v-for-v-if"><a href="#v-for-v-if" class="headerlink" title="v-for v-if"></a>v-for v-if</h3><blockquote>
+<p>pre 類似console.log()，但直接渲染在網頁上。<br>v-for == forEach<br>v-if == if</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">&lt;pre&gt;</span><br><span class="line">  &#123;&#123;list&#125;&#125;</span><br><span class="line">&lt;&#x2F;pre&gt;</span><br><span class="line"></span><br><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;li v-for&#x3D;&quot;(item, index) in list&quot; v-if&#x3D;&quot;item.age&lt;25&quot;&gt;</span><br><span class="line">    &lt;h5&gt;&#123;&#123;item.name&#125;&#125;&lt;&#x2F;h2&gt;</span><br><span class="line">    &lt;p&gt;年齡:&#123;&#123;item.age&#125;&#125;&lt;&#x2F;p&gt;</span><br><span class="line">  &lt;&#x2F;li&gt;</span><br><span class="line">&lt;&#x2F;ul&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var app &#x3D; new Vue(&#123;</span><br><span class="line">  el: &#39;#app&#39;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    list: [</span><br><span class="line">      &#123;</span><br><span class="line">        name: &#39;小明&#39;,</span><br><span class="line">        age: 16</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        name: &#39;媽媽&#39;,</span><br><span class="line">        age: 38,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        name: &#39;漂亮阿姨&#39;,</span><br><span class="line">        age: 24</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="v-on"><a href="#v-on" class="headerlink" title="v-on"></a>v-on</h3><p>可縮寫成<code>＠</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;button class&#x3D;&quot;btn btn-primary mt-1&quot; @click&#x3D;&quot;reverseText&quot;&gt;轉字串&lt;&#x2F;button&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>v-on == addEventListener</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">  &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; v-model&#x3D;&quot;text&quot;&gt; &#x2F;&#x2F; 雙向綁定</span><br><span class="line">  &lt;button class&#x3D;&quot;btn btn-primary mt-1&quot; v-on:click&#x3D;&quot;reverseText&quot;&gt;轉字串&lt;&#x2F;button&gt; &#x2F;&#x2F; v-on：事件＝&quot;執行函式&quot;</span><br><span class="line">  &lt;div class&#x3D;&quot;mt-3&quot;&gt;</span><br><span class="line">    &#123;&#123; newText &#125;&#125;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var app &#x3D; new Vue(&#123;</span><br><span class="line">  el: &#39;#app&#39;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    text: &#39;&#39;,</span><br><span class="line">    newText: &#39;&#39;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">      reverseText(params) &#123;  &#x2F;&#x2F; 不用寫 function</span><br><span class="line">      console.log(this.text);</span><br><span class="line">      this.newText&#x3D;this.text.split(&#39;&#39;).reverse().join(&#39;&#39;)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="v-class"><a href="#v-class" class="headerlink" title="v-class"></a>v-class</h3><blockquote>
+<p>v-class == addClass</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">  &lt;div class&#x3D;&quot;box&quot; :class&#x3D;&quot;&#123;&#39;rotate&#39;:isTransform&#125;&quot;&gt;&lt;&#x2F;div&gt; </span><br><span class="line">  &#x2F;&#x2F;&#123;&#39;加入class名稱&#39;: true or false ，可加入判斷式&#125;</span><br><span class="line">  &lt;hr&gt;</span><br><span class="line">  &lt;button class&#x3D;&quot;btn btn-outline-primary&quot; @click&#x3D;&quot;isTransform &#x3D; !isTransform&quot;&gt;轉物件&lt;&#x2F;button&gt;</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">var app &#x3D; new Vue(&#123;</span><br><span class="line">  el: &#39;#app&#39;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    isTransform: false</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">.box &#123;</span><br><span class="line">  transition: transform .5s;</span><br><span class="line">&#125;</span><br><span class="line">.box.rotate &#123;</span><br><span class="line">  transform: rotate(45deg)</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="Vue-component"><a href="#Vue-component" class="headerlink" title="Vue component"></a>Vue component</h2><p> Vue.component(‘自定義名稱’,{})</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;app&quot;&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    你已經點擊 &lt;button class&#x3D;&quot;btn btn-outline-secondary btn-sm&quot; @click&#x3D;&quot;counter +&#x3D; 1&quot;&gt;&#123;&#123; counter &#125;&#125;&lt;&#x2F;button&gt; 下。</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;counter-component&gt;&lt;&#x2F;counter-component&gt; </span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">&#x2F;&#x2F; 請在此撰寫 JavaScript</span><br><span class="line">Vue.component(&#39;counter-component&#39;, &#123;</span><br><span class="line">&#x2F;&#x2F; 取用的功能</span><br><span class="line">  data:function()&#123; </span><br><span class="line">    return &#123;counter: 0&#125;</span><br><span class="line">  &#125;,</span><br><span class="line">&#x2F;&#x2F; 顯現的方式</span><br><span class="line">  template:&#96;</span><br><span class="line">  &lt;button class&#x3D;&quot;btn btn-outline-secondary btn-sm&quot; @click&#x3D;&quot;counter +&#x3D; 1&quot;&gt;&#123;&#123; counter &#125;&#125;&lt;&#x2F;button&gt;</span><br><span class="line">  &#96;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">let app &#x3D; new Vue(&#123;</span><br><span class="line">  el: &#39;#app&#39;,</span><br><span class="line">  data: &#123;</span><br><span class="line">    counter: 0</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200901/8450/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Jason06286">
+      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JasonCodingBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/20200901/8450/" class="post-title-link" itemprop="url">Js筆記 DatePicker 應用及操作 </a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-09-01 16:13:16" itemprop="dateCreated datePublished" datetime="2020-09-01T16:13:16+08:00">2020-09-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-24 18:42:57" itemprop="dateModified" datetime="2020-12-24T18:42:57+08:00">2020-12-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="DatePicker"><a href="#DatePicker" class="headerlink" title="DatePicker"></a>DatePicker</h1><p>日曆選擇器在 <a target="_blank" rel="noopener" href="https://bootstrap-datepicker.readthedocs.io/en/latest/">BootStrap</a>或 <a target="_blank" rel="noopener" href="https://jqueryui.com/datepicker/">jQuery UI</a> 等其實都已經有相關的套件，不過這次是使用<a target="_blank" rel="noopener" href="https://www.daterangepicker.com/#options">Date Range Picker</a><br>，因為要使用在訂房網上，所以需要用到選取範圍功能。</p>
+<h2 id="Date-Range-Picker"><a href="#Date-Range-Picker" class="headerlink" title="Date Range Picker"></a><a target="_blank" rel="noopener" href="https://www.daterangepicker.com/#options">Date Range Picker</a></h2><h3 id="開始使用"><a href="#開始使用" class="headerlink" title="開始使用"></a>開始使用</h3><p>只要至<a target="_blank" rel="noopener" href="https://www.daterangepicker.com/#usage">官網</a>插入 <code>cdn</code> 或下載檔案下來，<br>並宣告<code>.daterangepicker();</code>即可使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;jquery&#x2F;latest&#x2F;jquery.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;momentjs&#x2F;latest&#x2F;moment.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;daterangepicker&#x2F;daterangepicker.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;link rel&#x3D;&quot;stylesheet&quot; type&#x3D;&quot;text&#x2F;css&quot; href&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;daterangepicker&#x2F;daterangepicker.css&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;date&quot;&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        $(&#39;.date&#39;).daterangepicker()</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="常用選項"><a href="#常用選項" class="headerlink" title="常用選項"></a>常用選項</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;.date&#39;).daterangepicker(&#123;</span><br><span class="line">    &quot;startDate&quot;:開始日期,</span><br><span class="line">    &quot;endDate&quot;: 結束日期,</span><br><span class="line">    &quot;locale&quot;: &#123;</span><br><span class="line">        &quot;format&quot;: &quot;YYYY年MM月DD日&quot;, &#x2F;&#x2F; 日期格式</span><br><span class="line">        &quot;separator&quot;: &quot; - &quot;,</span><br><span class="line">        &quot;applyLabel&quot;: &quot;確認&quot;,  &#x2F;&#x2F;自定義 apply 按鈕名稱</span><br><span class="line">        &quot;cancelLabel&quot;: &quot;取消&quot;, &#x2F;&#x2F;自定義 cancel 按鈕名稱</span><br><span class="line">        &quot;daysOfWeek&quot;: [   &#x2F;&#x2F;自定義星期名稱</span><br><span class="line">            &quot;日&quot;,</span><br><span class="line">            &quot;一&quot;,</span><br><span class="line">            &quot;二&quot;,</span><br><span class="line">            &quot;三&quot;,</span><br><span class="line">            &quot;四&quot;,</span><br><span class="line">            &quot;五&quot;,</span><br><span class="line">            &quot;六&quot;</span><br><span class="line">        ],</span><br><span class="line">        &quot;monthNames&quot;: [       &#x2F;&#x2F;自定義月份名稱</span><br><span class="line">            &quot;1 月&quot;,</span><br><span class="line">            &quot;2 月&quot;,</span><br><span class="line">            &quot;3 月&quot;,</span><br><span class="line">            &quot;4 月&quot;,</span><br><span class="line">            &quot;5 月&quot;,</span><br><span class="line">            &quot;6 月&quot;,</span><br><span class="line">            &quot;7 月&quot;,</span><br><span class="line">            &quot;8 月&quot;,</span><br><span class="line">            &quot;9 月&quot;,</span><br><span class="line">            &quot;10 月&quot;,</span><br><span class="line">            &quot;11 月&quot;,</span><br><span class="line">            &quot;12 月&quot;</span><br><span class="line">        ],</span><br><span class="line">        &quot;firstDay&quot;: 1  &#x2F;&#x2F;自定義開始星期，0為星期日 </span><br><span class="line">    &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="客製化"><a href="#客製化" class="headerlink" title="客製化"></a>客製化</h3><p>因為有太多功能可以選擇，官網下方也有 UI 介面，供大家客製化選擇。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.daterangepicker.com/#config">開始客製化日期選擇器</a></p>
+</blockquote>
+<p><img src="/images/datepicker/datepicker.png"></p>
+<h2 id="如何取出日期範圍的值"><a href="#如何取出日期範圍的值" class="headerlink" title="如何取出日期範圍的值"></a>如何取出日期範圍的值</h2><p>我們可以利用 <code>while</code> 迴圈，再利用 <code>new Date()</code>產生日期格式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">const getDatesBetween &#x3D; (startDate, endDate) &#x3D;&gt; &#123;</span><br><span class="line">        let reserveDayData&#x3D;[] </span><br><span class="line">        let result&#x3D;[] </span><br><span class="line">        let currentDate &#x3D; startDate</span><br><span class="line">        let holiday&#x3D;0</span><br><span class="line">        let weekday&#x3D;0</span><br><span class="line">        console.log(startDate,endDate)</span><br><span class="line">        while(currentDate &lt; endDate)&#123; &#x2F;&#x2F;開始日期＋1天 &lt; 結束日期</span><br><span class="line">            reserveDayData.push(new Date(currentDate))</span><br><span class="line">            &#x2F;&#x2F; 台北時間跟國際時間差八小時</span><br><span class="line">            result.push(new Date(currentDate+ 8 * 3600 * 1000).toISOString().split(&quot;T&quot;)[0]) </span><br><span class="line">            &#x2F;&#x2F; 現在日期加一天</span><br><span class="line">            currentDate &#x3D; moment(currentDate).add(1, &#39;days&#39;); </span><br><span class="line">        &#125;</span><br><span class="line">        console.log(reserveDayData)</span><br><span class="line">        console.log(result)</span><br><span class="line">        &#x2F;&#x2F; 計算幾晚</span><br><span class="line">        &#x2F;&#x2F; 最後一天沒住，所以扣除</span><br><span class="line">        reserveDayData.pop()</span><br><span class="line">        reserveDayData.forEach(function (item) &#123;</span><br><span class="line">            if(item.getDay()&#x3D;&#x3D;&#x3D;0 ||item.getDay()&#x3D;&#x3D;&#x3D;6)&#123;</span><br><span class="line">                    return holiday+&#x3D;1</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                    return weekday+&#x3D;1</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        console.log(holiday)  </span><br><span class="line">        console.log(weekday)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h2><ul>
+<li><a href="https://jason06286.github.io/bookingPractice/index.html">DEMO</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/jason06286/bookingPractice">GitHub</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200821/17906/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Jason06286">
+      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JasonCodingBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/20200821/17906/" class="post-title-link" itemprop="url">Js筆記 表單驗證-正規表達式、JavaScript match() </a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-21 15:11:22" itemprop="dateCreated datePublished" datetime="2020-08-21T15:11:22+08:00">2020-08-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-24 18:42:57" itemprop="dateModified" datetime="2020-12-24T18:42:57+08:00">2020-12-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="JavaScript-match"><a href="#JavaScript-match" class="headerlink" title="JavaScript  match()"></a>JavaScript  match()</h2><p>通常都會搭配正規表達式使用，若找到匹配的內容會回傳內容，<br>反之則傳回<code>null</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let str&#x3D;&#39;abc123&#39;</span><br><span class="line">&#x2F;&#x2F; 含數字或小寫字母之字串</span><br><span class="line">let re&#x3D;&#x2F;[a-z0-9]&#x2F;</span><br><span class="line">&#x2F;&#x2F; 篩選</span><br><span class="line">let found&#x3D;str.match(re)</span><br><span class="line">console.log(found)</span><br></pre></td></tr></table></figure>
+<p><img src="/images/match/match1.png"></p>
+<h2 id="正規表達式"><a href="#正規表達式" class="headerlink" title="正規表達式"></a>正規表達式</h2><p><img src="/images/match/regexp.gif"><br><code>/要驗證的內容/</code><br><img src="/images/match/match2.png"><br><img src="/images/match/match3.png"><br><img src="/images/match/match4.png"></p>
+<h3 id="帳號註冊範例"><a href="#帳號註冊範例" class="headerlink" title="帳號註冊範例"></a>帳號註冊範例</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 帳號驗證</span><br><span class="line">   if (emailStr &#x3D;&#x3D;&#x3D; &#39;&#39;) &#123;</span><br><span class="line">       reportOfEmail.innerHTML &#x3D; &#39;Email不能為空&#39;</span><br><span class="line">   &#125; else if (emailStr.match(&#x2F;[@]+&#x2F;) &#x3D;&#x3D;&#x3D; null ) &#123;</span><br><span class="line">   reportOfEmail.innerHTML &#x3D; &#39;Email必須包含 @符號&#39;</span><br><span class="line">   &#125; else if (emailStr.match(&#x2F;[.]+&#x2F;) &#x3D;&#x3D;&#x3D; null ) &#123;</span><br><span class="line">   reportOfEmail.innerHTML &#x3D; &#39;Email格式錯誤&#39;</span><br><span class="line">   &#125; else &#123;</span><br><span class="line">   reportOfEmail.innerHTML &#x3D; &#39;&#39;</span><br><span class="line">   account.email&#x3D;emailStr;</span><br><span class="line">   &#125;</span><br><span class="line">   &#x2F;&#x2F; 密碼驗證</span><br><span class="line">   if (passwordStr &#x3D;&#x3D;&#x3D; &#39;&#39;) &#123;</span><br><span class="line">       reportOfPassword.innerHTML &#x3D; &#39;密碼不能為空&#39;</span><br><span class="line">   &#125; else if (passwordStr.match(&#x2F;[a-zA-Z]+&#x2F;) &#x3D;&#x3D;&#x3D; null || passwordStr.match(&#x2F;[0-9]+&#x2F;) &#x3D;&#x3D;&#x3D; null) &#123;</span><br><span class="line">   reportOfPassword.innerHTML &#x3D; &#39;密碼需包含英數&#39;</span><br><span class="line">   &#125; else &#123;</span><br><span class="line">   reportOfPassword.innerHTML &#x3D; &#39;&#39;</span><br><span class="line">   account.password&#x3D;passwordStr;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h2><p><a target="_blank" rel="noopener" href="https://jonas1011.pixnet.net/blog/post/26065399">https://jonas1011.pixnet.net/blog/post/26065399</a><br><a target="_blank" rel="noopener" href="https://www.runoob.com/jsref/jsref-match.html">https://www.runoob.com/jsref/jsref-match.html</a><br><a target="_blank" rel="noopener" href="https://5xruby.tw/posts/learn-regular-expression/">https://5xruby.tw/posts/learn-regular-expression/</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200819/44267/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Jason06286">
+      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JasonCodingBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/20200819/44267/" class="post-title-link" itemprop="url">如何利用 JavaScript 做出一個時鐘</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-19 16:11:28" itemprop="dateCreated datePublished" datetime="2020-08-19T16:11:28+08:00">2020-08-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-24 18:42:57" itemprop="dateModified" datetime="2020-12-24T18:42:57+08:00">2020-12-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="如何利用-JavaScript-做出一個時鐘"><a href="#如何利用-JavaScript-做出一個時鐘" class="headerlink" title="如何利用 JavaScript 做出一個時鐘"></a>如何利用 JavaScript 做出一個時鐘</h1><h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><p>我們要創建一個 <code>div</code>，裡面要包裹著時針、分針，秒針和 數字 1 ~ 12</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;clock&quot;&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;hand hour data-hour-hand&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;hand minute data-minute-hand&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;hand second data-second-hand&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;number number1&quot;&gt;1&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;number number2&quot;&gt;2&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;number number3&quot;&gt;3&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;number number4&quot;&gt;4&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;number number5&quot;&gt;5&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;number number6&quot;&gt;6&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;number number7&quot;&gt;7&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;number number8&quot;&gt;8&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;number number9&quot;&gt;9&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;number number10&quot;&gt;10&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;number number11&quot;&gt;11&lt;&#x2F;div&gt;</span><br><span class="line">        &lt;div class&#x3D;&quot;number number12&quot;&gt;12&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="時鐘介面"><a href="#時鐘介面" class="headerlink" title="時鐘介面"></a>時鐘介面</h3><p>我們先給背景色，在給 <code>.clock</code> 寬高和外框把它變圓形。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">*, *::after, *::before &#123;</span><br><span class="line">    box-sizing: border-box;</span><br><span class="line">    &#125;</span><br><span class="line">body&#123;</span><br><span class="line">    background-color: #D9AFD9; &#x2F;&#x2F;設置背景色</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; 時鐘</span><br><span class="line">.clock&#123;</span><br><span class="line">    width: 300px; &#x2F;&#x2F;寬</span><br><span class="line">    height: 300px; &#x2F;&#x2F;高</span><br><span class="line">    background-color: rgba(255,255,255,.8); &#x2F;&#x2F;時鐘的背景色</span><br><span class="line">    border-radius: 50%; &#x2F;&#x2F;變圓</span><br><span class="line">    border: 2px solid black; &#x2F;&#x2F;給個外框</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="時鐘數字"><a href="#時鐘數字" class="headerlink" title="時鐘數字"></a>時鐘數字</h3><p>利用絕對定位，把數字定位在時鐘上，所以先給<code>.clock</code> ，<code>position:relative;</code><br>設置<code>--rotation</code>變數，一個圓為 360°，時鐘為 12 小時制，所以<code>360°/12=30°</code>，<br>每前進一格為30度，再把個角度帶入變數中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 時鐘</span><br><span class="line">.clock&#123;</span><br><span class="line">    width: 300px;</span><br><span class="line">    height: 300px;</span><br><span class="line">    background-color: rgba(255,255,255,.8);</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">    border: 2px solid black;</span><br><span class="line">    position: relative; &#x2F;&#x2F; 要定位在時鐘上</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; 時鐘數字</span><br><span class="line">.clock .number&#123;</span><br><span class="line">    --rotation:0; &#x2F;&#x2F;設置變數，起始為 0 度</span><br><span class="line">    position: absolute;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 100%;</span><br><span class="line">    text-align: center; </span><br><span class="line">    transform: rotate(var(--rotation));</span><br><span class="line">    font-size: 1.5rem;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; 帶入角度</span><br><span class="line">&#x2F;&#x2F; 360deg&#x2F;12&#x3D;30deg</span><br><span class="line">.clock .number1&#123;--rotation:30deg;&#125;</span><br><span class="line">.clock .number2&#123;--rotation:60deg;&#125;</span><br><span class="line">.clock .number3&#123;--rotation:90deg;&#125;</span><br><span class="line">.clock .number4&#123;--rotation:120deg;&#125;</span><br><span class="line">.clock .number5&#123;--rotation:150deg;&#125;</span><br><span class="line">.clock .number6&#123;--rotation:180deg;&#125;</span><br><span class="line">.clock .number7&#123;--rotation:210deg;&#125;</span><br><span class="line">.clock .number8&#123;--rotation:240deg;&#125;</span><br><span class="line">.clock .number9&#123;--rotation:270deg;&#125;</span><br><span class="line">.clock .number10&#123;--rotation:300deg;&#125;</span><br><span class="line">.clock .number11&#123;--rotation:330deg;&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="時針、分針、秒針"><a href="#時針、分針、秒針" class="headerlink" title="時針、分針、秒針"></a>時針、分針、秒針</h3><p>先設定共通 <code>.hand</code>，因為我們有設 <code>left:50%</code>，所以要下個<code>transform: translateX(-50%)</code>使它置中，再利用<code>transform-origin:bottom</code>，把中心點定成下方。</p>
+<p>時針、分針、秒針 再給予寬高、背景色。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;共通</span><br><span class="line"></span><br><span class="line">.clock .hand&#123;</span><br><span class="line">    --rotation:0;</span><br><span class="line">    position: absolute;</span><br><span class="line">    left: 50%;</span><br><span class="line">    bottom: 50%;</span><br><span class="line">    background-color: black;</span><br><span class="line">    border: 1px solid white;</span><br><span class="line">    border-top-left-radius: 10px;</span><br><span class="line">    border-top-right-radius: 10px;</span><br><span class="line">    z-index: 10; &#x2F;&#x2F;保證在最上面</span><br><span class="line">    transform-origin: bottom; &#x2F;&#x2F; 中心點定在下方</span><br><span class="line">    &#x2F;&#x2F; 使它置中 和帶入函數及變數</span><br><span class="line">    transform: translateX(-50%) rotate(calc(var(--rotation)*1deg)); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 秒針</span><br><span class="line">.clock .hand.second &#123;</span><br><span class="line">    width: 3px;</span><br><span class="line">    height: 45%;</span><br><span class="line">    background-color: red;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; 分針</span><br><span class="line">.clock .hand.minute &#123;</span><br><span class="line">width: 7px;</span><br><span class="line">height: 40%;    </span><br><span class="line">background-color: black;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; 時針</span><br><span class="line">.clock .hand.hour &#123;</span><br><span class="line">width: 10px;</span><br><span class="line">height: 35%;</span><br><span class="line">background-color: black;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="中心點"><a href="#中心點" class="headerlink" title="中心點"></a>中心點</h3><p>我們利用偽元素製作出一個中心圓，並利用<code>transform: translate(-50%, -50%);</code>使它置中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">.clock::after &#123;</span><br><span class="line">    content: &#39;&#39;;</span><br><span class="line">    position: absolute;</span><br><span class="line">    background-color: black;</span><br><span class="line">    z-index: 11; &#x2F;&#x2F;要使它在最上面</span><br><span class="line">    width: 15px;</span><br><span class="line">    height: 15px;</span><br><span class="line">    top: 50%;</span><br><span class="line">    left: 50%;</span><br><span class="line">    transform: translate(-50%, -50%); &#x2F;&#x2F;置中</span><br><span class="line">    border-radius: 50%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="時鐘置中"><a href="#時鐘置中" class="headerlink" title="時鐘置中"></a>時鐘置中</h3><p>我們要使時鐘在瀏覽器置中，利用 <code>flex</code> 並給予高度，避免卷軸滾動，<br>在加入<code>overflow:hidden;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">body&#123;</span><br><span class="line">    background-color: #D9AFD9;</span><br><span class="line">    display: flex;</span><br><span class="line">    justify-content: center;</span><br><span class="line">    align-items: center;</span><br><span class="line">    min-height: 100vh; &#x2F;&#x2F;給予高度</span><br><span class="line">    overflow: hidden; &#x2F;&#x2F;避免卷軸滾動</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><p>我們利用<code>setInterval</code>達到每秒更新，在創建一個<code>setClock</code>函數算份數，<br>分數要再加入當前的秒數。ex:12分12秒為 0.22份，<br>時數要再加入當前的分數，但時鐘為 12 小時一圈，故除以12，<br>在帶入<code>setRotation</code>函數，計算角度並把角度值加入到 css 中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">const hourHand&#x3D;document.querySelector(&#39;.data-hour-hand&#39;);</span><br><span class="line">const minuteHand&#x3D;document.querySelector(&#39;.data-minute-hand&#39;);</span><br><span class="line">const secondHand&#x3D;document.querySelector(&#39;.data-second-hand&#39;);</span><br><span class="line">setInterval(setClock,1000);</span><br><span class="line"></span><br><span class="line">function setClock(params) &#123;</span><br><span class="line">    const currentDate&#x3D;new Date();</span><br><span class="line">    const secondsRatio&#x3D; currentDate.getSeconds()&#x2F;60</span><br><span class="line">    &#x2F;&#x2F; 分數要再加入當前的秒數。ex:12分12秒為 0.22份</span><br><span class="line">    const minutesRatio&#x3D; (secondsRatio+currentDate.getMinutes())&#x2F;60</span><br><span class="line">    &#x2F;&#x2F; 時數要再加入當前的分數，但時鐘為 12 小時一圈，故除以12</span><br><span class="line">    const hourRatio&#x3D; (minutesRatio+currentDate.getHours())&#x2F;12</span><br><span class="line">    setRotation(secondHand,secondsRatio)</span><br><span class="line">    setRotation(minuteHand,minutesRatio)</span><br><span class="line">    setRotation(hourHand,hourRatio)</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F; 角度</span><br><span class="line">function setRotation(element,rotationRatio) &#123;</span><br><span class="line">    element.style.setProperty(&#39;--rotation&#39;,rotationRatio*360)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p class="codepen" data-height="400" data-theme-id="light" data-default-tab="css,result" data-user="jasonuse" data-slug-hash="abNmpdO" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="JavaScript Clock">
+  <span>See the Pen <a target="_blank" rel="noopener" href="https://codepen.io/jasonuse/pen/abNmpdO">
+  JavaScript Clock</a> by 曾慶榮 (<a target="_blank" rel="noopener" href="https://codepen.io/jasonuse">@jasonuse</a>)
+  on <a target="_blank" rel="noopener" href="https://codepen.io">CodePen</a>.</span>
+</p>
+<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Ki0XXrlKlHY">https://www.youtube.com/watch?v=Ki0XXrlKlHY</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10136005">https://ithelp.ithome.com.tw/articles/10136005</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200818/60230/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Jason06286">
+      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JasonCodingBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/20200818/60230/" class="post-title-link" itemprop="url">如何解決非同步？ 回呼函式 Callbacks、Promises 物件、Async/Await 非同步流程控制</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-18 15:32:18" itemprop="dateCreated datePublished" datetime="2020-08-18T15:32:18+08:00">2020-08-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-24 18:42:57" itemprop="dateModified" datetime="2020-12-24T18:42:57+08:00">2020-12-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="常見的非同步"><a href="#常見的非同步" class="headerlink" title="常見的非同步"></a>常見的非同步</h2><p><code>setTimeout</code>、 <code>XMLHttpRequest</code><br>這裡以 <code>setTimeout</code> 做示範：點擊按鈕，會兩數相加，兩秒後顯示結果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">let btn &#x3D;document.querySelector(&#39;#btn&#39;);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 監聽</span><br><span class="line">btn.addEventListener(&#39;click&#39;,test)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 非同步的程式</span><br><span class="line">function delayAdd(n1,n2,sec) &#123;</span><br><span class="line">    setTimeout(function name(params) &#123;</span><br><span class="line">        return n1 + n2</span><br><span class="line">    &#125;,sec)</span><br><span class="line">&#125;</span><br><span class="line">function test(params) &#123;</span><br><span class="line">    let result&#x3D;delayAdd(1,2,2000)</span><br><span class="line">    console.log(result)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="解決方式"><a href="#解決方式" class="headerlink" title="解決方式"></a>解決方式</h2><h3 id="回呼函式-Callbacks"><a href="#回呼函式-Callbacks" class="headerlink" title="回呼函式 Callbacks"></a>回呼函式 Callbacks</h3><p><img src="/images/promise/callback.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function delayAdd(n1,n2,sec,callback) &#123;</span><br><span class="line">    setTimeout(function (params) &#123;</span><br><span class="line">        callback(n1 + n2) </span><br><span class="line">    &#125;,sec)</span><br><span class="line">&#125;</span><br><span class="line">function test(params) &#123;</span><br><span class="line">    delayAdd(1,2,2000,function (result) &#123;</span><br><span class="line">        console.log(result)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><ul>
+<li>創建 <code>new Promise</code></li>
+<li><code>reslove</code> 對應 <code>than</code></li>
+<li><code>reject</code> 對應 <code>cath </code><br><img src="/images/promise/promise.png"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function delayAdd(n1,n2,sec) &#123;</span><br><span class="line">    return new Promise(function (reslove,reject) &#123;</span><br><span class="line">        setTimeout(function (params) &#123;</span><br><span class="line">            reslove(n1 + n2) </span><br><span class="line">        &#125;,sec)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">function test()&#123;</span><br><span class="line">    let promise&#x3D;delayAdd(1,2,2000)</span><br><span class="line">    promise.then(function (result) &#123;</span><br><span class="line">        console.log(result)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Promise-all"><a href="#Promise-all" class="headerlink" title="Promise.all"></a>Promise.all</h3><img src="/images/promise/promise.all.png"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function test(params) &#123;</span><br><span class="line">    let promise1&#x3D;delayAdd(1,2,2000)</span><br><span class="line">    let promise2&#x3D;delayAdd(3,4,3000)</span><br><span class="line">    Promise.all([promise1,promise2]).then(function (results) &#123;</span><br><span class="line">        console.log(results)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Async-Await"><a href="#Async-Await" class="headerlink" title="Async/Await"></a>Async/Await</h3>本質還是 <code>Promise</code>，簡化 <code>Promise</code> 的語法糖。<br><img src="/images/promise/async.png"><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function delayAdd(n1,n2,sec) &#123;</span><br><span class="line">    return new Promise(function (reslove,reject) &#123;</span><br><span class="line">        setTimeout(function (params) &#123;</span><br><span class="line">            reslove(n1 + n2) </span><br><span class="line">        &#125;,sec)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">async function test(params) &#123;</span><br><span class="line">    let result&#x3D;await delayAdd(1,2,2000)</span><br><span class="line">    console.log(result)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h2><a target="_blank" rel="noopener" href="https://codepen.io/jasonuse/pen/LYNZraN?editors=0011">本文範例程式碼</a><br><a target="_blank" rel="noopener" href="https://codepen.io/jasonuse/pen/mdPEjXK?editors=0012">XMLHttpRequest + Promise 範例</a><h2 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h2><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=NOprCnnjHm0">https://www.youtube.com/watch?v=NOprCnnjHm0</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200817/41868/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Jason06286">
+      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JasonCodingBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/20200817/41868/" class="post-title-link" itemprop="url">Js筆記 AJAX</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-17 14:38:12" itemprop="dateCreated datePublished" datetime="2020-08-17T14:38:12+08:00">2020-08-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-24 18:42:57" itemprop="dateModified" datetime="2020-12-24T18:42:57+08:00">2020-12-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h1><h2 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a>XMLHttpRequest</h2><h3 id="open-格式"><a href="#open-格式" class="headerlink" title="open 格式"></a>open 格式</h3><p><img src="/images/ajax/ajax1.png"></p>
+<h3 id="onlaod"><a href="#onlaod" class="headerlink" title="onlaod"></a>onlaod</h3><p>確定資料回傳，執行以下函式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function getData() &#123;</span><br><span class="line">    let xhr&#x3D;new XMLHttpRequest();</span><br><span class="line">    xhr.open(&#39;get&#39;,url,true);</span><br><span class="line">    xhr.send(null);</span><br><span class="line">    console.log(xhr.responseText)</span><br><span class="line">    xhr.onload&#x3D;function () &#123; </span><br><span class="line">        let data1 &#x3D; JSON.parse(xhr.responseText)</span><br><span class="line">        return data&#x3D;data1.ROOT.RECORD</span><br><span class="line">&#125;&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="asios"><a href="#asios" class="headerlink" title="asios"></a>asios</h2><p><img src="/images/ajax/ajax2.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; axios</span><br><span class="line">function getData()&#123;</span><br><span class="line">    axios.get(url)</span><br><span class="line">    .then(function (response) &#123;</span><br><span class="line">        return data&#x3D;response.data.ROOT.RECORD</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h2><p><img src="/images/ajax/ajax3.png"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function getData() &#123;</span><br><span class="line">    $(document).ready(function () &#123;</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            type: &quot;get&quot;,</span><br><span class="line">            url: url,</span><br><span class="line">            data: &quot;data&quot;,</span><br><span class="line">            dataType: &quot;json&quot;,</span><br><span class="line">            success: function (response) &#123;</span><br><span class="line">                return data&#x3D;response.ROOT.RECORD</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://codepen.io/jasonuse/pen/zYqBxzj?editors=0010">範例</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200814/64403/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Jason06286">
+      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JasonCodingBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/20200814/64403/" class="post-title-link" itemprop="url">Js筆記 XMLHttpRequest</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-14 18:38:51" itemprop="dateCreated datePublished" datetime="2020-08-14T18:38:51+08:00">2020-08-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-24 18:42:57" itemprop="dateModified" datetime="2020-12-24T18:42:57+08:00">2020-12-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a>XMLHttpRequest</h2><h3 id="readyState-狀態說明"><a href="#readyState-狀態說明" class="headerlink" title="readyState 狀態說明"></a>readyState 狀態說明</h3><p>0 已經產生XMLHttpRequest,但還沒連結要撈的資料<br>1 用了open,但還沒把資料傳送過去<br>2 偵測到你有用send<br>3 loading<br>4 你撈到資料了，數據已經完全接收</p>
+<h3 id="open的格式"><a href="#open的格式" class="headerlink" title="open的格式"></a>open的格式</h3><p>get 讀取資料<br>post 傳送資料到伺服器<br>true 同步<br>false 非同步</p>
+<h3 id="onload"><a href="#onload" class="headerlink" title="onload"></a>onload</h3><p>確定有資料回傳了，可使用onload來取得回傳的值</p>
+<h4 id="get"><a href="#get" class="headerlink" title="get"></a>get</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">let xhr &#x3D; new XMLHttpRequest();</span><br><span class="line">&#x2F;&#x2F; readyState 狀態</span><br><span class="line">&#x2F;&#x2F; 0  已經產生XMLHttpRequest,但還沒連結要撈的資料</span><br><span class="line">&#x2F;&#x2F; 1  用了open,但還沒把資料傳送過去</span><br><span class="line">&#x2F;&#x2F; 2  偵測到你有用send</span><br><span class="line">&#x2F;&#x2F; 3  loading</span><br><span class="line">&#x2F;&#x2F; 4  你撈到資料了，數據已經完全接收</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; open(&#39;格式(get:讀取資料)&#39;,&#39;要讀取的網址&#39;,true(同步)false(非同步))</span><br><span class="line">xhr.open(&#39;get&#39;,&#39;https:&#x2F;&#x2F;hexschool.github.io&#x2F;ajaxHomework&#x2F;data.json&#39;,true);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; true 非同步， (多數使用true)</span><br><span class="line">&#x2F;&#x2F; false 同步</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 只要讀取資料的話，填null空值即可</span><br><span class="line">xhr.send(null);</span><br><span class="line"></span><br><span class="line">console.log(xhr.responseText);</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; onload 當資料確定有回傳了，則開始執行以下function</span><br><span class="line">xhr.onload &#x3D; function() &#123;</span><br><span class="line">  console.log(xhr.responseText);</span><br><span class="line">  let data &#x3D; JSON.parse(xhr.responseText);</span><br><span class="line">  console.log(data);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="post"><a href="#post" class="headerlink" title="post"></a>post</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let xhr&#x3D;new XMLHttpRequest();</span><br><span class="line">   xhr.open(&#39;post&#39;,&#39;https:&#x2F;&#x2F;hexschool-tutorial.herokuapp.com&#x2F;api&#x2F;signup&#39;,true);</span><br><span class="line"></span><br><span class="line">   &#x2F;&#x2F;傳送的格式</span><br><span class="line">   xhr.setRequestHeader(&quot;Content-type&quot;,&quot;application&#x2F;json&quot;)</span><br><span class="line">   &#x2F;&#x2F;xhr.setRequestHeader(&quot;Content-type&quot;,&quot;application&#x2F;www-form-urlencoded&quot;)</span><br><span class="line">   </span><br><span class="line">   xhr.send(&#39;email&#x3D;abcde@gmail.com&amp;password&#x3D;1234&#39;);</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://codepen.io/jasonuse/pen/MWwvEWP">Post example</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
     <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200813/34258/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -268,10 +988,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-08-13 15:11:07 / Modified: 16:13:42" itemprop="dateCreated datePublished" datetime="2020-08-13T15:11:07+08:00">2020-08-13</time>
+              <time title="Created: 2020-08-13 15:11:07" itemprop="dateCreated datePublished" datetime="2020-08-13T15:11:07+08:00">2020-08-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-24 18:42:57" itemprop="dateModified" datetime="2020-12-24T18:42:57+08:00">2020-12-24</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -317,608 +1043,11 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200813/54502/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Jason06286">
-      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JasonCodingBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/20200813/54502/" class="post-title-link" itemprop="url">JS 筆記 var let const 差異</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2020-08-13 12:50:02 / Modified: 16:05:03" itemprop="dateCreated datePublished" datetime="2020-08-13T12:50:02+08:00">2020-08-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="/images/js01/js1.jpg"><br>在 ES6 之前 JavaScript 沒有區塊域的概念，因此經常使用 <code>var</code> 來宣告變數，<br>而造成區域變數覆蓋到全域變數，因此才有 <code>let</code>、<code>const</code> 來避免此狀況產生。</p>
-<h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><p>用法就跟 <code>var</code> 沒有差別，但作用域只在括號內，讓我們看個經典例子來瞭解</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for (var i &#x3D; 0; i &lt; 3; i++) &#123;</span><br><span class="line">  console.log(i);</span><br><span class="line">  setTimeout(function () &#123;</span><br><span class="line">    console.log(&#39;這執行第&#39; + i + &#39;次&#39;);</span><br><span class="line">  &#125;, 10);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/js01/js2.png"><br>我們會發現出來的結果是 <code>這執行第3次</code>，而不是我們要的結果，<br>因為 <code>var</code> 宣告 <code>i</code> 會變成全域變數，造成 <code>for</code> 迴圈累加，<br>在 <code>setTimeout</code> 實際執行時只會拿到 3 這個數字。<br>此時在查找 <code>i</code>，發現 <code>i＝3</code>，疑～🧐 不是只會作用在函式裡嗎？<br>怎麼 window 也讀得到？</p>
-<h3 id="用-let-改寫"><a href="#用-let-改寫" class="headerlink" title="用 let 改寫"></a>用 <code>let</code> 改寫</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for (let i &#x3D; 0; i &lt; 10; i++) &#123;</span><br><span class="line">  console.log(i);</span><br><span class="line">  setTimeout(function () &#123;</span><br><span class="line">    console.log(&#39;這執行第&#39; + i + &#39;次&#39;);</span><br><span class="line">  &#125;, 10);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/js01/js3.png"><br>我們會發現結果會依序跑出，且查找<code>i</code>，<br>顯示 <code>Uncaught ReferenceError: i is not defined</code>，<br><code>i</code> 變數未被宣告，因為 <code>let</code> 作用域只在括號內。</p>
-<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>是宣吿一個常數，且必須一定要有值，不可被更改。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const a&#x3D;1;</span><br><span class="line">let  a&#x3D;2;</span><br><span class="line">a&#x3D;2</span><br></pre></td></tr></table></figure>
-<p><img src="/images/js01/js4.png"></p>
-<h3 id="物件是例外"><a href="#物件是例外" class="headerlink" title="物件是例外"></a>物件是例外</h3><p>因為物件是傳址而不是傳值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const CLOTHES &#x3D;&#123;</span><br><span class="line">    color:&#39;red&#39;,</span><br><span class="line">    size:&#39;L&#39;,</span><br><span class="line">&#125;</span><br><span class="line">CLOTHES .material&#x3D;&quot;棉&quot;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>盡量少用 <code>var</code> 用 <code>let</code>、<code>const</code> 做取代<br><code>const</code> 可以宣告不太會更動的內容。ex: DOM 、物件、api<br><code>const</code> 常數可以用大寫，以利區分</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200811/33161/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Jason06286">
-      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JasonCodingBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/20200811/33161/" class="post-title-link" itemprop="url">Git branch 合併 Merge Rebase</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-11 14:49:28" itemprop="dateCreated datePublished" datetime="2020-08-11T14:49:28+08:00">2020-08-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-13 14:24:27" itemprop="dateModified" datetime="2020-08-13T14:24:27+08:00">2020-08-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>s</p>
-<h1 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h1><p>在開發中我們會有許多版本，像是開發版、測試版，測試功能都正常，才會合併到上線版。</p>
-<blockquote>
-<p>分支就像是影分身術的概念，而我們會透過 <code>git </code>的指令，來取需要分身的部分。 </p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">新增分支：git branch 分支名稱</span><br><span class="line">查看分支：git branch </span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><code>HEAD</code> 表示目前在哪裡，預設是指向 <code>master</code></p>
-</blockquote>
-<p><img src="/images/git02/git1.png"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">切換分支：git checkout 分支名稱</span><br><span class="line">刪除分支：git branch -d 分支名稱 、-D 是強制刪除</span><br><span class="line">還原上個版本：git reset HEAD^</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><code>HEAD</code> 代表目前位置<br><code>HEAD^</code> 代表 HEAD 往前一個版本，<code>HEAD^^</code> 代表 HEAD 往前二個版本<br><code>HEAD~1 </code>代表 HEAD 往前一個版本，<code>HEAD~4 </code>代表 HEAD 往前四個版本 </p>
-</blockquote>
-<p><img src="/images/git02/git2.png"><br><img src="/images/git02/git3.png"><br><img src="/images/git02/git4.png"></p>
-<h1 id="分支合併"><a href="#分支合併" class="headerlink" title="分支合併"></a>分支合併</h1><h2 id="Merge"><a href="#Merge" class="headerlink" title="Merge"></a>Merge</h2><p>在使用 <code>merge</code> 合併分支的時候，<code>git</code> 預設會以 <code>fast-forward</code> 的模式進行，那什麼是 <code>fast-forward</code> 和 <code>no-fast-forward</code> 呢？</p>
-<h4 id="fast-forward"><a href="#fast-forward" class="headerlink" title="fast-forward"></a>fast-forward</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge 分支名稱</span><br></pre></td></tr></table></figure>
-<p><img src="https://www.maxlist.xyz/wp-content/uploads/2020/05/merge_fast_foard.gif"><br><a target="_blank" rel="noopener" href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1#merge">Gif 來源：CS Visualized</a></p>
-<h4 id="no-fast-forward"><a href="#no-fast-forward" class="headerlink" title="no-fast-forward"></a>no-fast-forward</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge 分支名稱 --no-ff</span><br></pre></td></tr></table></figure>
-<p><img src="https://www.maxlist.xyz/wp-content/uploads/2020/05/merge_no_fast_forward.gif"><br><a target="_blank" rel="noopener" href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1#merge">Gif 來源：CS Visualized</a></p>
-<p>可以很清楚的看到同樣都是 <code>merge</code>，使用<code> no-fast-forward</code> 的模式，會長出小耳朵，可以讓成員在日後很清楚辨識不同的 <code>Commit</code> 歷程，但小耳朵過多會造成混亂，所以會需要 fast-forward 用來 <code>merge</code> 些較不重要的 <code>Commit</code>，像是零碎的 <code>bug fix</code>，保持 <code>Commit</code> 的乾淨。</p>
-<blockquote>
-<p>重要的合併用 <code>git merge 分支名稱 --no-ff</code><br>不重要的合併用 <code>git merge 分支名稱</code></p>
-</blockquote>
-<h3 id="衝突"><a href="#衝突" class="headerlink" title="衝突"></a>衝突</h3><p>當同時修改同一個檔案的同一行code，就會發生衝突，<br>因為<code> git</code> 無法知道哪個才是正確的內容，<br>這時就需要雙方溝通，看要用誰的code。</p>
-<p>假設我們在 <code>cat </code>分支修改了 <code>index.html</code> 的內容如下：<br><img src="/images/git02/git5.png"><br>然後在 <code>dog</code> 分支剛好也修改了 <code>index.html</code>，內容如下：<br><img src="/images/git02/git6.png"><br>這時候進行合併，發現因為第 9 行重複，所以產生了衝突，<br>此時狀態，已被放置至暫存區。<br>選要用哪個內容，在跑過一次 <code>Commit</code> 流程，就解決衝突了。<br><img src="/images/git02/git7.png"><br><img src="/images/git02/git8.png"></p>
-<h2 id="Rebase"><a href="#Rebase" class="headerlink" title="Rebase"></a>Rebase</h2><p>從字面上來看，「rebase」是「re」加上「base」，翻成中文大概是「重新定義分支的參考基準」的意思。</p>
-<h4 id="合併版本"><a href="#合併版本" class="headerlink" title="合併版本"></a>合併版本</h4><p><img src="https://www.maxlist.xyz/wp-content/uploads/2020/05/git_rebase.gif"><br><a target="_blank" rel="noopener" href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1#merge">Gif 來源：CS Visualized</a></p>
-<h4 id="修改歷史-commit-紀錄"><a href="#修改歷史-commit-紀錄" class="headerlink" title="修改歷史 commit 紀錄"></a>修改歷史 commit 紀錄</h4><p><img src="https://www.maxlist.xyz/wp-content/uploads/2020/05/git_rebase_i.gif"><br><a target="_blank" rel="noopener" href="https://dev.to/lydiahallie/cs-visualized-useful-git-commands-37p1#merge">Gif 來源：CS Visualized</a></p>
-<h4 id="使用-Rebase-來合併分支"><a href="#使用-Rebase-來合併分支" class="headerlink" title="使用 Rebase 來合併分支"></a>使用 Rebase 來合併分支</h4><p>優點:很自由可以自己決定歷史順序<br>缺點:有時候恍神失智，忘了自己 <code>Rebase</code> 到哪，<br>不小心弄壞了還不知道怎麼 <code>reset</code> 回來 (¬_¬)，<br>發生衝突時會停在一半，對不熟悉 <code>Rebase</code> 的人來說是個困擾</p>
-<h4 id="使用時機"><a href="#使用時機" class="headerlink" title="使用時機"></a>使用時機</h4><p>通常在還沒有推（<code>Push</code>）出去但感覺得有點亂（或太瑣碎）的 <code>Commit</code>，可以先使用 <code>Rebase</code> 分支來整理完再推出去。但如同前面提到的，<code>Rebase</code> 等於是修改歷史，修改已經推出去的歷史可能會對其它人帶來困擾，所以對於已經推出去的內容，非必要的話請盡量不要使用 <code>Rebase</code>。</p>
-<h4 id="技術總結"><a href="#技術總結" class="headerlink" title="技術總結:"></a>技術總結:</h4><blockquote>
-<p>創立 <code>branch</code> 用 <code>git branch 分支名稱</code><br>切換 <code>HEAD</code> 位置 <code>git ckeckout 位置</code><br>合併到主要版本用 <code>git merge 分支名稱 --no-ff</code><br>整理 <code>commit</code> 點 可以用 <code>git rebase</code> 和 <code>git merge</code></p>
-</blockquote>
-<h3 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h3><p><a target="_blank" rel="noopener" href="https://gitbook.tw/">為你自己學 Git</a></p>
-<h3 id="練習-Git-小遊戲"><a href="#練習-Git-小遊戲" class="headerlink" title="練習 Git 小遊戲"></a>練習 Git 小遊戲</h3><p><a target="_blank" rel="noopener" href="https://learngitbranching.js.org/?locale=zh_TW">Learn Git Branching</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200811/38287/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Jason06286">
-      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JasonCodingBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/20200811/38287/" class="post-title-link" itemprop="url">從零開始，如何從 Git push 到 GitHub？</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-11 14:32:06" itemprop="dateCreated datePublished" datetime="2020-08-11T14:32:06+08:00">2020-08-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-13 14:24:12" itemprop="dateModified" datetime="2020-08-13T14:24:12+08:00">2020-08-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>本篇適用於完全不會<code>Git</code>的人，將一步步帶你上傳檔案至<code>GitHub</code></p>
-<h2 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h2><p>首先到 <a target="_blank" rel="noopener" href="https://git-scm.com/"> Git 官網</a> ，下載<code>Git</code><br>以下為<code> windows</code> 環境下示範 ，開始選單&gt; 所有程式&gt; <code>Git</code>&gt; <code>Git Bash</code><br>然後開啟<code> Git Bash</code><br><img src="/images/git01/git1.png"></p>
-<h3 id="讓我們瞭解基本的-command-指令"><a href="#讓我們瞭解基本的-command-指令" class="headerlink" title="讓我們瞭解基本的 command 指令"></a>讓我們瞭解基本的 <code>command</code> 指令</h3><ol>
-<li>移動路徑：cd 路徑</li>
-<li>回上一層：cd .. </li>
-<li>開新資料夾： mkdir 資料夾名稱</li>
-<li>開新檔案： touch 檔案名稱<h3 id="設定"><a href="#設定" class="headerlink" title="設定"></a>設定</h3>首先先設定使用者的資料，這些資訊將作為提交者資訊顯示在版本控制的歷史記錄中。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name &quot;&lt;使用者名字&gt;&quot;</span><br><span class="line">$ git config --global user.email &quot;&lt;電子信箱&gt;&quot;</span><br><span class="line">$ git config --list &#x2F;&#x2F;來確認使用者資料</span><br></pre></td></tr></table></figure>
-<img src="/images/git01/git2.png"><h2 id="Git-基礎操作"><a href="#Git-基礎操作" class="headerlink" title="Git 基礎操作"></a>Git 基礎操作</h2><h3 id="創建-Git"><a href="#創建-Git" class="headerlink" title="創建 Git"></a>創建 Git</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">新增一個資料夾</span><br><span class="line">cd 資料夾的路經 </span><br><span class="line">$ git init &#x2F;&#x2F;開啟一個新的 git </span><br><span class="line">$ touch index.html &#x2F;&#x2F;建立一個檔案,可依自己需求建立，此示範為 index.html</span><br></pre></td></tr></table></figure>
-<img src="/images/git01/git3.png"><h3 id="確認工作目錄與索引的狀態"><a href="#確認工作目錄與索引的狀態" class="headerlink" title="確認工作目錄與索引的狀態"></a>確認工作目錄與索引的狀態</h3>從下圖我們得知檔案還未 <code>commit</code> , 系統建議我們先把它加入索引,不然會 <code>commit </code>不到<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git status </span><br></pre></td></tr></table></figure>
-<img src="/images/git01/git4.png"><h3 id="將檔案加入至索引"><a href="#將檔案加入至索引" class="headerlink" title="將檔案加入至索引"></a>將檔案加入至索引</h3>透過 <code>$ git status</code>，我們得知檔案已被加入索引。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ git add &#39;檔案名稱&#39; &#x2F;&#x2F;加入指定檔案</span><br><span class="line">$ git add . &#x2F;&#x2F;未加入的檔案一次加入</span><br><span class="line">$ git status</span><br></pre></td></tr></table></figure>
-<img src="/images/git01/git5.png"><h3 id="執行commit命令提交檔案"><a href="#執行commit命令提交檔案" class="headerlink" title="執行commit命令提交檔案"></a>執行<code>commit</code>命令提交檔案</h3>最後只要執行 <code>git commit -m &quot;更新註解&quot;</code> 就可以將本次更新的內容提交到數據庫了。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git commit -m &quot;update1&quot; </span><br><span class="line">$ git log &#x2F;&#x2F;查詢提交記錄</span><br></pre></td></tr></table></figure>
-<img src="/images/git01/git6.png"><h2 id="遠端數據庫-GitHub"><a href="#遠端數據庫-GitHub" class="headerlink" title="遠端數據庫 GitHub"></a>遠端數據庫 GitHub</h2><h3 id="申請-GitHub-帳號"><a href="#申請-GitHub-帳號" class="headerlink" title="申請 GitHub 帳號"></a>申請 <a target="_blank" rel="noopener" href="https://github.com/">GitHub</a> 帳號</h3>申請完 <code>GitHub</code> 帳號，我們要創建一個資料夾，來當遠端數據庫。<br><img src="/images/git01/git7.png"><br><img src="/images/git01/git8.png"><br><img src="/images/git01/git9.png"></li>
-</ol>
-<h3 id="連結至-GitHub-遠端數據庫"><a href="#連結至-GitHub-遠端數據庫" class="headerlink" title="連結至 GitHub 遠端數據庫"></a>連結至 GitHub 遠端數據庫</h3><p>透過 <code>$ git clone &#39;GitHub 的 URL&#39;</code>，連結至 <code>GitHub</code> 的遠端數據庫</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git clone &#39;GitHub 的 URL&#39;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/git01/git9.5.png"></p>
-<h3 id="上傳至-GitHub-專案"><a href="#上傳至-GitHub-專案" class="headerlink" title="上傳至 GitHub 專案"></a>上傳至 GitHub 專案</h3><p>透過 <code>$ git push </code>將本地端數據庫上傳至雲端數據庫 ，會要求你輸入 <code>GitHub</code> 的帳號密碼以確認。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push</span><br></pre></td></tr></table></figure>
-<p><img src="/images/git01/git10.png"><br><img src="/images/git01/git11.png"><br><img src="/images/git01/git12.png"></p>
-<blockquote>
-<p>操作過一次流程，我們就瞭解<br><code>$ git init</code> 建立工作目錄<br><code>$ git add .</code> 把工作目錄的檔案加入索引<br><code> $ git commit -m &#39;&#39;</code> 將索引的檔案提交至本地數據庫<br> <code>$ git clone &#39;URL&#39;</code> 連接至遠端數據庫<br> <code>$ git push</code>  本地端數據庫上傳至雲端數據庫</p>
-</blockquote>
-<p><img src="/images/git01/git13.png"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200811/17504/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Jason06286">
-      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JasonCodingBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/20200811/17504/" class="post-title-link" itemprop="url">Hexo 基礎設定</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-11 12:33:55" itemprop="dateCreated datePublished" datetime="2020-08-11T12:33:55+08:00">2020-08-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-13 14:24:39" itemprop="dateModified" datetime="2020-08-13T14:24:39+08:00">2020-08-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Hexo-基礎設定"><a href="#Hexo-基礎設定" class="headerlink" title="Hexo 基礎設定"></a>Hexo 基礎設定</h1><h2 id="設定網站名稱、及作者名稱"><a href="#設定網站名稱、及作者名稱" class="headerlink" title="設定網站名稱、及作者名稱"></a>設定網站名稱、及作者名稱</h2><p>開啟目錄資料夾中的 <code>_config.yml</code>搜尋<code>site</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: JasonCodingBlog &#x2F;&#x2F;網站名稱</span><br><span class="line">subtitle: &#39;Coding Road&#39; &#x2F;&#x2F;副標題</span><br><span class="line">description: &#39;不要等待運氣來臨，應該主動去努力掌握知識。&#39; &#x2F;&#x2F;網站敘述</span><br><span class="line">keywords: &#x2F;&#x2F;關鍵字</span><br><span class="line">author: Jason06286 &#x2F;&#x2F;作者名稱</span><br><span class="line">language: zh-tw &#x2F;&#x2F;語系</span><br><span class="line">timezone: &#39;&#39;</span><br><span class="line"></span><br><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &#39;http:&#x2F;&#x2F;yoursite.com&#x2F;child&#39; and root as &#39;&#x2F;child&#x2F;&#39;</span><br><span class="line">url: https:&#x2F;&#x2F;jason06286.github.io&#x2F; &#x2F;&#x2F;輸入您的網站URL</span><br><span class="line">root: &#x2F;</span><br><span class="line">permalink: :year:month:day&#x2F;:abbrlink&#x2F;</span><br><span class="line">permalink_defaults:</span><br><span class="line">pretty_urls:</span><br><span class="line">  trailing_index: true # Set to false to remove trailing &#39;index.html&#39; from permalinks</span><br><span class="line">  trailing_html: true # Set to false to remove trailing &#39;.html&#39; from permalinks</span><br></pre></td></tr></table></figure>
-<h2 id="設定主題"><a href="#設定主題" class="headerlink" title="設定主題"></a>設定主題</h2><p>下載 themes 並解壓縮到資料夾內的 themes 資料夾內，<br>開啟目錄資料夾中的 <code>_config.yml</code>搜尋<code>theme</code><br><img src="/images/hexoset/hexoset1.png"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https:&#x2F;&#x2F;hexo.io&#x2F;plugins&#x2F;</span><br><span class="line">## Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F;</span><br><span class="line">theme: hexo-theme-next-master &#x2F;&#x2F;更改成你所下載的主題名稱</span><br></pre></td></tr></table></figure>
-<h2 id="Next"><a href="#Next" class="headerlink" title="Next"></a>Next</h2><h3 id="加入-Google-Analytics"><a href="#加入-Google-Analytics" class="headerlink" title="加入 Google Analytics"></a>加入 Google Analytics</h3><p>這邊使用 NexT 7.8.0 模板作舉例。<br>進入主題 (Next) 中尋找 <code>_config.yml</code> 檔案，搜尋<code>Google Analytics</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">google_analytics:</span><br><span class="line">  tracking_id: </span><br><span class="line">  only_pageview: false</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">google_analytics:</span><br><span class="line">  tracking_id: UA-XXXXXX-1 &#x2F;&#x2F;UAID追蹤碼</span><br><span class="line">  only_pageview: false</span><br></pre></td></tr></table></figure>
-<h3 id="更改-Next-主題樣式"><a href="#更改-Next-主題樣式" class="headerlink" title="更改 Next 主題樣式"></a>更改 Next 主題樣式</h3><p>進入主題 (Next) 中尋找 <code>_config.yml</code> 檔案，搜尋<code>scheme</code><br>想要使用哪一個，打開註解即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Schemes</span><br><span class="line"># scheme: Muse</span><br><span class="line"># scheme: Mist</span><br><span class="line"># scheme: Pisces</span><br><span class="line">scheme: Gemini </span><br></pre></td></tr></table></figure>
-<h3 id="設置側邊欄"><a href="#設置側邊欄" class="headerlink" title="設置側邊欄"></a>設置側邊欄</h3><p>進入主題 (Next) 中尋找 <code>_config.yml</code> 檔案，搜尋<code>menu</code>，<br>想要使用哪一個，打開註解即可，若<code>tags</code>、<code>categories</code>跳出 404，<br>請參照此<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/29017171">解決辦法</a>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: &#x2F; || fa fa-home</span><br><span class="line">  # about: &#x2F;about&#x2F; || fa fa-user</span><br><span class="line">  tags: &#x2F;tags&#x2F; || fa fa-tags</span><br><span class="line">  categories: &#x2F;categories&#x2F; || fa fa-th</span><br><span class="line">  archives: &#x2F;archives&#x2F; || fa fa-archive</span><br><span class="line">  # schedule: &#x2F;schedule&#x2F; || fa fa-calendar</span><br><span class="line">  # sitemap: &#x2F;sitemap.xml || fa fa-sitemap</span><br><span class="line">  #commonweal: &#x2F;404&#x2F; || fa fa-heartbeat</span><br></pre></td></tr></table></figure>
-<h3 id="開啟-Social-Media"><a href="#開啟-Social-Media" class="headerlink" title="開啟 Social Media"></a>開啟 Social Media</h3><p>進入主題 (Next) 中尋找 <code>_config.yml</code> 檔案，搜尋<code>menu</code>，<br>想要使用哪一個，打開註解即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">social:</span><br><span class="line">  GitHub: https:&#x2F;&#x2F;github.com&#x2F;jason06286 || fab fa-github</span><br><span class="line">  E-Mail: mailto:dj4871114@gmail.com || fa fa-envelope</span><br><span class="line">  #Weibo: https:&#x2F;&#x2F;weibo.com&#x2F;yourname || fab fa-weibo</span><br><span class="line">  #Google: https:&#x2F;&#x2F;plus.google.com&#x2F;yourname || fab fa-google</span><br><span class="line">  #Twitter: https:&#x2F;&#x2F;twitter.com&#x2F;yourname || fab fa-twitter</span><br><span class="line">  FB Page: https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100000248997692 || fab fa-facebook</span><br><span class="line">  #StackOverflow: https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname || fab fa-stack-overflow</span><br><span class="line">  #YouTube: https:&#x2F;&#x2F;youtube.com&#x2F;yourname || fab fa-youtube</span><br><span class="line">  #Instagram: https:&#x2F;&#x2F;instagram.com&#x2F;yourname || fab fa-instagram</span><br><span class="line">  #Skype: skype:yourname?call|chat || fab fa-skype</span><br></pre></td></tr></table></figure>
-<h3 id="開啟-Gitalk-留言版"><a href="#開啟-Gitalk-留言版" class="headerlink" title="開啟 Gitalk 留言版"></a>開啟 Gitalk 留言版</h3><h4 id="建立-GitHub-OAuth-APP"><a href="#建立-GitHub-OAuth-APP" class="headerlink" title="建立 GitHub OAuth APP"></a>建立 GitHub OAuth APP</h4><p>由於要使用 Gitalk 必須先有 GitHub OAuth，首先開啟 GitHub → Setting<br><img src="/images/hexoset/hexoset2.png"><br>接下來選擇 Developer settings<br><img src="/images/hexoset/hexoset3.png"><br>然後點 OAuth Apps ，新增 New OAuth Apps<br><img src="/images/hexoset/hexoset4.png"><br>接下來依照欄位填寫即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Application name - 應用程式名稱</span><br><span class="line">Homepage URL - 應用程式網域 → 部落格網址</span><br><span class="line">Application description - 應用程式描述</span><br><span class="line">Authorization callback URL - 授權回應網址 → 部落格網址</span><br></pre></td></tr></table></figure>
-<p><img src="/images/hexoset/hexoset5.png"><br>申請完之後，你會獲得兩組 ID (Client ID、Client Secret)<br><img src="/images/hexoset/hexoset6.png"></p>
-<h4 id="Gitalk"><a href="#Gitalk" class="headerlink" title="Gitalk"></a>Gitalk</h4><p>進入主題 (Next) 中尋找 <code>_config.yml</code> 檔案，搜尋<code>Gitalk</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">gitalk:</span><br><span class="line">  enable: true</span><br><span class="line">  github_id:  &#x2F;&#x2F;GitHub 作者帳號</span><br><span class="line">  repo: jason06286.github.io &#x2F;&#x2F;你的 Repo 名稱，通常就是網域</span><br><span class="line">  client_id: xxxxxxxx &#x2F;&#x2F;剛剛申請的 Client ID</span><br><span class="line">  client_secret: xxxxxxxx &#x2F;&#x2F;剛剛申請的 Client Secret</span><br><span class="line">  admin_user: jason06286 &#x2F;&#x2F;管理者的帳號</span><br><span class="line">  distraction_free_mode: true &#x2F;&#x2F;無干擾模式</span><br><span class="line">  language: zh-TW &#x2F;&#x2F;語系</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200810/53228/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Jason06286">
-      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JasonCodingBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/20200810/53228/" class="post-title-link" itemprop="url">如何利用Hexo建立一個Blog</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-10 15:59:11" itemprop="dateCreated datePublished" datetime="2020-08-10T15:59:11+08:00">2020-08-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-13 14:24:58" itemprop="dateModified" datetime="2020-08-13T14:24:58+08:00">2020-08-13</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="為什麼要建立-Hexo-部落格"><a href="#為什麼要建立-Hexo-部落格" class="headerlink" title="為什麼要建立 Hexo 部落格"></a>為什麼要建立 Hexo 部落格</h1><p>從今年開始學習前端技術，不知不覺也過了半年了，覺得自己的技術有所成長，<br>可以藉由寫文章幫助大家並整合自己的技術。平台這麼多，為何我會選擇 Hexo ？</p>
-<p>因為 Hexo 是要用指令來開發，也必須配合 Git 做使用，，是不是摸蜊仔兼洗褲呢！</p>
-<p> Hexo 是使用 Ｍarkdown 撰寫格式，也需要熟悉 Git 指令還有一點 npm 的知識，<br> 可以參考下方連結教學。</p>
-<p><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10203758">Ｍarkdown</a><br><a target="_blank" rel="noopener" href="https://w3c.hexschool.com/git/cfdbd310">Git</a><br><a target="_blank" rel="noopener" href="https://hsiangfeng.github.io/nodejs/20190626/1317979814/">npm </a></p>
-<hr>
-<h2 id="建立-Hexo-部落格"><a href="#建立-Hexo-部落格" class="headerlink" title="建立 Hexo 部落格"></a>建立 Hexo 部落格</h2><h3 id="版本與環境"><a href="#版本與環境" class="headerlink" title="版本與環境"></a>版本與環境</h3><p>作業系統： macOs</p>
-<p>Nodejs:：v12.18.3 LTS</p>
-<p>IDE：VS Code</p>
-<h3 id="本文環境"><a href="#本文環境" class="headerlink" title="本文環境"></a>本文環境</h3><h4 id="Hexo-版本"><a href="#Hexo-版本" class="headerlink" title="Hexo 版本"></a>Hexo 版本</h4><p>hexo: 5.0.0</p>
-<h2 id="hexo-cli-4-1-0"><a href="#hexo-cli-4-1-0" class="headerlink" title="hexo-cli: 4.1.0"></a>hexo-cli: 4.1.0</h2><h2 id="從-GitHub-建立新的數據庫-Creat-a-new-Repository"><a href="#從-GitHub-建立新的數據庫-Creat-a-new-Repository" class="headerlink" title="從 GitHub 建立新的數據庫 (Creat a new Repository)"></a>從 GitHub 建立新的數據庫 (Creat a new Repository)</h2><p><img src="/images/hexoblog1.png"></p>
-<ul>
-<li>名稱務必要謹慎設定，因為之後就無法更改，若想要修改只能重新建立數據庫，記得後面的 github.io 要打一樣的。</li>
-<li>下方的權限直接用 Public (公開) 即可，若一開始還不想公開就選擇 Private (私人的)。</li>
-<li>其他不用更動，直接選擇最下方的綠色按鈕 (Create repostory) 建立數據庫<br><img src="/images/hexoblog2.png"></li>
-</ul>
-<hr>
-<h2 id="安裝-Hexo"><a href="#安裝-Hexo" class="headerlink" title="安裝 Hexo"></a>安裝 Hexo</h2><p>使用指令安裝 Hexo，開啟終端機，輸入以下指令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<p>指令說明：透過 npm 在 全域 (-g) 下安裝 Hexo-Cli</p>
-<p>可以透過以下指令，確認是否安裝成功</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-<p><img src="/images/hexoblog3.png"></p>
-<h3 id="建立-Hexo"><a href="#建立-Hexo" class="headerlink" title="建立 Hexo"></a>建立 Hexo</h3><p>在要存取的硬碟中開啟一個新資料夾，並自訂名稱 (建議用英文)，之後的資料就會在這個資料夾內，並輸入以下指令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init projectname</span><br></pre></td></tr></table></figure>
-<ul>
-<li>projectname 改成自己定義的名稱，建議用英文，安裝完成後如下圖：<br><img src="/images/hexoblog4.png"></li>
-</ul>
-<hr>
-<h3 id="進入-Hexo"><a href="#進入-Hexo" class="headerlink" title="進入 Hexo"></a>進入 Hexo</h3><p>在終端機輸入：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd projectname</span><br></pre></td></tr></table></figure>
-<ul>
-<li>projectname 為自定義名稱<h3 id="安裝相關套件"><a href="#安裝相關套件" class="headerlink" title="安裝相關套件"></a>安裝相關套件</h3>由於建立完畢的 Hexo 還必須安裝 npm 相關套件，所以必須在這個目錄下輸入：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure></li>
-<li>指令說明：將 package.json 相依套件下載下來</li>
-</ul>
-<hr>
-<h3 id="啟動-Hexo"><a href="#啟動-Hexo" class="headerlink" title="啟動 Hexo"></a>啟動 Hexo</h3><p>完成上方內容後再輸入下方指令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<p><img src="/images/hexoblog5.png"><br><img src="/images/hexoblog6.png"></p>
-<ul>
-<li>就會產生一個本地端 4000的網頁<h2 id="將資料上傳至-GitHub"><a href="#將資料上傳至-GitHub" class="headerlink" title="將資料上傳至 GitHub"></a>將資料上傳至 GitHub</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">git init &#x2F;&#x2F;創建一個 git 初始檔</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin https:&#x2F;&#x2F;github.com&#x2F;jason06286&#x2F;1234.git &#x2F;&#x2F;創建一個遠端資料庫</span><br><span class="line">git push -u origin master &#x2F;&#x2F; 將資料上傳至遠端 master 分支</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<img src="/images/hexoblog7.png"><h3 id="部署-GitHub"><a href="#部署-GitHub" class="headerlink" title="部署 GitHub"></a>部署 GitHub</h3></li>
-</ul>
-<p>需要安裝一個 Hexo 沒有安裝的插件</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>修改 _config.yml 中的 Depolyment 如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git &#x2F;&#x2F; 模式</span><br><span class="line">  repo: https:&#x2F;&#x2F;github.com&#x2F;yourGithub &#x2F;yourGithubName.github.io.git &#x2F;&#x2F; 自己 GitHub repos 連結</span><br><span class="line">  branch: master &#x2F;&#x2F; 分支</span><br></pre></td></tr></table></figure>
-<p>修改完後輸入下方指令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g d</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<ul>
-<li>指令說明：g →生成靜態頁面、d →部屬<h2 id="其他指令"><a href="#其他指令" class="headerlink" title="其他指令"></a>其他指令</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;title&quot;</span><br></pre></td></tr></table></figure></li>
-<li>建立新文章<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure></li>
-<li>s →啟動伺服器 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g d</span><br></pre></td></tr></table></figure></li>
-<li>g →生成靜態頁面 d →部屬模式 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br></pre></td></tr></table></figure></li>
-<li>刪除已生成的靜態頁面及快取檔案<h3 id="刪除指定文章"><a href="#刪除指定文章" class="headerlink" title="刪除指定文章"></a>刪除指定文章</h3>在本地端 source 資料夾，把指定的 md. 檔案刪除，在重新佈署即可，指令為：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g d</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<blockquote>
-<p>參考文章：<a target="_blank" rel="noopener" href="https://hsiangfeng.github.io/hexo/20190411/932826160/">https://hsiangfeng.github.io/hexo/20190411/932826160/</a><br>參考文章：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=jOJI9ekTzK8&amp;t=3809s">https://www.youtube.com/watch?v=jOJI9ekTzK8&amp;t=3809s</a></p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200808/16107/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Jason06286">
-      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JasonCodingBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/20200808/16107/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-08 20:17:16" itemprop="dateCreated datePublished" datetime="2020-08-08T20:17:16+08:00">2020-08-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-08-09 16:10:58" itemprop="dateModified" datetime="2020-08-09T16:10:58+08:00">2020-08-09</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+  </nav>
 
 
 
@@ -983,22 +1112,19 @@
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">8</span>
+          <a href="/archives">
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-          
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-          
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -1081,6 +1207,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
