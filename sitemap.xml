@@ -179,6 +179,13 @@
   </url>
   
   <url>
+    <loc>https://jason06286.github.io/tags/Git/</loc>
+    <lastmod>2020-12-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://jason06286.github.io/tags/JavaScript/</loc>
     <lastmod>2020-12-25</lastmod>
     <changefreq>daily</changefreq>
@@ -213,17 +220,17 @@
     <priority>0.6</priority>
   </url>
   
+
+  
   <url>
-    <loc>https://jason06286.github.io/tags/Git/</loc>
+    <loc>https://jason06286.github.io/categories/hexo/</loc>
     <lastmod>2020-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
-
-  
   <url>
-    <loc>https://jason06286.github.io/categories/hexo/</loc>
+    <loc>https://jason06286.github.io/categories/Git/</loc>
     <lastmod>2020-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -238,13 +245,6 @@
   
   <url>
     <loc>https://jason06286.github.io/categories/vue/</loc>
-    <lastmod>2020-12-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jason06286.github.io/categories/Git/</loc>
     <lastmod>2020-12-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
