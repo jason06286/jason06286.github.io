@@ -2,107 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://jason06286.github.io/20200908/23984/</loc>
+    <loc>https://jason06286.github.io/20210113/17681/</loc>
     
-    <lastmod>2020-12-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jason06286.github.io/20200903/36391/</loc>
-    
-    <lastmod>2020-12-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jason06286.github.io/20200901/8450/</loc>
-    
-    <lastmod>2020-12-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jason06286.github.io/20200821/17906/</loc>
-    
-    <lastmod>2020-12-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jason06286.github.io/20200819/44267/</loc>
-    
-    <lastmod>2020-12-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jason06286.github.io/20200818/60230/</loc>
-    
-    <lastmod>2020-12-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jason06286.github.io/20200817/41868/</loc>
-    
-    <lastmod>2020-12-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jason06286.github.io/20200814/64403/</loc>
-    
-    <lastmod>2020-12-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jason06286.github.io/20200813/54502/</loc>
-    
-    <lastmod>2020-12-24</lastmod>
+    <lastmod>2021-01-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://jason06286.github.io/20200813/34258/</loc>
     
-    <lastmod>2020-12-24</lastmod>
+    <lastmod>2020-08-13</lastmod>
     
   </url>
   
   <url>
-    <loc>https://jason06286.github.io/20200811/38287/</loc>
+    <loc>https://jason06286.github.io/20200813/54502/</loc>
     
-    <lastmod>2020-12-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jason06286.github.io/20200811/17504/</loc>
-    
-    <lastmod>2020-12-24</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://jason06286.github.io/20200811/33161/</loc>
-    
-    <lastmod>2020-12-24</lastmod>
+    <lastmod>2020-08-13</lastmod>
     
   </url>
   
   <url>
     <loc>https://jason06286.github.io/20200810/53228/</loc>
     
-    <lastmod>2020-12-24</lastmod>
+    <lastmod>2020-08-13</lastmod>
     
   </url>
   
   <url>
-    <loc>https://jason06286.github.io/20201224/54867/</loc>
+    <loc>https://jason06286.github.io/20200811/17504/</loc>
     
-    <lastmod>2020-12-24</lastmod>
+    <lastmod>2020-08-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jason06286.github.io/20200811/33161/</loc>
+    
+    <lastmod>2020-08-13</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://jason06286.github.io/20200811/38287/</loc>
+    
+    <lastmod>2020-08-13</lastmod>
     
   </url>
   
@@ -165,7 +109,7 @@
 
   <url>
     <loc>https://jason06286.github.io/</loc>
-    <lastmod>2020-12-25</lastmod>
+    <lastmod>2021-01-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -173,49 +117,21 @@
   
   <url>
     <loc>https://jason06286.github.io/tags/Hexo/</loc>
-    <lastmod>2020-12-25</lastmod>
+    <lastmod>2021-01-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jason06286.github.io/tags/Git/</loc>
-    <lastmod>2020-12-25</lastmod>
+    <lastmod>2021-01-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jason06286.github.io/tags/JavaScript/</loc>
-    <lastmod>2020-12-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jason06286.github.io/tags/XMLHttpRequest/</loc>
-    <lastmod>2020-12-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jason06286.github.io/tags/CSS/</loc>
-    <lastmod>2020-12-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jason06286.github.io/tags/Datepicker/</loc>
-    <lastmod>2020-12-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jason06286.github.io/tags/Vue/</loc>
-    <lastmod>2020-12-25</lastmod>
+    <lastmod>2021-01-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -224,28 +140,21 @@
   
   <url>
     <loc>https://jason06286.github.io/categories/hexo/</loc>
-    <lastmod>2020-12-25</lastmod>
+    <lastmod>2021-01-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jason06286.github.io/categories/Git/</loc>
-    <lastmod>2020-12-25</lastmod>
+    <lastmod>2021-01-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://jason06286.github.io/categories/javascript/</loc>
-    <lastmod>2020-12-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://jason06286.github.io/categories/vue/</loc>
-    <lastmod>2020-12-25</lastmod>
+    <lastmod>2021-01-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
