@@ -578,4 +578,20 @@
         <tag>LeetCode</tag>
       </tags>
   </entry>
+  <entry>
+    <title>LeetCode 1108. Defanging an IP Address</title>
+    <url>/20210118/16839/</url>
+    <content><![CDATA[<h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: address &#x3D; &quot;1.1.1.1&quot;</span><br><span class="line">Output: &quot;1[.]1[.]1[.]1&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="解法思維"><a href="#解法思維" class="headerlink" title="解法思維"></a>解法思維</h2><p>將字串分割<code>split()</code> 再加回去<code>join()</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var defangIPaddr &#x3D; address&#x3D;&gt; &#123; return address.split(&#39;.&#39;).join(&#39;[.]&#39;)&#125;;</span><br></pre></td></tr></table></figure>
+<p><code>splice()</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var defangIPaddr &#x3D; address&#x3D;&gt; &#123;return address.replace(&#x2F;[.]&#x2F;g,&#39;[.]&#39;)&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
 </search>
