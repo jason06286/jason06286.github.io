@@ -594,4 +594,23 @@
         <tag>LeetCode</tag>
       </tags>
   </entry>
+  <entry>
+    <title>LeetCode 1512. Number of Good Pairs</title>
+    <url>/20210120/5172/</url>
+    <content><![CDATA[<h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nums &#x3D; [1,2,3,1,1,3]</span><br><span class="line">Output: 4</span><br><span class="line">Explanation: There are 4 good pairs (0,3), (0,4), (3,4), (2,5) 0-indexed.</span><br></pre></td></tr></table></figure>
+<h2 id="解法思維"><a href="#解法思維" class="headerlink" title="解法思維"></a>解法思維</h2><p>想到跑雙迴圈判斷</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var numIdenticalPairs &#x3D; function(nums) &#123;</span><br><span class="line">    let counter &#x3D; 0;</span><br><span class="line">    for (let i &#x3D; 0; i &lt; nums.length; i++) &#123;</span><br><span class="line">        for (let j &#x3D; i+1; j &lt; nums.length; j++) &#123;</span><br><span class="line">            if(nums[i]&#x3D;&#x3D;&#x3D;nums[j])&#123;</span><br><span class="line">                counter++</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return counter</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>利用<code>for of</code> </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var numIdenticalPairs &#x3D; function(nums) &#123;</span><br><span class="line">    let obj &#x3D; &#123;&#125;;</span><br><span class="line">    let counter &#x3D; 0;</span><br><span class="line"></span><br><span class="line">    for (val of nums) &#123;</span><br><span class="line">        if (obj[val]) &#123;</span><br><span class="line">            counter +&#x3D; obj[val];</span><br><span class="line">            obj[val]++;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            obj[val] &#x3D; 1;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    console.log(obj);</span><br><span class="line">    return counter;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://kanboo.github.io/2018/01/30/JS-for-of-forin/">JS-for…in與for…of的差別</a></p>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
 </search>
