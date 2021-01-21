@@ -613,4 +613,22 @@
         <tag>LeetCode</tag>
       </tags>
   </entry>
+  <entry>
+    <title>LeetCode 771. Jewels and Stones</title>
+    <url>/20210121/50087/</url>
+    <content><![CDATA[<h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: jewels &#x3D; &quot;aA&quot;, stones &#x3D; &quot;aAAbbbb&quot;</span><br><span class="line">Output: 3</span><br></pre></td></tr></table></figure>
+<h2 id="解法思維"><a href="#解法思維" class="headerlink" title="解法思維"></a>解法思維</h2><p>跑迴圈比對</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var numJewelsInStones &#x3D; function(jewels, stones) &#123;</span><br><span class="line">            let c&#x3D;0</span><br><span class="line">            for (const jew of jewels) &#123;</span><br><span class="line">                for (const ston of stones) &#123;</span><br><span class="line">                    if(jew&#x3D;&#x3D;ston)&#123;</span><br><span class="line">                        c++</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            return c</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>先解構再用<code>filter()</code>篩選</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var numJewelsInStones &#x3D; function(jewels, stones) &#123;</span><br><span class="line">    let s&#x3D;[...stones].filter((item)&#x3D;&gt;jewels.includes(item))</span><br><span class="line">    return s.length</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
 </search>
