@@ -197,6 +197,163 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20210113/17681/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Jason06286">
+      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JasonCodingBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/20210113/17681/" class="post-title-link" itemprop="url">JS new Date() JS地下城 4F 時區 </a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-01-13 18:43:17 / Modified: 20:01:08" itemprop="dateCreated datePublished" datetime="2021-01-13T18:43:17+08:00">2021-01-13</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <iframe height="488" style="width: 100%;" scrolling="no" title="新手 JS 地下城-4F" src="https://codepen.io/jasonuse/embed/BaLqMed?height=488&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/jasonuse/pen/BaLqMed'>新手 JS 地下城-4F</a> by 曾慶榮
+  (<a target="_blank" rel="noopener" href='https://codepen.io/jasonuse'>@jasonuse</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+<h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><p>製作一個顯示各個時區的時鐘</p>
+<h2 id="攻略"><a href="#攻略" class="headerlink" title="攻略"></a>攻略</h2><ul>
+<li>將時區轉成<code>timestamp</code></li>
+<li>在依各時區做計算，再轉回需要的格式</li>
+<li>利用<code>setInterval()</code>達到每秒更新<h3 id="將時區轉換成timestamp"><a href="#將時區轉換成timestamp" class="headerlink" title="將時區轉換成timestamp"></a>將時區轉換成<code>timestamp</code></h3>利用<code>new Date()</code>宣告一個時間物件，在轉換成時間戳<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let d &#x3D;new Date()</span><br><span class="line">&#x2F;&#x2F; 當前時區的時間</span><br><span class="line">&#x2F;&#x2F; Wed Jan 13 2021 19:05:13 GMT+0800 (台北標準時間)</span><br><span class="line"></span><br><span class="line">new Date().valueOf()</span><br><span class="line">&#x2F;&#x2F;這裡的時間顯示至毫秒</span><br><span class="line">&#x2F;&#x2F;1610536513697</span><br><span class="line"></span><br><span class="line">new Date(1610536513697)</span><br><span class="line">&#x2F;&#x2F; Wed Jan 13 2021 19:05:13 GMT+0800 (台北標準時間)</span><br></pre></td></tr></table></figure>
+<h3 id="各時區計算"><a href="#各時區計算" class="headerlink" title="各時區計算"></a>各時區計算</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 因為 GMT+0800 (台北標準時間) 代表 台北比格林威治時間快 8 小時</span><br><span class="line">&#x2F;&#x2F; GMT-0500 (紐約標準時間) 代表 紐約比格林威治時間慢 5 小時</span><br><span class="line">let localTime&#x3D;new Date(timestamp + (timeZone-8)*60*60*1000)</span><br><span class="line">&#x2F;&#x2F; 因為 timestamp 顯示為毫秒，所以要乘 1000 轉換為秒，</span><br><span class="line">&#x2F;&#x2F; 在乘 60 轉換為分，在乘 60 轉換為小時</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="toLocaleString-NaN"><a href="#toLocaleString-NaN" class="headerlink" title="toLocaleString()"></a>toLocaleString()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;toLocaleString(&#39;語系&#39;,自由參數)</span><br><span class="line">new Date().toLocaleString(&#39;ko-KR&#39;, &#123; timeZone: &#39;UTC&#39; &#125;);</span><br><span class="line">&#x2F;&#x2F; &quot;2021. 1. 13. 오전 11:35:04&quot;</span><br></pre></td></tr></table></figure>
+最後附上<a target="_blank" rel="noopener" href="https://codepen.io/jasonuse/pen/BaLqMed?editors=0010">程式碼</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20201224/54867/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Jason06286">
+      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JasonCodingBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/20201224/54867/" class="post-title-link" itemprop="url">JS地下城-Lv3計算機 </a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-12-24 13:21:31 / Modified: 14:43:14" itemprop="dateCreated datePublished" datetime="2020-12-24T13:21:31+08:00">2020-12-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>要求：製作一個計算機<br>攻略：判斷輸入的字元為何，以及如何計算算式<br><img src="/images/js02/js01.png"></p>
+<hr>
+<h2 id="HTML-結構"><a href="#HTML-結構" class="headerlink" title="HTML 結構"></a>HTML 結構</h2><p>個人習慣先把版型切好，在撰寫程式塞入資料，之前習慣用<code>class 名稱</code> 來挖 <code>js DOM</code>，<br>這次改用<code>屬性 []</code>，使得程式碼容易維護查找，<br>所以將計算機結構 分為 數字、計算符號、歸零鍵、刪除鍵、等於鍵、目前紀錄、過去紀錄</p>
+<h2 id="JS-結構"><a href="#JS-結構" class="headerlink" title="JS 結構"></a>JS 結構</h2><ul>
+<li>利用<code>toString()</code>轉為字串，再用<code>parseFloat()</code>轉為數字計算，並搭配<code>isNaN()</code>判斷</li>
+<li><code>toLocaleString()</code>能將劃分三位數</li>
+<li>最後是 <code>Class</code> 把功能物件化。</li>
+</ul>
+<p>最後附上<a target="_blank" rel="noopener" href="https://codepen.io/jasonuse/pen/XWjeQMp">程式碼連結</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
     <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200908/23984/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -885,175 +1042,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200813/34258/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Jason06286">
-      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JasonCodingBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/20200813/34258/" class="post-title-link" itemprop="url">JS 筆記 Arrow Function 箭頭函式</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-13 15:11:07" itemprop="dateCreated datePublished" datetime="2020-08-13T15:11:07+08:00">2020-08-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-24 18:42:57" itemprop="dateModified" datetime="2020-12-24T18:42:57+08:00">2020-12-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="/images/js01/js5.png"></p>
-<h2 id="箭頭函式（Arrow-Function）"><a href="#箭頭函式（Arrow-Function）" class="headerlink" title="箭頭函式（Arrow Function）"></a>箭頭函式（Arrow Function）</h2><p>ES6 增加了箭頭函式使我們的程式碼更簡潔</p>
-<blockquote>
-<p>去掉 <code>function</code> 加入 <code>=&gt;</code><br>只有一個參數 <code>（）</code>可加可不加，兩個以上一定要加 <code>（params,params2）</code><br>箭頭函式 <code>this</code> 指向外層</p>
-</blockquote>
-<h3 id="函式比較"><a href="#函式比較" class="headerlink" title="函式比較"></a>函式比較</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; ES5</span><br><span class="line">const numbers &#x3D;[2,3,4];</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map(function(number)&#123;</span><br><span class="line">    return number * number;</span><br><span class="line">&#125;);</span><br><span class="line">console.log(double)</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; ES6</span><br><span class="line">const numbers &#x3D;[2,3,4];</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map((number)&#x3D;&gt;&#123;</span><br><span class="line">    return number * number;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map(number&#x3D;&gt;&#123;</span><br><span class="line">    return number * number;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map(number&#x3D;&gt;number * number);</span><br><span class="line"></span><br><span class="line">console.log(double)</span><br></pre></td></tr></table></figure>
-<h3 id="this比較"><a href="#this比較" class="headerlink" title="this比較"></a>this比較</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; ES5</span><br><span class="line">const Jason&#x3D;&#123;</span><br><span class="line">    name:&#39;Jason&#39;,</span><br><span class="line">    hobbies:[&#39;Coding&#39;, &#39;Running&#39;, &#39;Sleeping&#39;],</span><br><span class="line">    printHobbies: function()&#123;</span><br><span class="line">        let self&#x3D;this &#x2F;&#x2F;透過宣告變數來取得外層this</span><br><span class="line">        this.hobbies.map(function (hobby) &#123;</span><br><span class="line">            console.log(this) &#x2F;&#x2F;指向window</span><br><span class="line">            console.log(&#96;$&#123;self.name&#125; loves $&#123;hobby&#125;&#96;); </span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Jason.printHobbies();</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; ES6</span><br><span class="line">const Jason&#x3D;&#123;</span><br><span class="line">    name:&#39;Jason&#39;,</span><br><span class="line">    hobbies:[&#39;Coding&#39;, &#39;Running&#39;, &#39;Sleeping&#39;],</span><br><span class="line">    printHobbies: function()&#123;</span><br><span class="line">        this.hobbies.map(hobby&#x3D;&gt; &#123;</span><br><span class="line">            console.log(&#96;$&#123;this.name&#125; loves $&#123;hobby&#125;&#96;); </span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Jason.printHobbies();</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200813/54502/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Jason06286">
-      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JasonCodingBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/20200813/54502/" class="post-title-link" itemprop="url">JS 筆記 var let const 差異</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-13 12:50:02" itemprop="dateCreated datePublished" datetime="2020-08-13T12:50:02+08:00">2020-08-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-24 18:42:57" itemprop="dateModified" datetime="2020-12-24T18:42:57+08:00">2020-12-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><img src="/images/js01/js1.jpg"><br>在 ES6 之前 JavaScript 沒有區塊域的概念，因此經常使用 <code>var</code> 來宣告變數，<br>而造成區域變數覆蓋到全域變數，因此才有 <code>let</code>、<code>const</code> 來避免此狀況產生。</p>
-<h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><p>用法就跟 <code>var</code> 沒有差別，但作用域只在括號內，讓我們看個經典例子來瞭解</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for (var i &#x3D; 0; i &lt; 3; i++) &#123;</span><br><span class="line">  console.log(i);</span><br><span class="line">  setTimeout(function () &#123;</span><br><span class="line">    console.log(&#39;這執行第&#39; + i + &#39;次&#39;);</span><br><span class="line">  &#125;, 10);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/js01/js2.png"><br>我們會發現出來的結果是 <code>這執行第3次</code>，而不是我們要的結果，<br>因為 <code>var</code> 宣告 <code>i</code> 會變成全域變數，造成 <code>for</code> 迴圈累加，<br>在 <code>setTimeout</code> 實際執行時只會拿到 3 這個數字。<br>此時在查找 <code>i</code>，發現 <code>i＝3</code>，疑～🧐 不是只會作用在函式裡嗎？<br>怎麼 window 也讀得到？</p>
-<h3 id="用-let-改寫"><a href="#用-let-改寫" class="headerlink" title="用 let 改寫"></a>用 <code>let</code> 改寫</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for (let i &#x3D; 0; i &lt; 10; i++) &#123;</span><br><span class="line">  console.log(i);</span><br><span class="line">  setTimeout(function () &#123;</span><br><span class="line">    console.log(&#39;這執行第&#39; + i + &#39;次&#39;);</span><br><span class="line">  &#125;, 10);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/js01/js3.png"><br>我們會發現結果會依序跑出，且查找<code>i</code>，<br>顯示 <code>Uncaught ReferenceError: i is not defined</code>，<br><code>i</code> 變數未被宣告，因為 <code>let</code> 作用域只在括號內。</p>
-<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>是宣吿一個常數，且必須一定要有值，不可被更改。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const a&#x3D;1;</span><br><span class="line">let  a&#x3D;2;</span><br><span class="line">a&#x3D;2</span><br></pre></td></tr></table></figure>
-<p><img src="/images/js01/js4.png"></p>
-<h3 id="物件是例外"><a href="#物件是例外" class="headerlink" title="物件是例外"></a>物件是例外</h3><p>因為物件是傳址而不是傳值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const CLOTHES &#x3D;&#123;</span><br><span class="line">    color:&#39;red&#39;,</span><br><span class="line">    size:&#39;L&#39;,</span><br><span class="line">&#125;</span><br><span class="line">CLOTHES .material&#x3D;&quot;棉&quot;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>盡量少用 <code>var</code> 用 <code>let</code>、<code>const</code> 做取代<br><code>const</code> 可以宣告不太會更動的內容。ex: DOM 、物件、api<br><code>const</code> 常數可以用大寫，以利區分</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1124,18 +1112,18 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
