@@ -666,4 +666,18 @@
         <tag>LeetCode</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Leetcode 1678. Goal Parser Interpretation</title>
+    <url>/20210126/35701/</url>
+    <content><![CDATA[<h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: command &#x3D; &quot;G()(al)&quot;</span><br><span class="line">Output: &quot;Goal&quot;</span><br><span class="line">Explanation: The Goal Parser interprets the command as follows:</span><br><span class="line">G -&gt; G</span><br><span class="line">() -&gt; o</span><br><span class="line">(al) -&gt; al</span><br><span class="line">The final concatenated result is &quot;Goal&quot;.</span><br></pre></td></tr></table></figure>
+<h2 id="解法思維"><a href="#解法思維" class="headerlink" title="解法思維"></a>解法思維</h2><p>利用<code>replace()</code><a href="https://medium.com/@moojing/javascript-%E5%88%9D%E6%8E%A2regex-%E6%AD%A3%E8%A6%8F%E8%A1%A8%E9%81%94%E5%BC%8F-1da2f4d94795">正規表達式</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var interpret &#x3D;(command)&#x3D;&gt;command.replace(&#x2F;\(\)&#x2F;g,&#39;o&#39;).replace(&#x2F;\((\w)(\w)\)&#x2F;g,&quot;$1$2&quot;);</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
 </search>
