@@ -21,25 +21,20 @@
     var CONFIG = {"hostname":"jason06286.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="在 ES6 之前 JavaScript 沒有區塊域的概念，因此經常使用 var 來宣告變數，而造成區域變數覆蓋到全域變數，因此才有 let、const 來避免此狀況產生。 let用法就跟 var 沒有差別，但作用域只在括號內，讓我們看個經典例子來瞭解 123456for (var i &#x3D; 0; i &lt; 3; i++) &amp;#123;  console.log(i);  setTime">
+  <meta name="description" content="題目12345678Input: nums &#x3D; [8,1,2,2,3]Output: [4,0,1,1,3]Explanation: For nums[0]&#x3D;8 there exist four smaller numbers than it (1, 2, 2 and 3). For nums[1]&#x3D;1 does not exist any smaller numbe">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS 筆記 var let const 差異">
-<meta property="og:url" content="https://jason06286.github.io/20200813/54502/index.html">
+<meta property="og:title" content="Leetcode 1365. How Many Numbers Are Smaller Than the Current Number">
+<meta property="og:url" content="https://jason06286.github.io/20210126/2383/index.html">
 <meta property="og:site_name" content="JasonCodingBlog">
-<meta property="og:description" content="在 ES6 之前 JavaScript 沒有區塊域的概念，因此經常使用 var 來宣告變數，而造成區域變數覆蓋到全域變數，因此才有 let、const 來避免此狀況產生。 let用法就跟 var 沒有差別，但作用域只在括號內，讓我們看個經典例子來瞭解 123456for (var i &#x3D; 0; i &lt; 3; i++) &amp;#123;  console.log(i);  setTime">
+<meta property="og:description" content="題目12345678Input: nums &#x3D; [8,1,2,2,3]Output: [4,0,1,1,3]Explanation: For nums[0]&#x3D;8 there exist four smaller numbers than it (1, 2, 2 and 3). For nums[1]&#x3D;1 does not exist any smaller numbe">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://jason06286.github.io/images/js01/js1.jpg">
-<meta property="og:image" content="https://jason06286.github.io/images/js01/js2.png">
-<meta property="og:image" content="https://jason06286.github.io/images/js01/js3.png">
-<meta property="og:image" content="https://jason06286.github.io/images/js01/js4.png">
-<meta property="article:published_time" content="2020-08-13T04:50:02.000Z">
-<meta property="article:modified_time" content="2020-12-24T10:42:57.476Z">
+<meta property="article:published_time" content="2021-01-26T15:08:18.000Z">
+<meta property="article:modified_time" content="2021-01-26T15:16:36.174Z">
 <meta property="article:author" content="Jason06286">
-<meta property="article:tag" content="JavaScript">
+<meta property="article:tag" content="LeetCode">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://jason06286.github.io/images/js01/js1.jpg">
 
-<link rel="canonical" href="https://jason06286.github.io/20200813/54502/">
+<link rel="canonical" href="https://jason06286.github.io/20210126/2383/">
 
 
 <script id="page-configurations">
@@ -52,7 +47,7 @@
   };
 </script>
 
-  <title>JS 筆記 var let const 差異 | JasonCodingBlog</title>
+  <title>Leetcode 1365. How Many Numbers Are Smaller Than the Current Number | JasonCodingBlog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174935555-1"></script>
     <script>
@@ -206,7 +201,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200813/54502/">
+    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20210126/2383/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.png">
@@ -219,7 +214,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          JS 筆記 var let const 差異
+          Leetcode 1365. How Many Numbers Are Smaller Than the Current Number
         </h1>
 
         <div class="post-meta">
@@ -228,23 +223,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
+              
 
-              <time title="Created: 2020-08-13 12:50:02" itemprop="dateCreated datePublished" datetime="2020-08-13T12:50:02+08:00">2020-08-13</time>
+              <time title="Created: 2021-01-26 23:08:18 / Modified: 23:16:36" itemprop="dateCreated datePublished" datetime="2021-01-26T23:08:18+08:00">2021-01-26</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-24 18:42:57" itemprop="dateModified" datetime="2020-12-24T18:42:57+08:00">2020-12-24</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
                 </span>
             </span>
 
@@ -259,20 +248,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><img src="/images/js01/js1.jpg"><br>在 ES6 之前 JavaScript 沒有區塊域的概念，因此經常使用 <code>var</code> 來宣告變數，<br>而造成區域變數覆蓋到全域變數，因此才有 <code>let</code>、<code>const</code> 來避免此狀況產生。</p>
-<h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><p>用法就跟 <code>var</code> 沒有差別，但作用域只在括號內，讓我們看個經典例子來瞭解</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for (var i &#x3D; 0; i &lt; 3; i++) &#123;</span><br><span class="line">  console.log(i);</span><br><span class="line">  setTimeout(function () &#123;</span><br><span class="line">    console.log(&#39;這執行第&#39; + i + &#39;次&#39;);</span><br><span class="line">  &#125;, 10);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/js01/js2.png"><br>我們會發現出來的結果是 <code>這執行第3次</code>，而不是我們要的結果，<br>因為 <code>var</code> 宣告 <code>i</code> 會變成全域變數，造成 <code>for</code> 迴圈累加，<br>在 <code>setTimeout</code> 實際執行時只會拿到 3 這個數字。<br>此時在查找 <code>i</code>，發現 <code>i＝3</code>，疑～🧐 不是只會作用在函式裡嗎？<br>怎麼 window 也讀得到？</p>
-<h3 id="用-let-改寫"><a href="#用-let-改寫" class="headerlink" title="用 let 改寫"></a>用 <code>let</code> 改寫</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">for (let i &#x3D; 0; i &lt; 10; i++) &#123;</span><br><span class="line">  console.log(i);</span><br><span class="line">  setTimeout(function () &#123;</span><br><span class="line">    console.log(&#39;這執行第&#39; + i + &#39;次&#39;);</span><br><span class="line">  &#125;, 10);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/images/js01/js3.png"><br>我們會發現結果會依序跑出，且查找<code>i</code>，<br>顯示 <code>Uncaught ReferenceError: i is not defined</code>，<br><code>i</code> 變數未被宣告，因為 <code>let</code> 作用域只在括號內。</p>
-<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p>是宣吿一個常數，且必須一定要有值，不可被更改。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const a&#x3D;1;</span><br><span class="line">let  a&#x3D;2;</span><br><span class="line">a&#x3D;2</span><br></pre></td></tr></table></figure>
-<p><img src="/images/js01/js4.png"></p>
-<h3 id="物件是例外"><a href="#物件是例外" class="headerlink" title="物件是例外"></a>物件是例外</h3><p>因為物件是傳址而不是傳值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const CLOTHES &#x3D;&#123;</span><br><span class="line">    color:&#39;red&#39;,</span><br><span class="line">    size:&#39;L&#39;,</span><br><span class="line">&#125;</span><br><span class="line">CLOTHES .material&#x3D;&quot;棉&quot;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>盡量少用 <code>var</code> 用 <code>let</code>、<code>const</code> 做取代<br><code>const</code> 可以宣告不太會更動的內容。ex: DOM 、物件、api<br><code>const</code> 常數可以用大寫，以利區分</p>
-</blockquote>
+        <h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Input: nums &#x3D; [8,1,2,2,3]</span><br><span class="line">Output: [4,0,1,1,3]</span><br><span class="line">Explanation: </span><br><span class="line">For nums[0]&#x3D;8 there exist four smaller numbers than it (1, 2, 2 and 3). </span><br><span class="line">For nums[1]&#x3D;1 does not exist any smaller number than it.</span><br><span class="line">For nums[2]&#x3D;2 there exist one smaller number than it (1). </span><br><span class="line">For nums[3]&#x3D;2 there exist one smaller number than it (1). </span><br><span class="line">For nums[4]&#x3D;3 there exist three smaller numbers than it (1, 2 and 2).</span><br></pre></td></tr></table></figure>
+<h2 id="解法思維"><a href="#解法思維" class="headerlink" title="解法思維"></a>解法思維</h2><p>跑迴圈依序比大小</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">const smallerNumbersThanCurrent &#x3D; nums &#x3D;&gt; &#123;</span><br><span class="line">  let result &#x3D; [];</span><br><span class="line">  let count &#x3D; 0;</span><br><span class="line"></span><br><span class="line">  for (let i &#x3D; 0; i &lt; nums.length; i +&#x3D; 1) &#123;</span><br><span class="line">    let cv &#x3D; nums[i];</span><br><span class="line"></span><br><span class="line">    for (let j &#x3D; 0; j &lt; nums.length; j +&#x3D; 1) &#123;</span><br><span class="line">      let num &#x3D; nums[j];</span><br><span class="line"></span><br><span class="line">      if (cv &gt; num) &#123;</span><br><span class="line">        count++</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    result.push(count)</span><br><span class="line">    count &#x3D; 0;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>先用 <code>sort()</code>排序由小到大，再由<code>indexOf</code>查找位置，回傳結果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">let smallerNumbersThanCurrent &#x3D; (nums) &#x3D;&gt;&#123;</span><br><span class="line">    let tp&#x3D;Array.from(nums).sort((a,b)&#x3D;&gt;a-b)</span><br><span class="line">    let result&#x3D;nums.map(x&#x3D;&gt;tp.indexOf(x))</span><br><span class="line">    return result</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -282,7 +262,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+              <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
           </div>
 
         
@@ -291,13 +271,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/20200811/33161/" rel="prev" title="Git branch 合併 Merge Rebase">
-      <i class="fa fa-chevron-left"></i> Git branch 合併 Merge Rebase
+    <a href="/20210126/35701/" rel="prev" title="Leetcode 1678. Goal Parser Interpretation">
+      <i class="fa fa-chevron-left"></i> Leetcode 1678. Goal Parser Interpretation
     </a></div>
-      <div class="post-nav-item">
-    <a href="/20200813/34258/" rel="next" title="JS 筆記 Arrow Function 箭頭函式">
-      JS 筆記 Arrow Function 箭頭函式 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -357,7 +334,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#let"><span class="nav-number">1.</span> <span class="nav-text">let</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8-let-%E6%94%B9%E5%AF%AB"><span class="nav-number">1.1.</span> <span class="nav-text">用 let 改寫</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#const"><span class="nav-number">2.</span> <span class="nav-text">const</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%A9%E4%BB%B6%E6%98%AF%E4%BE%8B%E5%A4%96"><span class="nav-number">2.1.</span> <span class="nav-text">物件是例外</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">題目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E6%80%9D%E7%B6%AD"><span class="nav-number">2.</span> <span class="nav-text">解法思維</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -498,7 +475,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'https://jason06286.github.io',
       owner       : 'jason06286',
       admin       : ['jason06286'],
-      id          : '8d722fe361a0bb28f0c575e60dbdb955',
+      id          : 'd80f0e2c13fd07f3bcfe06b80df43773',
         language: 'zh-TW',
       distractionFreeMode: true
     });

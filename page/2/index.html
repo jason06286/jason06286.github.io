@@ -197,6 +197,78 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20210116/31616/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Jason06286">
+      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JasonCodingBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/20210116/31616/" class="post-title-link" itemprop="url">LeetCode 1480. Running Sum of 1d Array </a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-01-16 18:46:27 / Modified: 20:15:53" itemprop="dateCreated datePublished" datetime="2021-01-16T18:46:27+08:00">2021-01-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: nums &#x3D; [1,2,3,4]</span><br><span class="line">Output: [1,3,6,10]</span><br><span class="line">Explanation: Running sum is obtained as follows: [1, 1+2, 1+2+3, 1+2+3+4].</span><br></pre></td></tr></table></figure>
+<h2 id="解法思維"><a href="#解法思維" class="headerlink" title="解法思維"></a>解法思維</h2><p>用<code>foreach()</code>依序相加，再回傳</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var runningSum &#x3D; function(nums) &#123;</span><br><span class="line">    let total&#x3D;[]</span><br><span class="line">    let sum&#x3D;0</span><br><span class="line">    nums.forEach(item &#x3D;&gt; &#123;</span><br><span class="line">        sum+&#x3D;item</span><br><span class="line">        total.push(sum)</span><br><span class="line">    &#125;);</span><br><span class="line">    return total</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>用<a target="_blank" rel="noopener" href="https://w3c.hexschool.com/blog/a2cb755f">reduce()</a>依序相加，再回傳</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * @param &#123;number[]&#125; nums</span><br><span class="line"> * @return &#123;number[]&#125;</span><br><span class="line"> *&#x2F;</span><br><span class="line">var runningSum &#x3D; function(nums) &#123;</span><br><span class="line">&#x2F;*</span><br><span class="line">    The current array index is increamented by the accumlator which is the new value of arr[i]</span><br><span class="line">    </span><br><span class="line">    Example trace:</span><br><span class="line">    </span><br><span class="line">    input:</span><br><span class="line">    [1,2,3,4]</span><br><span class="line">    </span><br><span class="line">        acc i  arr                return value</span><br><span class="line">        0   0  1,2,3,4            0 + 1 &#x3D; 1</span><br><span class="line">        1   1  1,2,3,4            1 + 2 &#x3D; 3</span><br><span class="line">        3   2  1,3,3,4            3 + 3 &#x3D; 6</span><br><span class="line">end  &#x3D;&gt; 6   3  1,3,6,4            6 + 4 &#x3D; 10</span><br><span class="line">        10  4  1,3,6,10</span><br><span class="line">    </span><br><span class="line">*&#x2F;</span><br><span class="line">    nums.reduce((acc, _, i, arr) &#x3D;&gt; arr[i] +&#x3D; acc )</span><br><span class="line">    return nums</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
     <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20210116/3826/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -954,87 +1026,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200817/41868/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Jason06286">
-      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JasonCodingBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/20200817/41868/" class="post-title-link" itemprop="url">Js筆記 AJAX</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-17 14:38:12" itemprop="dateCreated datePublished" datetime="2020-08-17T14:38:12+08:00">2020-08-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-24 18:42:57" itemprop="dateModified" datetime="2020-12-24T18:42:57+08:00">2020-12-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="AJAX"><a href="#AJAX" class="headerlink" title="AJAX"></a>AJAX</h1><h2 id="XMLHttpRequest"><a href="#XMLHttpRequest" class="headerlink" title="XMLHttpRequest"></a>XMLHttpRequest</h2><h3 id="open-格式"><a href="#open-格式" class="headerlink" title="open 格式"></a>open 格式</h3><p><img src="/images/ajax/ajax1.png"></p>
-<h3 id="onlaod"><a href="#onlaod" class="headerlink" title="onlaod"></a>onlaod</h3><p>確定資料回傳，執行以下函式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function getData() &#123;</span><br><span class="line">    let xhr&#x3D;new XMLHttpRequest();</span><br><span class="line">    xhr.open(&#39;get&#39;,url,true);</span><br><span class="line">    xhr.send(null);</span><br><span class="line">    console.log(xhr.responseText)</span><br><span class="line">    xhr.onload&#x3D;function () &#123; </span><br><span class="line">        let data1 &#x3D; JSON.parse(xhr.responseText)</span><br><span class="line">        return data&#x3D;data1.ROOT.RECORD</span><br><span class="line">&#125;&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="asios"><a href="#asios" class="headerlink" title="asios"></a>asios</h2><p><img src="/images/ajax/ajax2.png"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; axios</span><br><span class="line">function getData()&#123;</span><br><span class="line">    axios.get(url)</span><br><span class="line">    .then(function (response) &#123;</span><br><span class="line">        return data&#x3D;response.data.ROOT.RECORD</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h2><p><img src="/images/ajax/ajax3.png"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">function getData() &#123;</span><br><span class="line">    $(document).ready(function () &#123;</span><br><span class="line">        $.ajax(&#123;</span><br><span class="line">            type: &quot;get&quot;,</span><br><span class="line">            url: url,</span><br><span class="line">            data: &quot;data&quot;,</span><br><span class="line">            dataType: &quot;json&quot;,</span><br><span class="line">            success: function (response) &#123;</span><br><span class="line">                return data&#x3D;response.ROOT.RECORD</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><a target="_blank" rel="noopener" href="https://codepen.io/jasonuse/pen/zYqBxzj?editors=0010">範例</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1105,7 +1096,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">28</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

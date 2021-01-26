@@ -680,4 +680,20 @@
         <tag>LeetCode</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Leetcode 1365. How Many Numbers Are Smaller Than the Current Number</title>
+    <url>/20210126/2383/</url>
+    <content><![CDATA[<h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: nums &#x3D; [8,1,2,2,3]</span><br><span class="line">Output: [4,0,1,1,3]</span><br><span class="line">Explanation: </span><br><span class="line">For nums[0]&#x3D;8 there exist four smaller numbers than it (1, 2, 2 and 3). </span><br><span class="line">For nums[1]&#x3D;1 does not exist any smaller number than it.</span><br><span class="line">For nums[2]&#x3D;2 there exist one smaller number than it (1). </span><br><span class="line">For nums[3]&#x3D;2 there exist one smaller number than it (1). </span><br><span class="line">For nums[4]&#x3D;3 there exist three smaller numbers than it (1, 2 and 2).</span><br></pre></td></tr></table></figure>
+<h2 id="解法思維"><a href="#解法思維" class="headerlink" title="解法思維"></a>解法思維</h2><p>跑迴圈依序比大小</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const smallerNumbersThanCurrent &#x3D; nums &#x3D;&gt; &#123;</span><br><span class="line">  let result &#x3D; [];</span><br><span class="line">  let count &#x3D; 0;</span><br><span class="line"></span><br><span class="line">  for (let i &#x3D; 0; i &lt; nums.length; i +&#x3D; 1) &#123;</span><br><span class="line">    let cv &#x3D; nums[i];</span><br><span class="line"></span><br><span class="line">    for (let j &#x3D; 0; j &lt; nums.length; j +&#x3D; 1) &#123;</span><br><span class="line">      let num &#x3D; nums[j];</span><br><span class="line"></span><br><span class="line">      if (cv &gt; num) &#123;</span><br><span class="line">        count++</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    result.push(count)</span><br><span class="line">    count &#x3D; 0;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  return result;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>先用 <code>sort()</code>排序由小到大，再由<code>indexOf</code>查找位置，回傳結果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">let smallerNumbersThanCurrent &#x3D; (nums) &#x3D;&gt;&#123;</span><br><span class="line">    let tp&#x3D;Array.from(nums).sort((a,b)&#x3D;&gt;a-b)</span><br><span class="line">    let result&#x3D;nums.map(x&#x3D;&gt;tp.indexOf(x))</span><br><span class="line">    return result</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
 </search>
