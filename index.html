@@ -197,6 +197,92 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20210128/8204/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Jason06286">
+      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JasonCodingBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/20210128/8204/" class="post-title-link" itemprop="url">JS地下城 6F 60秒算數遊戲</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-01-28 19:11:47 / Modified: 19:56:48" itemprop="dateCreated datePublished" datetime="2021-01-28T19:11:47+08:00">2021-01-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <iframe height="265" style="width: 100%;" scrolling="no" title="新手 JS 地下城-6F - 60秒算數遊戲" src="https://codepen.io/jasonuse/embed/mdrgwbv?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/jasonuse/pen/mdrgwbv'>新手 JS 地下城-6F - 60秒算數遊戲</a> by 曾慶榮
+  (<a target="_blank" rel="noopener" href='https://codepen.io/jasonuse'>@jasonuse</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+<h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><ul>
+<li>0<del>20 秒為 1位數計算 ，21</del>40 秒為 2 位數計算，41~60 秒為 3 位數計算，加減乘除規則請用隨機產生，不可寫死題目，60 秒內可無限次數答題。</li>
+<li>0<del>40 秒答對加一分，41</del>60 秒答對加五分，答錯扣一分，最多僅能扣到零分</li>
+<li>不可設計跳轉頁面，都得在同一頁內部切換頁面完成。<h2 id="攻略"><a href="#攻略" class="headerlink" title="攻略"></a>攻略</h2></li>
+<li>利用<code>setInterval()</code>達到每秒更新</li>
+<li>利用<code>Math.floor()</code> <code>Math.random() </code> 達成亂數規則</li>
+</ul>
+<h3 id="製作一個倒數計時器"><a href="#製作一個倒數計時器" class="headerlink" title="製作一個倒數計時器"></a>製作一個倒數計時器</h3><p>這邊踩到的雷是換轉頁面時，<code>setInterval()</code>還在執行，<br><code>clearInterval(timeId)</code>，必須要宣告個變數接<code>timeId</code>，<br>不可直接帶入，這裡卡了好久 😭😭 ，附上相關<a target="_blank" rel="noopener" href="https://kuro.tw/posts/2019/02/23/%E8%AB%87%E8%AB%87-JavaScript-%E7%9A%84-setTimeout-%E8%88%87-setInterval/">連結</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">let sec</span><br><span class="line">let timeId</span><br><span class="line"></span><br><span class="line">function getTime() &#123;</span><br><span class="line">    if(main.classList[1]&#x3D;&#x3D;&#39;d-none&#39;)return</span><br><span class="line">    if(sec&#x3D;&#x3D;0)&#123;</span><br><span class="line">        main.classList.add(&#39;d-none&#39;)</span><br><span class="line">        restart.classList.remove(&#39;d-none&#39;)</span><br><span class="line">        getStatus(main.classList[1])</span><br><span class="line">        return</span><br><span class="line">    &#125;</span><br><span class="line">    else if(sec&lt;&#x3D;10)&#123;</span><br><span class="line">        sec -&#x3D;1</span><br><span class="line">        time.textContent&#x3D;&#96;00 : 0$&#123;sec&#125;&#96;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        sec -&#x3D;1</span><br><span class="line">        time.textContent&#x3D;&#96;00 : $&#123;sec&#125;&#96;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function getStatus(status) &#123;</span><br><span class="line">    if(status!&#x3D;&#39;d-none&#39;)&#123;</span><br><span class="line">        timeId&#x3D;setInterval(getTime,1000)</span><br><span class="line">        </span><br><span class="line">    &#125;else if(status&#x3D;&#x3D;&#39;d-none&#39;)&#123;</span><br><span class="line">        clearInterval(timeId)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="製作一個亂數選擇器"><a href="#製作一個亂數選擇器" class="headerlink" title="製作一個亂數選擇器"></a>製作一個亂數選擇器</h3><p><code>Math.random()</code>會產生 0~1隨機小數，再利用<code>Math.floor()</code>取最大整數</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Math.random(); &#x2F;&#x2F; 0.23012228691419123 </span><br><span class="line">Math.random(); &#x2F;&#x2F; 0.8107096418156079</span><br><span class="line"></span><br><span class="line">Math.floor(Math.random());  &#x2F;&#x2F;回傳0</span><br><span class="line">Math.floor(0.8888888);  &#x2F;&#x2F;回傳0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>當我們把<code>Math.random()*2</code>放進<code>Math.floor()</code>中會得到 0、1 的結果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(Math.random()*2 ) &#x2F;&#x2F; 0.000...02~1.999...98</span><br><span class="line">Math.floor(Math.random()*2); &#x2F;&#x2F;回傳0或1</span><br><span class="line">Math.floor(Math.random()*5); &#x2F;&#x2F;回傳0或1或2或3或4</span><br><span class="line">Math.floor(Math.random()*50); &#x2F;&#x2F;回傳0或1或2或3...或49</span><br></pre></td></tr></table></figure>
+<p>我們來實作 min~max 之間的亂數，min 為最小值 max為最大值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function getRandom(min,max)&#123;</span><br><span class="line">    return Math.floor(Math.random()*(max-min+1))+min;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;會產生1~10之間的隨機亂數</span><br><span class="line">getRandom(1,10);</span><br><span class="line">&#x2F;&#x2F;會產生100~500之間的隨機亂數</span><br><span class="line">getRandom(100,500);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
     <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20210127/24735/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -510,7 +596,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-28 18:25:58" itemprop="dateModified" datetime="2021-01-28T18:25:58+08:00">2021-01-28</time>
+                <time title="Modified: 2021-01-28 19:25:29" itemprop="dateModified" datetime="2021-01-28T19:25:29+08:00">2021-01-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -533,7 +619,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;canvas id&#x3D;&quot;cvs&quot; width&#x3D;&quot;800&quot; height&#x3D;&quot;600&quot; style&#x3D;&quot;border: 1px solid #000000;&quot;&gt;&lt;&#x2F;canvas&gt;</span><br></pre></td></tr></table></figure>
+          <iframe height="265" style="width: 100%;" scrolling="no" title="新手 JS 地下城-7F - 畫版" src="https://codepen.io/jasonuse/embed/jOVNZgp?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/jasonuse/pen/jOVNZgp'>新手 JS 地下城-7F - 畫版</a> by 曾慶榮
+  (<a target="_blank" rel="noopener" href='https://codepen.io/jasonuse'>@jasonuse</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
+</iframe>
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;canvas id&#x3D;&quot;cvs&quot; width&#x3D;&quot;800&quot; height&#x3D;&quot;600&quot; style&#x3D;&quot;border: 1px solid #000000;&quot;&gt;&lt;&#x2F;canvas&gt;</span><br></pre></td></tr></table></figure>
 <h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><h3 id="綁定-canvas"><a href="#綁定-canvas" class="headerlink" title="綁定 canvas"></a>綁定 canvas</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">const cvs&#x3D;document.querySelector(&#39;#cvs&#39;)</span><br><span class="line">&#x2F;&#x2F; 宣告  Canvas Content Object </span><br><span class="line">getContext() 2d webgl</span><br><span class="line">&#x2F;&#x2F;       2D 畫面 3D 畫面 </span><br><span class="line">const ctx&#x3D; cvs.getContext(&#39;2d&#39;)</span><br></pre></td></tr></table></figure>
 <h3 id="Fill-填滿"><a href="#Fill-填滿" class="headerlink" title="Fill 填滿"></a>Fill 填滿</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 填滿顏色</span><br><span class="line">ctx.fillStyle&#x3D;&quot;red&quot;</span><br><span class="line">&#x2F;&#x2F; 透明度 1 為不透明 0 為完全透明</span><br><span class="line">ctx.globalAlpha&#x3D;0.5</span><br><span class="line">&#x2F;&#x2F;  fillRect(X,Y,weight,height)</span><br><span class="line">ctx.fillRect(50,50,100,100)</span><br></pre></td></tr></table></figure>
 <h3 id="Stroke-描邊"><a href="#Stroke-描邊" class="headerlink" title="Stroke 描邊"></a>Stroke 描邊</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 描邊顏色</span><br><span class="line">ctx.strokeStyle&#x3D;&#39;blue&#39;</span><br><span class="line">&#x2F;&#x2F; strokeRect(Ｘ,Ｙ,weight,height)</span><br><span class="line">ctx.strokeRect(100,100,100,100)</span><br></pre></td></tr></table></figure>
@@ -547,7 +639,6 @@
 <h3 id="畫線"><a href="#畫線" class="headerlink" title="畫線"></a>畫線</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">let painting&#x3D;false</span><br><span class="line">&#x2F;&#x2F; 按下滑鼠代表開始畫畫</span><br><span class="line">cvs.addEventListener(&#39;mousedown&#39;,startPosition)</span><br><span class="line">&#x2F;&#x2F; 放下滑鼠代表完成畫畫</span><br><span class="line">cvs.addEventListener(&#39;mouseup&#39;,finishedPosition)</span><br><span class="line">&#x2F;&#x2F; 滑鼠移動代表正在畫畫</span><br><span class="line">cvs.addEventListener(&#39;mousemove&#39;,draw) </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">function startPosition() &#123;</span><br><span class="line">painting&#x3D;true</span><br><span class="line">&#125;</span><br><span class="line">function finishedPosition(e) &#123;</span><br><span class="line">    painting&#x3D;false</span><br><span class="line">    ctx.beginPath()</span><br><span class="line">&#125;</span><br><span class="line">function draw(e) &#123;</span><br><span class="line">    &#x2F;&#x2F; 如果正在畫畫就 return</span><br><span class="line">    if(!painting)return</span><br><span class="line">    if(stroke &amp;&amp; !eraser)&#123;</span><br><span class="line">        ctx.lineWidth&#x3D;size</span><br><span class="line">        ctx.strokeStyle&#x3D;color</span><br><span class="line">        ctx.lineCap&#x3D;&#39;round&#39;</span><br><span class="line">        ctx.lineTo(e.clientX,e.clientY)</span><br><span class="line">        ctx.stroke()</span><br><span class="line">        ctx.beginPath()</span><br><span class="line">        ctx.moveTo(e.clientX,e.clientY)</span><br><span class="line">    &#125;else if(!stroke &amp;&amp; eraser)&#123;</span><br><span class="line">        ctx.lineWidth&#x3D;size</span><br><span class="line">        ctx.strokeStyle&#x3D;&#39;#E8E8E8&#39;</span><br><span class="line">        ctx.lineCap&#x3D;&#39;round&#39;</span><br><span class="line">        ctx.lineTo(e.clientX,e.clientY)</span><br><span class="line">        ctx.stroke()</span><br><span class="line">        ctx.beginPath()</span><br><span class="line">        ctx.moveTo(e.clientX,e.clientY)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Undo、Redo"><a href="#Undo、Redo" class="headerlink" title="Undo、Redo"></a>Undo、Redo</h3><p>創建一個物件，每次畫完就擷取圖片存在物件裡，物件[步驟]讀取畫面。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">let restore_array&#x3D;[]</span><br><span class="line">let step&#x3D;-1</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> function finishedPosition(e) &#123;</span><br><span class="line">    painting&#x3D;false</span><br><span class="line">    ctx.beginPath()</span><br><span class="line">    console.log(e.type)</span><br><span class="line">    if(e.type!&#x3D;&#39;mousedown&#39;)&#123;</span><br><span class="line">        restore_array.push(ctx.getImageData(0,0,cvs.width,cvs.height))</span><br><span class="line">        step++</span><br><span class="line">    &#125;</span><br><span class="line">    if(restore_array.length&gt;0)&#123;</span><br><span class="line">        console.log(1)</span><br><span class="line">        domUndo.classList.add(&#39;btn-active&#39;)</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        domUndo.classList.remove(&#39;btn-active&#39;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    function undo(e) &#123;</span><br><span class="line">    e.preventDefault()</span><br><span class="line">    if(step&lt;&#x3D;0)&#123;</span><br><span class="line">        allClear()</span><br><span class="line">        domUndo.classList.remove(&#39;btn-active&#39;)</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        console.log(restore_array)</span><br><span class="line">        domUndo.classList.add(&#39;btn-active&#39;)</span><br><span class="line">        step--</span><br><span class="line">        ctx.putImageData(restore_array[step],0,0)</span><br><span class="line">    &#125;</span><br><span class="line">    if(step&lt;restore_array.length&amp;&amp;step&gt;&#x3D;0)&#123;</span><br><span class="line">        domRedo.classList.add(&#39;btn-active&#39;)</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        domRedo.classList.remove(&#39;btn-active&#39;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">function redo(e) &#123;</span><br><span class="line">    e.preventDefault()</span><br><span class="line">    console.log(step)</span><br><span class="line">    if(step&#x3D;&#x3D;restore_array.length||step&lt;0)&#123;</span><br><span class="line">        return</span><br><span class="line">    &#125;else if(step&lt;restore_array.length)&#123;</span><br><span class="line">        step++  </span><br><span class="line">        ctx.putImageData(restore_array[step],0,0)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>最後附上用 Canvas 實作的<a target="_blank" rel="noopener" href="https://codepen.io/jasonuse/pen/jOVNZgp?editors=0010">小畫板</a></p>
 
       
     </div>
@@ -858,79 +949,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20210116/27214/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Jason06286">
-      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JasonCodingBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/20210116/27214/" class="post-title-link" itemprop="url">LeetCode 1431. Kids With the Greatest Number of Candies </a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-01-16 20:12:25 / Modified: 20:15:35" itemprop="dateCreated datePublished" datetime="2021-01-16T20:12:25+08:00">2021-01-16</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Input: candies &#x3D; [2,3,5,1,3], extraCandies &#x3D; 3</span><br><span class="line">Output: [true,true,true,false,true] </span><br><span class="line">Explanation: </span><br><span class="line">Kid 1 has 2 candies and if he or she receives all extra candies (3) will have 5 candies --- the greatest number of candies among the kids. </span><br><span class="line">Kid 2 has 3 candies and if he or she receives at least 2 extra candies will have the greatest number of candies among the kids. </span><br><span class="line">Kid 3 has 5 candies and this is already the greatest number of candies among the kids. </span><br><span class="line">Kid 4 has 1 candy and even if he or she receives all extra candies will only have 4 candies. </span><br><span class="line">Kid 5 has 3 candies and if he or she receives at least 2 extra candies will have the greatest number of candies among the kids.</span><br></pre></td></tr></table></figure>
-<h2 id="解法思維"><a href="#解法思維" class="headerlink" title="解法思維"></a>解法思維</h2><p>用<code>map()</code>相加，在跟<code> Math.max()</code>比較，回傳結果</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var kidsWithCandies &#x3D; (candies, extraCandies) &#x3D;&gt;candies.map(v &#x3D;&gt; (v + extraCandies) &gt;&#x3D; Math.max(...candies));</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -997,7 +1019,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

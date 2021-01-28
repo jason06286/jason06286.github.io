@@ -21,20 +21,20 @@
     var CONFIG = {"hostname":"jason06286.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="題目12345Input: nums &#x3D; [1,2,3,4]Output: [2,4,4,4]Explanation: The first pair [1,2] means we have freq &#x3D; 1 and val &#x3D; 2 so we generate the array [2].The second pair [3,4] means we have freq">
+  <meta name="description" content="See the Pen 新手 JS 地下城-6F - 60秒算數遊戲 by 曾慶榮   (@jasonuse) on CodePen.   要求 020 秒為 1位數計算 ，2140 秒為 2 位數計算，41~60 秒為 3 位數計算，加減乘除規則請用隨機產生，不可寫死題目，60 秒內可無限次數答題。 040 秒答對加一分，4160 秒答對加五分，答錯扣一分，最多僅能扣到零分 不可設計跳轉頁">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode 1313. Decompress Run-Length Encoded List">
-<meta property="og:url" content="https://jason06286.github.io/20210127/24735/index.html">
+<meta property="og:title" content="JS地下城 6F 60秒算數遊戲">
+<meta property="og:url" content="https://jason06286.github.io/20210128/8204/index.html">
 <meta property="og:site_name" content="JasonCodingBlog">
-<meta property="og:description" content="題目12345Input: nums &#x3D; [1,2,3,4]Output: [2,4,4,4]Explanation: The first pair [1,2] means we have freq &#x3D; 1 and val &#x3D; 2 so we generate the array [2].The second pair [3,4] means we have freq">
+<meta property="og:description" content="See the Pen 新手 JS 地下城-6F - 60秒算數遊戲 by 曾慶榮   (@jasonuse) on CodePen.   要求 020 秒為 1位數計算 ，2140 秒為 2 位數計算，41~60 秒為 3 位數計算，加減乘除規則請用隨機產生，不可寫死題目，60 秒內可無限次數答題。 040 秒答對加一分，4160 秒答對加五分，答錯扣一分，最多僅能扣到零分 不可設計跳轉頁">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2021-01-27T15:11:34.000Z">
-<meta property="article:modified_time" content="2021-01-27T15:23:21.722Z">
+<meta property="article:published_time" content="2021-01-28T11:11:47.000Z">
+<meta property="article:modified_time" content="2021-01-28T11:56:48.426Z">
 <meta property="article:author" content="Jason06286">
-<meta property="article:tag" content="LeetCode">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://jason06286.github.io/20210127/24735/">
+<link rel="canonical" href="https://jason06286.github.io/20210128/8204/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>Leetcode 1313. Decompress Run-Length Encoded List | JasonCodingBlog</title>
+  <title>JS地下城 6F 60秒算數遊戲 | JasonCodingBlog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-174935555-1"></script>
     <script>
@@ -201,7 +201,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20210127/24735/">
+    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20210128/8204/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/head.png">
@@ -214,7 +214,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Leetcode 1313. Decompress Run-Length Encoded List
+          JS地下城 6F 60秒算數遊戲
         </h1>
 
         <div class="post-meta">
@@ -225,7 +225,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-01-27 23:11:34 / Modified: 23:23:21" itemprop="dateCreated datePublished" datetime="2021-01-27T23:11:34+08:00">2021-01-27</time>
+              <time title="Created: 2021-01-28 19:11:47 / Modified: 19:56:48" itemprop="dateCreated datePublished" datetime="2021-01-28T19:11:47+08:00">2021-01-28</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -233,7 +233,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
                 </span>
             </span>
 
@@ -248,10 +248,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: nums &#x3D; [1,2,3,4]</span><br><span class="line">Output: [2,4,4,4]</span><br><span class="line">Explanation: The first pair [1,2] means we have freq &#x3D; 1 and val &#x3D; 2 so we generate the array [2].</span><br><span class="line">The second pair [3,4] means we have freq &#x3D; 3 and val &#x3D; 4 so we generate [4,4,4].</span><br><span class="line">At the end the concatenation [2] + [4,4,4] is [2,4,4,4].</span><br></pre></td></tr></table></figure>
-<h2 id="解法思維"><a href="#解法思維" class="headerlink" title="解法思維"></a>解法思維</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var decompressRLElist &#x3D; function(nums) &#123;</span><br><span class="line">    let arr &#x3D; [];</span><br><span class="line">    function pushTo(count, num) &#123;</span><br><span class="line">        if (count &#x3D;&#x3D;&#x3D; 0) return;</span><br><span class="line">            arr.push(num);</span><br><span class="line">            pushTo(count-1, num);</span><br><span class="line">    &#125;</span><br><span class="line">    for (let i &#x3D; 0; i &lt; nums.length; i +&#x3D; 2) &#123;</span><br><span class="line">      pushTo(nums[i], nums[i+1]);</span><br><span class="line">    &#125;</span><br><span class="line">    return arr;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var decompressRLElist &#x3D; function(nums) &#123;</span><br><span class="line">    let result &#x3D; []</span><br><span class="line">    </span><br><span class="line">    for(let i&#x3D;0; i&lt;nums.length; i+&#x3D;2) &#123;</span><br><span class="line">        const frequency &#x3D; nums[i]</span><br><span class="line">        const value &#x3D; nums[i+1]</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F; result &#x3D; [...result, ...new Array(frequency).fill(value)]</span><br><span class="line">        result.push(...new Array(frequency).fill(value))</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    return result</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+        <iframe height="265" style="width: 100%;" scrolling="no" title="新手 JS 地下城-6F - 60秒算數遊戲" src="https://codepen.io/jasonuse/embed/mdrgwbv?height=265&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/jasonuse/pen/mdrgwbv'>新手 JS 地下城-6F - 60秒算數遊戲</a> by 曾慶榮
+  (<a target="_blank" rel="noopener" href='https://codepen.io/jasonuse'>@jasonuse</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
+</iframe>
 
+<h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><ul>
+<li>0<del>20 秒為 1位數計算 ，21</del>40 秒為 2 位數計算，41~60 秒為 3 位數計算，加減乘除規則請用隨機產生，不可寫死題目，60 秒內可無限次數答題。</li>
+<li>0<del>40 秒答對加一分，41</del>60 秒答對加五分，答錯扣一分，最多僅能扣到零分</li>
+<li>不可設計跳轉頁面，都得在同一頁內部切換頁面完成。<h2 id="攻略"><a href="#攻略" class="headerlink" title="攻略"></a>攻略</h2></li>
+<li>利用<code>setInterval()</code>達到每秒更新</li>
+<li>利用<code>Math.floor()</code> <code>Math.random() </code> 達成亂數規則</li>
+</ul>
+<h3 id="製作一個倒數計時器"><a href="#製作一個倒數計時器" class="headerlink" title="製作一個倒數計時器"></a>製作一個倒數計時器</h3><p>這邊踩到的雷是換轉頁面時，<code>setInterval()</code>還在執行，<br><code>clearInterval(timeId)</code>，必須要宣告個變數接<code>timeId</code>，<br>不可直接帶入，這裡卡了好久 😭😭 ，附上相關<a target="_blank" rel="noopener" href="https://kuro.tw/posts/2019/02/23/%E8%AB%87%E8%AB%87-JavaScript-%E7%9A%84-setTimeout-%E8%88%87-setInterval/">連結</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">let sec</span><br><span class="line">let timeId</span><br><span class="line"></span><br><span class="line">function getTime() &#123;</span><br><span class="line">    if(main.classList[1]&#x3D;&#x3D;&#39;d-none&#39;)return</span><br><span class="line">    if(sec&#x3D;&#x3D;0)&#123;</span><br><span class="line">        main.classList.add(&#39;d-none&#39;)</span><br><span class="line">        restart.classList.remove(&#39;d-none&#39;)</span><br><span class="line">        getStatus(main.classList[1])</span><br><span class="line">        return</span><br><span class="line">    &#125;</span><br><span class="line">    else if(sec&lt;&#x3D;10)&#123;</span><br><span class="line">        sec -&#x3D;1</span><br><span class="line">        time.textContent&#x3D;&#96;00 : 0$&#123;sec&#125;&#96;</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        sec -&#x3D;1</span><br><span class="line">        time.textContent&#x3D;&#96;00 : $&#123;sec&#125;&#96;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function getStatus(status) &#123;</span><br><span class="line">    if(status!&#x3D;&#39;d-none&#39;)&#123;</span><br><span class="line">        timeId&#x3D;setInterval(getTime,1000)</span><br><span class="line">        </span><br><span class="line">    &#125;else if(status&#x3D;&#x3D;&#39;d-none&#39;)&#123;</span><br><span class="line">        clearInterval(timeId)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="製作一個亂數選擇器"><a href="#製作一個亂數選擇器" class="headerlink" title="製作一個亂數選擇器"></a>製作一個亂數選擇器</h3><p><code>Math.random()</code>會產生 0~1隨機小數，再利用<code>Math.floor()</code>取最大整數</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Math.random(); &#x2F;&#x2F; 0.23012228691419123 </span><br><span class="line">Math.random(); &#x2F;&#x2F; 0.8107096418156079</span><br><span class="line"></span><br><span class="line">Math.floor(Math.random());  &#x2F;&#x2F;回傳0</span><br><span class="line">Math.floor(0.8888888);  &#x2F;&#x2F;回傳0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>當我們把<code>Math.random()*2</code>放進<code>Math.floor()</code>中會得到 0、1 的結果。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(Math.random()*2 ) &#x2F;&#x2F; 0.000...02~1.999...98</span><br><span class="line">Math.floor(Math.random()*2); &#x2F;&#x2F;回傳0或1</span><br><span class="line">Math.floor(Math.random()*5); &#x2F;&#x2F;回傳0或1或2或3或4</span><br><span class="line">Math.floor(Math.random()*50); &#x2F;&#x2F;回傳0或1或2或3...或49</span><br></pre></td></tr></table></figure>
+<p>我們來實作 min~max 之間的亂數，min 為最小值 max為最大值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function getRandom(min,max)&#123;</span><br><span class="line">    return Math.floor(Math.random()*(max-min+1))+min;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;會產生1~10之間的隨機亂數</span><br><span class="line">getRandom(1,10);</span><br><span class="line">&#x2F;&#x2F;會產生100~500之間的隨機亂數</span><br><span class="line">getRandom(100,500);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -260,7 +276,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/LeetCode/" rel="tag"># LeetCode</a>
+              <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           </div>
 
         
@@ -269,13 +285,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/20210126/2383/" rel="prev" title="Leetcode 1365. How Many Numbers Are Smaller Than the Current Number">
-      <i class="fa fa-chevron-left"></i> Leetcode 1365. How Many Numbers Are Smaller Than the Current Number
+    <a href="/20210127/24735/" rel="prev" title="Leetcode 1313. Decompress Run-Length Encoded List">
+      <i class="fa fa-chevron-left"></i> Leetcode 1313. Decompress Run-Length Encoded List
     </a></div>
-      <div class="post-nav-item">
-    <a href="/20210128/8204/" rel="next" title="JS地下城 6F 60秒算數遊戲">
-      JS地下城 6F 60秒算數遊戲 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -335,7 +348,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%8C%E7%9B%AE"><span class="nav-number">1.</span> <span class="nav-text">題目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E6%B3%95%E6%80%9D%E7%B6%AD"><span class="nav-number">2.</span> <span class="nav-text">解法思維</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A6%81%E6%B1%82"><span class="nav-number">1.</span> <span class="nav-text">要求</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%94%BB%E7%95%A5"><span class="nav-number">2.</span> <span class="nav-text">攻略</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A3%BD%E4%BD%9C%E4%B8%80%E5%80%8B%E5%80%92%E6%95%B8%E8%A8%88%E6%99%82%E5%99%A8"><span class="nav-number">2.1.</span> <span class="nav-text">製作一個倒數計時器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A3%BD%E4%BD%9C%E4%B8%80%E5%80%8B%E4%BA%82%E6%95%B8%E9%81%B8%E6%93%87%E5%99%A8"><span class="nav-number">2.2.</span> <span class="nav-text">製作一個亂數選擇器</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -476,7 +489,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'https://jason06286.github.io',
       owner       : 'jason06286',
       admin       : ['jason06286'],
-      id          : '42d29dc68eef0f632ad9b03db607d100',
+      id          : '335eea136143caeeff9f22de41588ba3',
         language: 'zh-TW',
       distractionFreeMode: true
     });
