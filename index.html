@@ -197,6 +197,77 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20210131/36166/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Jason06286">
+      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JasonCodingBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/20210131/36166/" class="post-title-link" itemprop="url">Leetcode 1588. Sum of All Odd Length Subarrays</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-01-31 13:29:56 / Modified: 13:37:47" itemprop="dateCreated datePublished" datetime="2021-01-31T13:29:56+08:00">2021-01-31</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Input: arr &#x3D; [1,4,2,5,3]</span><br><span class="line">Output: 58</span><br><span class="line">Explanation: The odd-length subarrays of arr and their sums are:</span><br><span class="line">[1] &#x3D; 1</span><br><span class="line">[4] &#x3D; 4</span><br><span class="line">[2] &#x3D; 2</span><br><span class="line">[5] &#x3D; 5</span><br><span class="line">[3] &#x3D; 3</span><br><span class="line">[1,4,2] &#x3D; 7</span><br><span class="line">[4,2,5] &#x3D; 11</span><br><span class="line">[2,5,3] &#x3D; 10</span><br><span class="line">[1,4,2,5,3] &#x3D; 15</span><br><span class="line">If we add all these together we get 1 + 4 + 2 + 5 + 3 + 7 + 11 + 10 + 15 &#x3D; 58</span><br></pre></td></tr></table></figure>
+<h2 id="解法思維"><a href="#解法思維" class="headerlink" title="解法思維"></a>解法思維</h2><p>利用<code>slice()</code>取出奇數列再加總</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 取頭不取尾</span><br><span class="line">let arr&#x3D;[1,2,3,4]</span><br><span class="line">arr.slice(0,1) &#x2F;&#x2F; 1</span><br><span class="line">arr.slice(0,3) &#x2F;&#x2F; 1,2,3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">const sumOddLengthSubarrays&#x3D; arr &#x3D;&gt; &#123;</span><br><span class="line">    let sum &#x3D; 0;</span><br><span class="line">    for (let i &#x3D; 1; i &lt;&#x3D; arr.length; i +&#x3D; 2) &#123;</span><br><span class="line">        for (let j &#x3D; 0; j &lt;&#x3D; arr.length - i; j++) &#123;</span><br><span class="line">            let odd &#x3D; arr.slice(j, j + i);</span><br><span class="line">            console.log(j,odd)</span><br><span class="line">            sum +&#x3D; odd.reduce((acc, cv) &#x3D;&gt; acc + cv, 0);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return sum;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
     <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20210128/30111/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +293,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-01-28 21:06:00 / Modified: 21:08:51" itemprop="dateCreated datePublished" datetime="2021-01-28T21:06:00+08:00">2021-01-28</time>
+              <time title="Created: 2021-01-28 21:06:00 / Modified: 21:09:00" itemprop="dateCreated datePublished" datetime="2021-01-28T21:06:00+08:00">2021-01-28</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -873,78 +944,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20210118/16839/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Jason06286">
-      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JasonCodingBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/20210118/16839/" class="post-title-link" itemprop="url">LeetCode 1108. Defanging an IP Address</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-01-18 22:33:19 / Modified: 22:42:05" itemprop="dateCreated datePublished" datetime="2021-01-18T22:33:19+08:00">2021-01-18</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: address &#x3D; &quot;1.1.1.1&quot;</span><br><span class="line">Output: &quot;1[.]1[.]1[.]1&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="解法思維"><a href="#解法思維" class="headerlink" title="解法思維"></a>解法思維</h2><p>將字串分割<code>split()</code> 再加回去<code>join()</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var defangIPaddr &#x3D; address&#x3D;&gt; &#123; return address.split(&#39;.&#39;).join(&#39;[.]&#39;)&#125;;</span><br></pre></td></tr></table></figure>
-<p><code>splice()</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var defangIPaddr &#x3D; address&#x3D;&gt; &#123;return address.replace(&#x2F;[.]&#x2F;g,&#39;[.]&#39;)&#125;;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1015,7 +1014,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

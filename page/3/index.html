@@ -197,6 +197,94 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200901/8450/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Jason06286">
+      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JasonCodingBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/20200901/8450/" class="post-title-link" itemprop="url">Js筆記 DatePicker 應用及操作 </a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-09-01 16:13:16" itemprop="dateCreated datePublished" datetime="2020-09-01T16:13:16+08:00">2020-09-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-24 18:42:57" itemprop="dateModified" datetime="2020-12-24T18:42:57+08:00">2020-12-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="DatePicker"><a href="#DatePicker" class="headerlink" title="DatePicker"></a>DatePicker</h1><p>日曆選擇器在 <a target="_blank" rel="noopener" href="https://bootstrap-datepicker.readthedocs.io/en/latest/">BootStrap</a>或 <a target="_blank" rel="noopener" href="https://jqueryui.com/datepicker/">jQuery UI</a> 等其實都已經有相關的套件，不過這次是使用<a target="_blank" rel="noopener" href="https://www.daterangepicker.com/#options">Date Range Picker</a><br>，因為要使用在訂房網上，所以需要用到選取範圍功能。</p>
+<h2 id="Date-Range-Picker"><a href="#Date-Range-Picker" class="headerlink" title="Date Range Picker"></a><a target="_blank" rel="noopener" href="https://www.daterangepicker.com/#options">Date Range Picker</a></h2><h3 id="開始使用"><a href="#開始使用" class="headerlink" title="開始使用"></a>開始使用</h3><p>只要至<a target="_blank" rel="noopener" href="https://www.daterangepicker.com/#usage">官網</a>插入 <code>cdn</code> 或下載檔案下來，<br>並宣告<code>.daterangepicker();</code>即可使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang&#x3D;&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset&#x3D;&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;meta name&#x3D;&quot;viewport&quot; content&#x3D;&quot;width&#x3D;device-width, initial-scale&#x3D;1.0&quot;&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;&#x2F;title&gt;</span><br><span class="line">    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;jquery&#x2F;latest&#x2F;jquery.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;momentjs&#x2F;latest&#x2F;moment.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;script type&#x3D;&quot;text&#x2F;javascript&quot; src&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;daterangepicker&#x2F;daterangepicker.min.js&quot;&gt;&lt;&#x2F;script&gt;</span><br><span class="line">    &lt;link rel&#x3D;&quot;stylesheet&quot; type&#x3D;&quot;text&#x2F;css&quot; href&#x3D;&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;daterangepicker&#x2F;daterangepicker.css&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;date&quot;&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        $(&#39;.date&#39;).daterangepicker()</span><br><span class="line">    &lt;&#x2F;script&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br><span class="line">&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="常用選項"><a href="#常用選項" class="headerlink" title="常用選項"></a>常用選項</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">$(&#39;.date&#39;).daterangepicker(&#123;</span><br><span class="line">    &quot;startDate&quot;:開始日期,</span><br><span class="line">    &quot;endDate&quot;: 結束日期,</span><br><span class="line">    &quot;locale&quot;: &#123;</span><br><span class="line">        &quot;format&quot;: &quot;YYYY年MM月DD日&quot;, &#x2F;&#x2F; 日期格式</span><br><span class="line">        &quot;separator&quot;: &quot; - &quot;,</span><br><span class="line">        &quot;applyLabel&quot;: &quot;確認&quot;,  &#x2F;&#x2F;自定義 apply 按鈕名稱</span><br><span class="line">        &quot;cancelLabel&quot;: &quot;取消&quot;, &#x2F;&#x2F;自定義 cancel 按鈕名稱</span><br><span class="line">        &quot;daysOfWeek&quot;: [   &#x2F;&#x2F;自定義星期名稱</span><br><span class="line">            &quot;日&quot;,</span><br><span class="line">            &quot;一&quot;,</span><br><span class="line">            &quot;二&quot;,</span><br><span class="line">            &quot;三&quot;,</span><br><span class="line">            &quot;四&quot;,</span><br><span class="line">            &quot;五&quot;,</span><br><span class="line">            &quot;六&quot;</span><br><span class="line">        ],</span><br><span class="line">        &quot;monthNames&quot;: [       &#x2F;&#x2F;自定義月份名稱</span><br><span class="line">            &quot;1 月&quot;,</span><br><span class="line">            &quot;2 月&quot;,</span><br><span class="line">            &quot;3 月&quot;,</span><br><span class="line">            &quot;4 月&quot;,</span><br><span class="line">            &quot;5 月&quot;,</span><br><span class="line">            &quot;6 月&quot;,</span><br><span class="line">            &quot;7 月&quot;,</span><br><span class="line">            &quot;8 月&quot;,</span><br><span class="line">            &quot;9 月&quot;,</span><br><span class="line">            &quot;10 月&quot;,</span><br><span class="line">            &quot;11 月&quot;,</span><br><span class="line">            &quot;12 月&quot;</span><br><span class="line">        ],</span><br><span class="line">        &quot;firstDay&quot;: 1  &#x2F;&#x2F;自定義開始星期，0為星期日 </span><br><span class="line">    &#125;,</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="客製化"><a href="#客製化" class="headerlink" title="客製化"></a>客製化</h3><p>因為有太多功能可以選擇，官網下方也有 UI 介面，供大家客製化選擇。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.daterangepicker.com/#config">開始客製化日期選擇器</a></p>
+</blockquote>
+<p><img src="/images/datepicker/datepicker.png"></p>
+<h2 id="如何取出日期範圍的值"><a href="#如何取出日期範圍的值" class="headerlink" title="如何取出日期範圍的值"></a>如何取出日期範圍的值</h2><p>我們可以利用 <code>while</code> 迴圈，再利用 <code>new Date()</code>產生日期格式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">const getDatesBetween &#x3D; (startDate, endDate) &#x3D;&gt; &#123;</span><br><span class="line">        let reserveDayData&#x3D;[] </span><br><span class="line">        let result&#x3D;[] </span><br><span class="line">        let currentDate &#x3D; startDate</span><br><span class="line">        let holiday&#x3D;0</span><br><span class="line">        let weekday&#x3D;0</span><br><span class="line">        console.log(startDate,endDate)</span><br><span class="line">        while(currentDate &lt; endDate)&#123; &#x2F;&#x2F;開始日期＋1天 &lt; 結束日期</span><br><span class="line">            reserveDayData.push(new Date(currentDate))</span><br><span class="line">            &#x2F;&#x2F; 台北時間跟國際時間差八小時</span><br><span class="line">            result.push(new Date(currentDate+ 8 * 3600 * 1000).toISOString().split(&quot;T&quot;)[0]) </span><br><span class="line">            &#x2F;&#x2F; 現在日期加一天</span><br><span class="line">            currentDate &#x3D; moment(currentDate).add(1, &#39;days&#39;); </span><br><span class="line">        &#125;</span><br><span class="line">        console.log(reserveDayData)</span><br><span class="line">        console.log(result)</span><br><span class="line">        &#x2F;&#x2F; 計算幾晚</span><br><span class="line">        &#x2F;&#x2F; 最後一天沒住，所以扣除</span><br><span class="line">        reserveDayData.pop()</span><br><span class="line">        reserveDayData.forEach(function (item) &#123;</span><br><span class="line">            if(item.getDay()&#x3D;&#x3D;&#x3D;0 ||item.getDay()&#x3D;&#x3D;&#x3D;6)&#123;</span><br><span class="line">                    return holiday+&#x3D;1</span><br><span class="line">            &#125;else&#123;</span><br><span class="line">                    return weekday+&#x3D;1</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        console.log(holiday)  </span><br><span class="line">        console.log(weekday)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h2><ul>
+<li><a href="https://jason06286.github.io/bookingPractice/index.html">DEMO</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/jason06286/bookingPractice">GitHub</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
     <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200821/17906/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -987,110 +1075,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200811/17504/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Jason06286">
-      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JasonCodingBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/20200811/17504/" class="post-title-link" itemprop="url">Hexo 基礎設定</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-08-11 12:33:55" itemprop="dateCreated datePublished" datetime="2020-08-11T12:33:55+08:00">2020-08-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-24 18:42:57" itemprop="dateModified" datetime="2020-12-24T18:42:57+08:00">2020-12-24</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index"><span itemprop="name">Hexo</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Hexo-基礎設定"><a href="#Hexo-基礎設定" class="headerlink" title="Hexo 基礎設定"></a>Hexo 基礎設定</h1><h2 id="設定網站名稱、及作者名稱"><a href="#設定網站名稱、及作者名稱" class="headerlink" title="設定網站名稱、及作者名稱"></a>設定網站名稱、及作者名稱</h2><p>開啟目錄資料夾中的 <code>_config.yml</code>搜尋<code>site</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># Site</span><br><span class="line">title: JasonCodingBlog &#x2F;&#x2F;網站名稱</span><br><span class="line">subtitle: &#39;Coding Road&#39; &#x2F;&#x2F;副標題</span><br><span class="line">description: &#39;不要等待運氣來臨，應該主動去努力掌握知識。&#39; &#x2F;&#x2F;網站敘述</span><br><span class="line">keywords: &#x2F;&#x2F;關鍵字</span><br><span class="line">author: Jason06286 &#x2F;&#x2F;作者名稱</span><br><span class="line">language: zh-tw &#x2F;&#x2F;語系</span><br><span class="line">timezone: &#39;&#39;</span><br><span class="line"></span><br><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &#39;http:&#x2F;&#x2F;yoursite.com&#x2F;child&#39; and root as &#39;&#x2F;child&#x2F;&#39;</span><br><span class="line">url: https:&#x2F;&#x2F;jason06286.github.io&#x2F; &#x2F;&#x2F;輸入您的網站URL</span><br><span class="line">root: &#x2F;</span><br><span class="line">permalink: :year:month:day&#x2F;:abbrlink&#x2F;</span><br><span class="line">permalink_defaults:</span><br><span class="line">pretty_urls:</span><br><span class="line">  trailing_index: true # Set to false to remove trailing &#39;index.html&#39; from permalinks</span><br><span class="line">  trailing_html: true # Set to false to remove trailing &#39;.html&#39; from permalinks</span><br></pre></td></tr></table></figure>
-<h2 id="設定主題"><a href="#設定主題" class="headerlink" title="設定主題"></a>設定主題</h2><p>下載 themes 並解壓縮到資料夾內的 themes 資料夾內，<br>開啟目錄資料夾中的 <code>_config.yml</code>搜尋<code>theme</code><br><img src="/images/hexoset/hexoset1.png"></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># Extensions</span><br><span class="line">## Plugins: https:&#x2F;&#x2F;hexo.io&#x2F;plugins&#x2F;</span><br><span class="line">## Themes: https:&#x2F;&#x2F;hexo.io&#x2F;themes&#x2F;</span><br><span class="line">theme: hexo-theme-next-master &#x2F;&#x2F;更改成你所下載的主題名稱</span><br></pre></td></tr></table></figure>
-<h2 id="Next"><a href="#Next" class="headerlink" title="Next"></a>Next</h2><h3 id="加入-Google-Analytics"><a href="#加入-Google-Analytics" class="headerlink" title="加入 Google Analytics"></a>加入 Google Analytics</h3><p>這邊使用 NexT 7.8.0 模板作舉例。<br>進入主題 (Next) 中尋找 <code>_config.yml</code> 檔案，搜尋<code>Google Analytics</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">google_analytics:</span><br><span class="line">  tracking_id: </span><br><span class="line">  only_pageview: false</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">google_analytics:</span><br><span class="line">  tracking_id: UA-XXXXXX-1 &#x2F;&#x2F;UAID追蹤碼</span><br><span class="line">  only_pageview: false</span><br></pre></td></tr></table></figure>
-<h3 id="更改-Next-主題樣式"><a href="#更改-Next-主題樣式" class="headerlink" title="更改 Next 主題樣式"></a>更改 Next 主題樣式</h3><p>進入主題 (Next) 中尋找 <code>_config.yml</code> 檔案，搜尋<code>scheme</code><br>想要使用哪一個，打開註解即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Schemes</span><br><span class="line"># scheme: Muse</span><br><span class="line"># scheme: Mist</span><br><span class="line"># scheme: Pisces</span><br><span class="line">scheme: Gemini </span><br></pre></td></tr></table></figure>
-<h3 id="設置側邊欄"><a href="#設置側邊欄" class="headerlink" title="設置側邊欄"></a>設置側邊欄</h3><p>進入主題 (Next) 中尋找 <code>_config.yml</code> 檔案，搜尋<code>menu</code>，<br>想要使用哪一個，打開註解即可，若<code>tags</code>、<code>categories</code>跳出 404，<br>請參照此<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/29017171">解決辦法</a>。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">  home: &#x2F; || fa fa-home</span><br><span class="line">  # about: &#x2F;about&#x2F; || fa fa-user</span><br><span class="line">  tags: &#x2F;tags&#x2F; || fa fa-tags</span><br><span class="line">  categories: &#x2F;categories&#x2F; || fa fa-th</span><br><span class="line">  archives: &#x2F;archives&#x2F; || fa fa-archive</span><br><span class="line">  # schedule: &#x2F;schedule&#x2F; || fa fa-calendar</span><br><span class="line">  # sitemap: &#x2F;sitemap.xml || fa fa-sitemap</span><br><span class="line">  #commonweal: &#x2F;404&#x2F; || fa fa-heartbeat</span><br></pre></td></tr></table></figure>
-<h3 id="開啟-Social-Media"><a href="#開啟-Social-Media" class="headerlink" title="開啟 Social Media"></a>開啟 Social Media</h3><p>進入主題 (Next) 中尋找 <code>_config.yml</code> 檔案，搜尋<code>menu</code>，<br>想要使用哪一個，打開註解即可。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">social:</span><br><span class="line">  GitHub: https:&#x2F;&#x2F;github.com&#x2F;jason06286 || fab fa-github</span><br><span class="line">  E-Mail: mailto:dj4871114@gmail.com || fa fa-envelope</span><br><span class="line">  #Weibo: https:&#x2F;&#x2F;weibo.com&#x2F;yourname || fab fa-weibo</span><br><span class="line">  #Google: https:&#x2F;&#x2F;plus.google.com&#x2F;yourname || fab fa-google</span><br><span class="line">  #Twitter: https:&#x2F;&#x2F;twitter.com&#x2F;yourname || fab fa-twitter</span><br><span class="line">  FB Page: https:&#x2F;&#x2F;www.facebook.com&#x2F;profile.php?id&#x3D;100000248997692 || fab fa-facebook</span><br><span class="line">  #StackOverflow: https:&#x2F;&#x2F;stackoverflow.com&#x2F;yourname || fab fa-stack-overflow</span><br><span class="line">  #YouTube: https:&#x2F;&#x2F;youtube.com&#x2F;yourname || fab fa-youtube</span><br><span class="line">  #Instagram: https:&#x2F;&#x2F;instagram.com&#x2F;yourname || fab fa-instagram</span><br><span class="line">  #Skype: skype:yourname?call|chat || fab fa-skype</span><br></pre></td></tr></table></figure>
-<h3 id="開啟-Gitalk-留言版"><a href="#開啟-Gitalk-留言版" class="headerlink" title="開啟 Gitalk 留言版"></a>開啟 Gitalk 留言版</h3><h4 id="建立-GitHub-OAuth-APP"><a href="#建立-GitHub-OAuth-APP" class="headerlink" title="建立 GitHub OAuth APP"></a>建立 GitHub OAuth APP</h4><p>由於要使用 Gitalk 必須先有 GitHub OAuth，首先開啟 GitHub → Setting<br><img src="/images/hexoset/hexoset2.png"><br>接下來選擇 Developer settings<br><img src="/images/hexoset/hexoset3.png"><br>然後點 OAuth Apps ，新增 New OAuth Apps<br><img src="/images/hexoset/hexoset4.png"><br>接下來依照欄位填寫即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Application name - 應用程式名稱</span><br><span class="line">Homepage URL - 應用程式網域 → 部落格網址</span><br><span class="line">Application description - 應用程式描述</span><br><span class="line">Authorization callback URL - 授權回應網址 → 部落格網址</span><br></pre></td></tr></table></figure>
-<p><img src="/images/hexoset/hexoset5.png"><br>申請完之後，你會獲得兩組 ID (Client ID、Client Secret)<br><img src="/images/hexoset/hexoset6.png"></p>
-<h4 id="Gitalk"><a href="#Gitalk" class="headerlink" title="Gitalk"></a>Gitalk</h4><p>進入主題 (Next) 中尋找 <code>_config.yml</code> 檔案，搜尋<code>Gitalk</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">gitalk:</span><br><span class="line">  enable: true</span><br><span class="line">  github_id:  &#x2F;&#x2F;GitHub 作者帳號</span><br><span class="line">  repo: jason06286.github.io &#x2F;&#x2F;你的 Repo 名稱，通常就是網域</span><br><span class="line">  client_id: xxxxxxxx &#x2F;&#x2F;剛剛申請的 Client ID</span><br><span class="line">  client_secret: xxxxxxxx &#x2F;&#x2F;剛剛申請的 Client Secret</span><br><span class="line">  admin_user: jason06286 &#x2F;&#x2F;管理者的帳號</span><br><span class="line">  distraction_free_mode: true &#x2F;&#x2F;無干擾模式</span><br><span class="line">  language: zh-TW &#x2F;&#x2F;語系</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1161,7 +1145,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

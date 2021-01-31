@@ -764,4 +764,19 @@
         <tag>LeetCode</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Leetcode 1588. Sum of All Odd Length Subarrays</title>
+    <url>/20210131/36166/</url>
+    <content><![CDATA[<h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: arr &#x3D; [1,4,2,5,3]</span><br><span class="line">Output: 58</span><br><span class="line">Explanation: The odd-length subarrays of arr and their sums are:</span><br><span class="line">[1] &#x3D; 1</span><br><span class="line">[4] &#x3D; 4</span><br><span class="line">[2] &#x3D; 2</span><br><span class="line">[5] &#x3D; 5</span><br><span class="line">[3] &#x3D; 3</span><br><span class="line">[1,4,2] &#x3D; 7</span><br><span class="line">[4,2,5] &#x3D; 11</span><br><span class="line">[2,5,3] &#x3D; 10</span><br><span class="line">[1,4,2,5,3] &#x3D; 15</span><br><span class="line">If we add all these together we get 1 + 4 + 2 + 5 + 3 + 7 + 11 + 10 + 15 &#x3D; 58</span><br></pre></td></tr></table></figure>
+<h2 id="解法思維"><a href="#解法思維" class="headerlink" title="解法思維"></a>解法思維</h2><p>利用<code>slice()</code>取出奇數列再加總</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 取頭不取尾</span><br><span class="line">let arr&#x3D;[1,2,3,4]</span><br><span class="line">arr.slice(0,1) &#x2F;&#x2F; 1</span><br><span class="line">arr.slice(0,3) &#x2F;&#x2F; 1,2,3</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const sumOddLengthSubarrays&#x3D; arr &#x3D;&gt; &#123;</span><br><span class="line">    let sum &#x3D; 0;</span><br><span class="line">    for (let i &#x3D; 1; i &lt;&#x3D; arr.length; i +&#x3D; 2) &#123;</span><br><span class="line">        for (let j &#x3D; 0; j &lt;&#x3D; arr.length - i; j++) &#123;</span><br><span class="line">            let odd &#x3D; arr.slice(j, j + i);</span><br><span class="line">            console.log(j,odd)</span><br><span class="line">            sum +&#x3D; odd.reduce((acc, cv) &#x3D;&gt; acc + cv, 0);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return sum;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
 </search>
