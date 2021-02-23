@@ -819,4 +819,20 @@
         <tag>LeetCode</tag>
       </tags>
   </entry>
+  <entry>
+    <title>Leetcode 1450. Number of Students Doing Homework at a Given Time</title>
+    <url>/20210223/21004/</url>
+    <content><![CDATA[<h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Input: startTime &#x3D; [1,2,3], endTime &#x3D; [3,2,7], queryTime &#x3D; 4</span><br><span class="line">Output: 1</span><br><span class="line">Explanation: We have 3 students where:</span><br><span class="line">The first student started doing homework at time 1 and finished at time 3 and wasn&#39;t doing anything at time 4.</span><br><span class="line">The second student started doing homework at time 2 and finished at time 2 and also wasn&#39;t doing anything at time 4.</span><br><span class="line">The third student started doing homework at time 3 and finished at time 7 and was the only student doing homework at time 4.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="解法思維"><a href="#解法思維" class="headerlink" title="解法思維"></a>解法思維</h2><p>做出<code>endTime</code>到<code>startTime</code>的陣列在查找</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">var busyStudent &#x3D; function(startTime, endTime, queryTime) &#123;</span><br><span class="line">    let sum&#x3D;0</span><br><span class="line">    for (let j &#x3D; 0; j &lt; startTime.length; j++) &#123;</span><br><span class="line">        let len&#x3D;endTime[j]-startTime[j]</span><br><span class="line">        if(len&#x3D;&#x3D;0)&#123;</span><br><span class="line">            Array.from(&#123;length:1&#125;,(v,i)&#x3D;&gt;endTime[j]).indexOf(queryTime)!&#x3D;-1?sum++:false;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            Array.from(&#123;length:len+1&#125;, (v, i) &#x3D;&gt; startTime[j]++).indexOf(queryTime)!&#x3D;-1?sum++:false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return sum</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>如果<code>startTime</code>小於目標時間和<code>endTime</code>大於目標時間，就代表目標時間包含在裡面</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">const busyStudent &#x3D; (startTime, endTime, queryTime) &#x3D;&gt; &#123;</span><br><span class="line">  let ret &#x3D; 0;</span><br><span class="line">  for (let i &#x3D; 0; i &lt; startTime.length; ++i) &#123;</span><br><span class="line">    startTime[i] &lt;&#x3D; queryTime &amp;&amp; endTime[i] &gt;&#x3D; queryTime &amp;&amp; ++ret;</span><br><span class="line">  &#125;</span><br><span class="line">  return ret;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>LeetCode</tag>
+      </tags>
+  </entry>
 </search>

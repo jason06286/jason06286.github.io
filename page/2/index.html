@@ -197,6 +197,76 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20210123/30501/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Jason06286">
+      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JasonCodingBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/20210123/30501/" class="post-title-link" itemprop="url">Leetcode 1603. Design Parking System</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-01-23 13:13:51 / Modified: 13:16:54" itemprop="dateCreated datePublished" datetime="2021-01-23T13:13:51+08:00">2021-01-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input</span><br><span class="line">[&quot;ParkingSystem&quot;, &quot;addCar&quot;, &quot;addCar&quot;, &quot;addCar&quot;, &quot;addCar&quot;]</span><br><span class="line">[[1, 1, 0], [1], [2], [3], [1]]</span><br><span class="line">Output</span><br><span class="line">[null, true, true, false, false]</span><br></pre></td></tr></table></figure>
+<h2 id="解法思維"><a href="#解法思維" class="headerlink" title="解法思維"></a>解法思維</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var ParkingSystem &#x3D; function(big, medium, small) &#123;</span><br><span class="line">    this.big&#x3D;big</span><br><span class="line">    this.medium&#x3D;medium</span><br><span class="line">    this.small&#x3D;small</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">ParkingSystem.prototype.addCar &#x3D; function(carType) &#123;</span><br><span class="line">    if(carType&#x3D;&#x3D;1)&#123;</span><br><span class="line">        this.big-&#x3D;1</span><br><span class="line">        return this.big&gt;&#x3D;0</span><br><span class="line">    &#125;else if(carType&#x3D;&#x3D;2)&#123;</span><br><span class="line">        this.medium-&#x3D;1</span><br><span class="line">        return this.medium&gt;&#x3D;0</span><br><span class="line">    &#125;else if(carType&#x3D;&#x3D;3)&#123;</span><br><span class="line">        this.small-&#x3D;1</span><br><span class="line">        return this.small&gt;&#x3D;0</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var ParkingSystem &#x3D; function(big, medium, small) &#123;</span><br><span class="line">    this.remainingSpaces &#x3D; [big, medium, small];</span><br><span class="line">&#125;;</span><br><span class="line">ParkingSystem.prototype.addCar &#x3D; function(carType) &#123;</span><br><span class="line">    return (this.remainingSpaces[carType - 1]--) &gt; 0</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
     <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20210122/7932/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -863,87 +933,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20210113/17681/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Jason06286">
-      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JasonCodingBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/20210113/17681/" class="post-title-link" itemprop="url">JS new Date() JS地下城 4F 時區 </a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-01-13 18:43:17 / Modified: 20:01:08" itemprop="dateCreated datePublished" datetime="2021-01-13T18:43:17+08:00">2021-01-13</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <iframe height="488" style="width: 100%;" scrolling="no" title="新手 JS 地下城-4F" src="https://codepen.io/jasonuse/embed/BaLqMed?height=488&theme-id=dark&default-tab=js,result" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a target="_blank" rel="noopener" href='https://codepen.io/jasonuse/pen/BaLqMed'>新手 JS 地下城-4F</a> by 曾慶榮
-  (<a target="_blank" rel="noopener" href='https://codepen.io/jasonuse'>@jasonuse</a>) on <a target="_blank" rel="noopener" href='https://codepen.io'>CodePen</a>.
-</iframe>
-
-<h2 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h2><p>製作一個顯示各個時區的時鐘</p>
-<h2 id="攻略"><a href="#攻略" class="headerlink" title="攻略"></a>攻略</h2><ul>
-<li>將時區轉成<code>timestamp</code></li>
-<li>在依各時區做計算，再轉回需要的格式</li>
-<li>利用<code>setInterval()</code>達到每秒更新<h3 id="將時區轉換成timestamp"><a href="#將時區轉換成timestamp" class="headerlink" title="將時區轉換成timestamp"></a>將時區轉換成<code>timestamp</code></h3>利用<code>new Date()</code>宣告一個時間物件，在轉換成時間戳<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let d &#x3D;new Date()</span><br><span class="line">&#x2F;&#x2F; 當前時區的時間</span><br><span class="line">&#x2F;&#x2F; Wed Jan 13 2021 19:05:13 GMT+0800 (台北標準時間)</span><br><span class="line"></span><br><span class="line">new Date().valueOf()</span><br><span class="line">&#x2F;&#x2F;這裡的時間顯示至毫秒</span><br><span class="line">&#x2F;&#x2F;1610536513697</span><br><span class="line"></span><br><span class="line">new Date(1610536513697)</span><br><span class="line">&#x2F;&#x2F; Wed Jan 13 2021 19:05:13 GMT+0800 (台北標準時間)</span><br></pre></td></tr></table></figure>
-<h3 id="各時區計算"><a href="#各時區計算" class="headerlink" title="各時區計算"></a>各時區計算</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 因為 GMT+0800 (台北標準時間) 代表 台北比格林威治時間快 8 小時</span><br><span class="line">&#x2F;&#x2F; GMT-0500 (紐約標準時間) 代表 紐約比格林威治時間慢 5 小時</span><br><span class="line">let localTime&#x3D;new Date(timestamp + (timeZone-8)*60*60*1000)</span><br><span class="line">&#x2F;&#x2F; 因為 timestamp 顯示為毫秒，所以要乘 1000 轉換為秒，</span><br><span class="line">&#x2F;&#x2F; 在乘 60 轉換為分，在乘 60 轉換為小時</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="toLocaleString-NaN"><a href="#toLocaleString-NaN" class="headerlink" title="toLocaleString()"></a>toLocaleString()</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;toLocaleString(&#39;語系&#39;,自由參數)</span><br><span class="line">new Date().toLocaleString(&#39;ko-KR&#39;, &#123; timeZone: &#39;UTC&#39; &#125;);</span><br><span class="line">&#x2F;&#x2F; &quot;2021. 1. 13. 오전 11:35:04&quot;</span><br></pre></td></tr></table></figure>
-最後附上<a target="_blank" rel="noopener" href="https://codepen.io/jasonuse/pen/BaLqMed?editors=0010">程式碼</a></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1014,7 +1003,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">37</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

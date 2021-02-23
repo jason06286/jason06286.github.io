@@ -197,6 +197,88 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200813/34258/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Jason06286">
+      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JasonCodingBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/20200813/34258/" class="post-title-link" itemprop="url">JS 筆記 Arrow Function 箭頭函式</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-08-13 15:11:07" itemprop="dateCreated datePublished" datetime="2020-08-13T15:11:07+08:00">2020-08-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-12-24 18:42:57" itemprop="dateModified" datetime="2020-12-24T18:42:57+08:00">2020-12-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/javascript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><img src="/images/js01/js5.png"></p>
+<h2 id="箭頭函式（Arrow-Function）"><a href="#箭頭函式（Arrow-Function）" class="headerlink" title="箭頭函式（Arrow Function）"></a>箭頭函式（Arrow Function）</h2><p>ES6 增加了箭頭函式使我們的程式碼更簡潔</p>
+<blockquote>
+<p>去掉 <code>function</code> 加入 <code>=&gt;</code><br>只有一個參數 <code>（）</code>可加可不加，兩個以上一定要加 <code>（params,params2）</code><br>箭頭函式 <code>this</code> 指向外層</p>
+</blockquote>
+<h3 id="函式比較"><a href="#函式比較" class="headerlink" title="函式比較"></a>函式比較</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; ES5</span><br><span class="line">const numbers &#x3D;[2,3,4];</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map(function(number)&#123;</span><br><span class="line">    return number * number;</span><br><span class="line">&#125;);</span><br><span class="line">console.log(double)</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; ES6</span><br><span class="line">const numbers &#x3D;[2,3,4];</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map((number)&#x3D;&gt;&#123;</span><br><span class="line">    return number * number;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map(number&#x3D;&gt;&#123;</span><br><span class="line">    return number * number;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">const double &#x3D;numbers.map(number&#x3D;&gt;number * number);</span><br><span class="line"></span><br><span class="line">console.log(double)</span><br></pre></td></tr></table></figure>
+<h3 id="this比較"><a href="#this比較" class="headerlink" title="this比較"></a>this比較</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; ES5</span><br><span class="line">const Jason&#x3D;&#123;</span><br><span class="line">    name:&#39;Jason&#39;,</span><br><span class="line">    hobbies:[&#39;Coding&#39;, &#39;Running&#39;, &#39;Sleeping&#39;],</span><br><span class="line">    printHobbies: function()&#123;</span><br><span class="line">        let self&#x3D;this &#x2F;&#x2F;透過宣告變數來取得外層this</span><br><span class="line">        this.hobbies.map(function (hobby) &#123;</span><br><span class="line">            console.log(this) &#x2F;&#x2F;指向window</span><br><span class="line">            console.log(&#96;$&#123;self.name&#125; loves $&#123;hobby&#125;&#96;); </span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Jason.printHobbies();</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; ES6</span><br><span class="line">const Jason&#x3D;&#123;</span><br><span class="line">    name:&#39;Jason&#39;,</span><br><span class="line">    hobbies:[&#39;Coding&#39;, &#39;Running&#39;, &#39;Sleeping&#39;],</span><br><span class="line">    printHobbies: function()&#123;</span><br><span class="line">        this.hobbies.map(hobby&#x3D;&gt; &#123;</span><br><span class="line">            console.log(&#96;$&#123;this.name&#125; loves $&#123;hobby&#125;&#96;); </span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">Jason.printHobbies();</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
     <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20200813/54502/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -869,7 +951,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">37</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

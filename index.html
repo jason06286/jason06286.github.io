@@ -197,6 +197,78 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
+    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20210223/21004/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/head.png">
+      <meta itemprop="name" content="Jason06286">
+      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JasonCodingBlog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/20210223/21004/" class="post-title-link" itemprop="url">Leetcode 1450. Number of Students Doing Homework at a Given Time</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-02-23 22:20:02 / Modified: 22:25:14" itemprop="dateCreated datePublished" datetime="2021-02-23T22:20:02+08:00">2021-02-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Input: startTime &#x3D; [1,2,3], endTime &#x3D; [3,2,7], queryTime &#x3D; 4</span><br><span class="line">Output: 1</span><br><span class="line">Explanation: We have 3 students where:</span><br><span class="line">The first student started doing homework at time 1 and finished at time 3 and wasn&#39;t doing anything at time 4.</span><br><span class="line">The second student started doing homework at time 2 and finished at time 2 and also wasn&#39;t doing anything at time 4.</span><br><span class="line">The third student started doing homework at time 3 and finished at time 7 and was the only student doing homework at time 4.</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="解法思維"><a href="#解法思維" class="headerlink" title="解法思維"></a>解法思維</h2><p>做出<code>endTime</code>到<code>startTime</code>的陣列在查找</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var busyStudent &#x3D; function(startTime, endTime, queryTime) &#123;</span><br><span class="line">    let sum&#x3D;0</span><br><span class="line">    for (let j &#x3D; 0; j &lt; startTime.length; j++) &#123;</span><br><span class="line">        let len&#x3D;endTime[j]-startTime[j]</span><br><span class="line">        if(len&#x3D;&#x3D;0)&#123;</span><br><span class="line">            Array.from(&#123;length:1&#125;,(v,i)&#x3D;&gt;endTime[j]).indexOf(queryTime)!&#x3D;-1?sum++:false;</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            Array.from(&#123;length:len+1&#125;, (v, i) &#x3D;&gt; startTime[j]++).indexOf(queryTime)!&#x3D;-1?sum++:false;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return sum</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>如果<code>startTime</code>小於目標時間和<code>endTime</code>大於目標時間，就代表目標時間包含在裡面</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const busyStudent &#x3D; (startTime, endTime, queryTime) &#x3D;&gt; &#123;</span><br><span class="line">  let ret &#x3D; 0;</span><br><span class="line">  for (let i &#x3D; 0; i &lt; startTime.length; ++i) &#123;</span><br><span class="line">    startTime[i] &lt;&#x3D; queryTime &amp;&amp; endTime[i] &gt;&#x3D; queryTime &amp;&amp; ++ret;</span><br><span class="line">  &#125;</span><br><span class="line">  return ret;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
     <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20210206/60035/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -222,7 +294,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-02-06 13:09:38 / Modified: 13:10:59" itemprop="dateCreated datePublished" datetime="2021-02-06T13:09:38+08:00">2021-02-06</time>
+              <time title="Created: 2021-02-06 13:09:38 / Modified: 13:11:08" itemprop="dateCreated datePublished" datetime="2021-02-06T13:09:38+08:00">2021-02-06</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -840,76 +912,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-tw">
-    <link itemprop="mainEntityOfPage" href="https://jason06286.github.io/20210123/30501/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/head.png">
-      <meta itemprop="name" content="Jason06286">
-      <meta itemprop="description" content="不要等待運氣來臨，應該主動去努力掌握知識。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JasonCodingBlog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/20210123/30501/" class="post-title-link" itemprop="url">Leetcode 1603. Design Parking System</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2021-01-23 13:13:51 / Modified: 13:16:54" itemprop="dateCreated datePublished" datetime="2021-01-23T13:13:51+08:00">2021-01-23</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index"><span itemprop="name">LeetCode</span></a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="題目"><a href="#題目" class="headerlink" title="題目"></a>題目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input</span><br><span class="line">[&quot;ParkingSystem&quot;, &quot;addCar&quot;, &quot;addCar&quot;, &quot;addCar&quot;, &quot;addCar&quot;]</span><br><span class="line">[[1, 1, 0], [1], [2], [3], [1]]</span><br><span class="line">Output</span><br><span class="line">[null, true, true, false, false]</span><br></pre></td></tr></table></figure>
-<h2 id="解法思維"><a href="#解法思維" class="headerlink" title="解法思維"></a>解法思維</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">var ParkingSystem &#x3D; function(big, medium, small) &#123;</span><br><span class="line">    this.big&#x3D;big</span><br><span class="line">    this.medium&#x3D;medium</span><br><span class="line">    this.small&#x3D;small</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">ParkingSystem.prototype.addCar &#x3D; function(carType) &#123;</span><br><span class="line">    if(carType&#x3D;&#x3D;1)&#123;</span><br><span class="line">        this.big-&#x3D;1</span><br><span class="line">        return this.big&gt;&#x3D;0</span><br><span class="line">    &#125;else if(carType&#x3D;&#x3D;2)&#123;</span><br><span class="line">        this.medium-&#x3D;1</span><br><span class="line">        return this.medium&gt;&#x3D;0</span><br><span class="line">    &#125;else if(carType&#x3D;&#x3D;3)&#123;</span><br><span class="line">        this.small-&#x3D;1</span><br><span class="line">        return this.small&gt;&#x3D;0</span><br><span class="line">    &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var ParkingSystem &#x3D; function(big, medium, small) &#123;</span><br><span class="line">    this.remainingSpaces &#x3D; [big, medium, small];</span><br><span class="line">&#125;;</span><br><span class="line">ParkingSystem.prototype.addCar &#x3D; function(carType) &#123;</span><br><span class="line">    return (this.remainingSpaces[carType - 1]--) &gt; 0</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -980,7 +982,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">36</span>
+          <span class="site-state-item-count">37</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
